@@ -1,152 +1,99 @@
-import React, { useState } from 'react';
-import carousel1 from '../assets/carousel-1.png'; // Housekeeping
-import carousel2 from '../assets/carousel-2.png'; // Pest Control
-import carousel3 from '../assets/carousel-3.jpg'; // Event Management
-import carousel4 from '../assets/carousel-4.png'; // Security
-import carousel5 from '../assets/carousel-5.jpg'; // Landscape
-import workflow from '../assets/workflow.png';     // Training
+import React from 'react';
 
 const Services = () => {
-    const [openIndex, setOpenIndex] = useState(0);
-
     const services = [
         {
-            id: '01',
-            title: 'Housekeeping Services',
-            description: 'Experience pristine cleanliness that boosts productivity. Our professional housekeeping staff ensures your workspace remains hygienic, organized, and welcoming every single day.',
-            features: ['Daily Sweeping & Mopping', 'Restroom Sanitization', 'Workstation Cleaning', 'Waste Management'],
-            image: carousel1,
-            color: 'bg-blue-600'
+            title: 'Housekeeping',
+            desc: 'Professional cleaning and hygiene maintenance for corporate and industrial facilities.',
+            icon: (
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            )
         },
         {
-            id: '02',
-            title: 'Landscape & Garden',
-            description: 'Transform your outdoors into a serene oasis. We provide comprehensive gardening solutions, from landscape creation to monthly maintenance, ensuring year-round beauty.',
-            features: ['Landscape Design', 'Lawn Maintenance', 'Tree Pruning', 'Irrigation Systems'],
-            image: carousel5,
-            color: 'bg-green-600'
+            title: 'Security Services',
+            desc: '24/7 manned guarding and electronic surveillance for maximum asset protection.',
+            icon: (
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            )
         },
         {
-            id: '03',
-            title: 'Security Maintenance',
-            description: 'Protect your assets with our disciplined security personnel. We offer tailored security solutions including access control, surveillance, and 24/7 guarding services.',
-            features: ['Manned Guarding', 'Access Control', 'Patrolling', 'Emergency Response'],
-            image: carousel4,
-            color: 'bg-slate-700'
+            title: 'Landscaping',
+            desc: 'Creating and maintaining beautiful green spaces for a refreshing environment.',
+            icon: (
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+            )
         },
         {
-            id: '04',
-            title: 'Pest Control Services',
-            description: 'Say goodbye to pests with our long-term solutions. We use eco-friendly and effective treatments to eliminate termites, rodents, and insects from your facility.',
-            features: ['Termite Treatment', 'General Disinfestation', 'Rodent Control', 'Mosquito Fogging'],
-            image: carousel2,
-            color: 'bg-orange-600'
+            title: 'Pest Control',
+            desc: 'Advanced eco-friendly treatments for effective long-term pest management.',
+            icon: (
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+            )
         },
         {
-            id: '05',
-            title: 'Training & Placements',
-            description: 'Empowering the workforce. We not only supply skilled manpower but also provide rigorous training to ensure they meet the highest industry standards.',
-            features: ['Skill Development', 'Soft Skills Training', 'Safety Protocols', 'Job Placement'],
-            image: workflow,
-            color: 'bg-indigo-600'
+            title: 'Manpower Supply',
+            desc: 'Skilled, semi-skilled, and unskilled labor for various industrial requirements.',
+            icon: (
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+            )
         },
         {
-            id: '06',
             title: 'Event Management',
-            description: 'Flawless execution for your corporate events. From product launches to conferences, we handle all logistics, decor, and management so you can focus on your guests.',
-            features: ['Venue Management', 'Decor & Logistics', 'Catering Coordination', 'Guest Management'],
-            image: carousel3,
-            color: 'bg-pink-600'
+            desc: 'End-to-end logistics and management for corporate events and functions.',
+            icon: (
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            )
         }
     ];
 
-    const toggleService = (index) => {
-        setOpenIndex(openIndex === index ? -1 : index);
-    };
-
     return (
-        <section id="services" className="py-24 bg-white font-['Poppins']">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Section Header */}
-                <div className="mb-20">
-                    <span className="text-[#0d9488] font-bold tracking-widest uppercase text-sm mb-2 block">Our Expertise</span>
-                    <h2 className="text-5xl lg:text-7xl font-bold text-[#1e3a5f] leading-tight">
-                        Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0d9488] to-[#2dd4bf]">Services</span>
+        <section id="services" className="py-24 bg-gray-50 font-['Poppins']">
+            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+
+                {/* Header */}
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                    <span className="inline-block px-4 py-1.5 bg-[#0d9488]/10 text-[#0d9488] rounded-full text-xs font-bold tracking-widest uppercase mb-4">
+                        Our Expertise
+                    </span>
+                    <h2 className="text-4xl lg:text-5xl font-bold text-[#1e3a5f] mb-6">
+                        Comprehensive <span className="text-[#0d9488]">Facility Services</span>
                     </h2>
+                    <p className="text-gray-500 text-lg leading-relaxed">
+                        Delivering excellence through integrated facility management solutions designed to optimize your operations.
+                    </p>
                 </div>
 
-                {/* Vertical Mega-Accordion */}
-                <div className="border-t border-gray-200">
+                {/* Service Cards Grid */}
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
-                        <div key={index} className="border-b border-gray-200 group">
-                            {/* Accordion Header */}
-                            <button
-                                onClick={() => toggleService(index)}
-                                className="w-full py-8 lg:py-12 flex items-center justify-between text-left focus:outline-none group-hover:bg-gray-50 transition-colors duration-300 px-4 -mx-4 sm:px-0 sm:mx-0"
-                            >
-                                <div className="flex items-baseline gap-6 lg:gap-10">
-                                    <span className={`text-xl font-bold font-mono transition-colors duration-300 ${openIndex === index ? 'text-[#0d9488]' : 'text-gray-300'}`}>
-                                        {service.id}
-                                    </span>
-                                    <h3 className={`text-3xl sm:text-4xl lg:text-6xl font-bold transition-all duration-300 ${openIndex === index ? 'text-[#1e3a5f] translate-x-4' : 'text-gray-400 group-hover:text-gray-600'}`}>
-                                        {service.title}
-                                    </h3>
-                                </div>
-                                <div className={`w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center transition-all duration-300 ${openIndex === index ? 'bg-[#1e3a5f] border-[#1e3a5f] rotate-45' : 'group-hover:border-[#0d9488]'}`}>
-                                    <svg className={`w-6 h-6 transition-colors duration-300 ${openIndex === index ? 'text-white' : 'text-gray-400 group-hover:text-[#0d9488]'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                                    </svg>
-                                </div>
-                            </button>
-
-                            {/* Accordion Content (Collapsible) */}
-                            <div
-                                className={`grid overflow-hidden transition-all duration-500 ease-in-out ${openIndex === index ? 'grid-rows-[1fr] opacity-100 pb-12' : 'grid-rows-[0fr] opacity-0'
-                                    }`}
-                            >
-                                <div className="min-h-0">
-                                    <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center pt-4">
-                                        {/* Image Side */}
-                                        <div className="lg:col-span-5 relative group/img overflow-hidden rounded-3xl">
-                                            <div className={`absolute inset-0 opacity-20 transition-colors duration-300 ${service.color}`}></div>
-                                            <img
-                                                src={service.image}
-                                                alt={service.title}
-                                                className="w-full h-[300px] lg:h-[400px] object-cover transform group-hover/img:scale-110 transition-transform duration-700"
-                                            />
-                                        </div>
-
-                                        {/* Content Side */}
-                                        <div className="lg:col-span-7 space-y-8">
-                                            <p className="text-xl text-gray-600 leading-relaxed">
-                                                {service.description}
-                                            </p>
-
-                                            <div>
-                                                <h4 className="text-sm font-bold text-[#1e3a5f] uppercase tracking-wider mb-4">Key Features</h4>
-                                                <div className="grid sm:grid-cols-2 gap-4">
-                                                    {service.features.map((feature, idx) => (
-                                                        <div key={idx} className="flex items-center gap-3">
-                                                            <div className={`w-2 h-2 rounded-full ${service.color.replace('bg-', 'bg-')}`}></div>
-                                                            <span className="text-gray-700 font-medium">{feature}</span>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            </div>
-
-                                            <button className="inline-flex items-center gap-2 text-[#0d9488] font-bold text-lg hover:gap-4 transition-all duration-300 group/link">
-                                                Learn more
-                                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div
+                            key={index}
+                            className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+                        >
+                            {/* Icon */}
+                            <div className="w-16 h-16 bg-[#1e3a5f]/5 rounded-xl flex items-center justify-center text-[#1e3a5f] mb-6 group-hover:bg-[#0d9488] group-hover:text-white transition-all duration-300">
+                                {service.icon}
                             </div>
+
+                            {/* Title */}
+                            <h3 className="text-xl font-bold text-[#1e3a5f] mb-3 group-hover:text-[#0d9488] transition-colors">
+                                {service.title}
+                            </h3>
+
+                            {/* Description */}
+                            <p className="text-gray-500 leading-relaxed mb-6">
+                                {service.desc}
+                            </p>
+
+                            {/* Link */}
+                            <a href="#contact" className="inline-flex items-center gap-2 text-sm font-bold text-[#1e3a5f] group-hover:text-[#0d9488] transition-colors">
+                                Learn More
+                                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                            </a>
                         </div>
                     ))}
                 </div>
+
             </div>
         </section>
     );

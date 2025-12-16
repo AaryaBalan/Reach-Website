@@ -3,129 +3,132 @@ import React, { useState } from 'react';
 const RepairMaintenance = () => {
     const [activeTab, setActiveTab] = useState('electrical');
 
-    const services = {
-        electrical: {
-            title: 'Electrical Services',
-            subtitle: 'Technical Excellence',
-            icon: "⚡",
-            features: [
-                'HV/LV Cabling work up to 400 sq.mm',
-                'Network cabling & Earthing Layout',
-                'DG Erecting and Cabling',
+    const services = [
+        {
+            key: 'electrical',
+            title: 'Electrical Engineering',
+            icon: (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+            ),
+            specs: [
+                'HV/LV Cabling & Termination',
+                'Network Cabling & Earthing',
+                'DG Erecting & Cabling',
                 'MV Panel Fabrication',
-                'BMS Electrical work',
-                'Power factor correction',
-                'Industrial wiring',
-                'Transformers Erection'
+                'BMS Wiring Systems',
+                'Power Factor Correction',
+                'Industrial Heavy Wiring',
+                'Transformer Erection'
             ]
         },
-        plumbing: {
-            title: 'Plumbing Services',
-            subtitle: 'Installation & AMC',
-            icon: "💧",
-            features: [
-                'Pipeline welding & installation',
-                'MS and SS Pipe Line work',
-                'Wash basin & WC installation',
-                'Urinal sensor setup',
+        {
+            key: 'plumbing',
+            title: 'Plumbing Solutions',
+            icon: (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+            ),
+            specs: [
+                'Industrial Pipeline Welding',
+                'MS & SS Pipeline fabrication',
+                'Sanitary Ware Installation',
+                'Urinal Sensor Automation',
                 'RO, ETP and STP Plant',
                 'Comprehensive AMC'
             ]
         },
-        carpentry: {
-            title: 'Carpentry Services',
-            subtitle: 'Industrial & Interior',
-            icon: "🪚",
-            features: [
-                'Industrial cabin shade & roofing',
-                'Doors, Windows, Sofa sets',
-                'Interior & Exterior wood works',
-                'Floor Carpet & Sun Window',
-                'Aluminum fabrication',
-                'Industrial Plywood work'
+        {
+            key: 'carpentry',
+            title: 'Carpentry & Works',
+            icon: (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
+            ),
+            specs: [
+                'Industrial Cabin Shades',
+                'Door & Window Fabrication',
+                'Interior Wood Paneling',
+                'Floor Carpeting',
+                'Aluminum Partitioning',
+                'Plywood Furniture'
             ]
         },
-        painting: {
-            title: 'Painting Services',
-            subtitle: 'Premium Finishing',
-            icon: "🎨",
-            features: [
-                'Surface prep & 3-coat white wash',
-                'Synthetic plaster renovation',
-                'Putty & Emulsion painting',
-                'French spirit polishing',
-                'Melamine Polishing',
-                'Wood filler application'
-            ]
-        },
-        interior: {
-            title: 'Interior Fit Outs',
-            subtitle: 'Space Optimization',
-            icon: "🛋️",
-            features: [
-                'Cupboard & Storage',
-                'Work Station Cubicles',
-                'Office Partitions',
-                'False Ceiling',
-                'Custom furniture',
-                'Space optimization'
+        {
+            key: 'painting',
+            title: 'Painting & Finish',
+            icon: (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>
+            ),
+            specs: [
+                'Surface Preparation',
+                'Synthetic Plaster Renovation',
+                'Putty & Emulsion Painting',
+                'French Spirit Polishing',
+                'Wood Texture Application',
+                'Weather-Proof Coatings'
             ]
         }
-    };
+    ];
+
+    const activeData = services.find(s => s.key === activeTab);
 
     return (
-        <section id="repair" className="py-24 bg-gray-50 font-['Poppins']">
+        <section id="repair" className="py-24 bg-white font-['Poppins']">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
-                <div className="mb-16 text-center">
+                {/* Header */}
+                <div className="mb-16">
+                    <span className="text-[#0d9488] font-bold tracking-widest uppercase text-sm mb-2 block">Technical Support</span>
                     <h2 className="text-4xl lg:text-5xl font-bold text-[#1e3a5f] mb-4">
-                        Technical <span className="text-[#0d9488]">Maintenance</span>
+                        Maintenance <span className="text-[#0d9488]">Expertise</span>
                     </h2>
-                    <p className="text-gray-600 text-lg">Precision maintenance across all operational domains</p>
+                    <p className="text-gray-500 text-lg max-w-2xl">
+                        Ensuring operational efficiency through precise engineering solutions.
+                    </p>
                 </div>
 
-                {/* Dashboard Tabs */}
-                <div className="flex flex-wrap justify-center gap-4 mb-12">
-                    {Object.keys(services).map((key) => (
-                        <button
-                            key={key}
-                            onClick={() => setActiveTab(key)}
-                            className={`px-8 py-4 rounded-xl font-bold text-sm tracking-wide uppercase transition-all duration-300 border shadow-sm ${activeTab === key
-                                    ? 'bg-[#1e3a5f] text-white border-[#1e3a5f] shadow-lg transform scale-105'
-                                    : 'bg-white text-gray-500 border-gray-200 hover:bg-gray-100'
-                                }`}
-                        >
-                            <span className="mr-2 opacity-100">{services[key].icon}</span>
-                            {services[key].title.split(' ')[0]}
-                        </button>
-                    ))}
-                </div>
+                {/* Clean Tab Layout */}
+                <div className="flex flex-col lg:flex-row gap-12 bg-white rounded-2xl border border-gray-100 shadow-xl overflow-hidden">
 
-                {/* Active Content Display */}
-                <div className="bg-white rounded-3xl p-8 lg:p-16 shadow-2xl border border-gray-100">
-                    <div className="grid lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <div className="inline-block p-4 rounded-2xl bg-[#0d9488]/10 text-4xl mb-6 text-[#0d9488]">
-                                {services[activeTab].icon}
-                            </div>
-                            <h3 className="text-3xl lg:text-4xl font-bold text-[#1e3a5f] mb-2">
-                                {services[activeTab].title}
-                            </h3>
-                            <p className="text-[#0d9488] font-semibold tracking-wider uppercase mb-8">
-                                {services[activeTab].subtitle}
-                            </p>
-                            <div className="h-1 w-20 bg-gray-100 rounded-full overflow-hidden">
-                                <div className="h-full bg-[#0d9488] w-2/3"></div>
-                            </div>
-                        </div>
-
-                        <div className="grid sm:grid-cols-2 gap-4">
-                            {services[activeTab].features.map((feature, idx) => (
-                                <div key={idx} className="bg-gray-50 p-4 rounded-xl border border-gray-200 flex items-center gap-3 hover:border-[#0d9488]/30 transition-colors">
-                                    <div className="w-2 h-2 rounded-full bg-[#0d9488] shadow-sm"></div>
-                                    <span className="text-gray-700 text-sm font-medium">{feature}</span>
+                    {/* Sidebar Nav */}
+                    <div className="lg:w-1/3 bg-gray-50 border-r border-gray-100 p-6 flex flex-col gap-2">
+                        {services.map((s) => (
+                            <button
+                                key={s.key}
+                                onClick={() => setActiveTab(s.key)}
+                                className={`flex items-center gap-4 p-4 rounded-xl text-left transition-all duration-300
+                                    ${activeTab === s.key
+                                        ? 'bg-white text-[#1e3a5f] shadow-md border border-gray-100'
+                                        : 'text-gray-500 hover:text-[#1e3a5f] hover:bg-white/50'
+                                    }
+                                `}
+                            >
+                                <div className={`${activeTab === s.key ? 'text-[#0d9488]' : 'text-gray-400'}`}>
+                                    {s.icon}
                                 </div>
-                            ))}
+                                <span className={`font-bold ${activeTab === s.key ? 'font-bold' : 'font-medium'}`}>
+                                    {s.title}
+                                </span>
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Content Panel */}
+                    <div className="lg:w-2/3 p-8 lg:p-12">
+                        <div className="animate-fade-in-up">
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="p-3 bg-[#1e3a5f]/5 rounded-xl text-[#1e3a5f]">
+                                    {activeData.icon}
+                                </div>
+                                <h3 className="text-3xl font-bold text-[#1e3a5f]">{activeData.title}</h3>
+                            </div>
+
+                            <div className="grid sm:grid-cols-2 gap-4">
+                                {activeData.specs.map((spec, idx) => (
+                                    <div key={idx} className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                                        <svg className="w-5 h-5 text-[#0d9488] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                                        <span className="text-gray-600 font-medium text-sm">{spec}</span>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -84,7 +84,7 @@ const About = () => {
                         <div className="grid sm:grid-cols-2 gap-4">
                             {features.map((item, index) => (
                                 <div key={index} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-white hover:shadow-md transition-all duration-300 border border-transparent hover:border-gray-100">
-                                    <div className="text-[#0d9488] font-bold">✓</div>
+                                    <svg className="w-5 h-5 text-[#0d9488] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                                     <span className="text-gray-700 text-sm font-semibold">{item}</span>
                                 </div>
                             ))}
