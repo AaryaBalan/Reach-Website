@@ -104,57 +104,80 @@ const About = () => {
                     </div>
                 </div>
 
-                {/* Why Choose Us - Redesigned */}
-                <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start mb-32 max-w-7xl mx-auto">
+                {/* Why Partner With Us - Modern Bento Grid UI */}
+                <div className="mb-32 max-w-[1920px] mx-auto">
 
-                    {/* Left Panel: Sticky Content */}
-                    <div className="lg:col-span-5 lg:sticky top-32">
-                        <span className="text-[#0d9488] font-bold tracking-widest uppercase text-sm mb-4 block">The Reach Advantage</span>
-                        <h3 className="text-4xl lg:text-6xl font-bold text-[#1e3a5f] mb-8 leading-tight">
-                            Why Partner <br />With <span className="text-[#0d9488]">Us?</span>
-                        </h3>
+                    <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
 
-                        {/* Highlight Box */}
-                        <div className="bg-[#1e3a5f] text-white p-8 rounded-3xl shadow-xl mb-12 relative overflow-hidden group transform hover:scale-[1.02] transition-transform duration-500">
-                            <div className="absolute top-0 right-0 w-40 h-40 bg-[#0d9488] rounded-full blur-[60px] opacity-20 -mr-10 -mt-10"></div>
-
-                            <div className="relative z-10">
-                                <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-6 text-[#0d9488]">
-                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                </div>
-                                <h4 className="text-xl font-bold mb-3">Client First Philosophy</h4>
-                                <p className="text-white/80 leading-relaxed">
-                                    Your happiness is our priority. That's why every client gets a <strong className="text-white border-b-2 border-[#0d9488]">Dedicated Relationship Manager</strong> to ensure seamless communication.
+                        {/* Left: Sticky Narrative Panel */}
+                        <div className="lg:w-1/3 lg:sticky top-32 h-fit space-y-8">
+                            <div>
+                                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0d9488]/10 text-[#0d9488] text-xs font-bold uppercase tracking-widest mb-4 border border-[#0d9488]/20">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#0d9488] animate-pulse"></span>
+                                    The Reach Advantage
+                                </span>
+                                <h3 className="text-4xl lg:text-5xl font-bold text-[#1e3a5f] leading-tight mb-6">
+                                    Redefining <br />
+                                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1e3a5f] via-[#0d9488] to-[#0d9488]">Facility Excellence.</span>
+                                </h3>
+                                <p className="text-gray-500 text-lg leading-relaxed">
+                                    We go beyond standard maintenance. We engineer environments that enhance productivity, safety, and comfort.
                                 </p>
                             </div>
-                        </div>
 
-                        {/* Workflow Image */}
-                        <div className="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white group">
-                            <img
-                                src={workflowImage}
-                                alt="Reach FMS Protocol"
-                                className="w-full h-auto transform group-hover:scale-110 transition-transform duration-700"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#1e3a5f]/90 via-transparent to-transparent flex items-end p-8">
-                                <div>
-                                    <span className="text-[#0d9488] text-xs font-bold uppercase tracking-wider block mb-1">Our Process</span>
-                                    <span className="text-white font-bold text-lg">Streamlined Workflow System</span>
+                            {/* Highlight Bento Block */}
+                            <div className="relative group overflow-hidden rounded-[2rem] bg-[#1e3a5f] p-8 text-white shadow-2xl">
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-[#0d9488] opacity-20 blur-[80px] rounded-full translate-x-1/2 -translate-y-1/2 group-hover:scale-125 transition-transform duration-700"></div>
+                                <div className="absolute bottom-0 left-0 w-40 h-40 bg-white opacity-5 blur-[50px] rounded-full -translate-x-1/2 translate-y-1/2"></div>
+
+                                <div className="relative z-10">
+                                    <svg className="w-10 h-10 mb-6 text-[#0d9488]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                    <h4 className="text-2xl font-bold mb-3">Dedicated Relationship Manager</h4>
+                                    <p className="text-white/70 mb-6 leading-relaxed text-sm">Every partner is assigned a single point of contact for seamless, personalized communication and instant resolutions.</p>
+                                    <button className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#0d9488] hover:text-white transition-colors">
+                                        Learn More <span className="text-lg">→</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    {/* Right Panel: Feature Grid */}
-                    <div className="lg:col-span-7 grid sm:grid-cols-2 gap-5 pt-8">
-                        {features.map((item, index) => (
-                            <div key={index} className="p-6 bg-white rounded-2xl shadow-[0_2px_10px_rgba(0,0,0,0.03)] border border-gray-100 hover:shadow-xl hover:border-[#0d9488]/30 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between h-full">
-                                <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center text-[#1e3a5f] mb-4 group-hover:bg-[#0d9488] group-hover:text-white transition-all duration-300 group-hover:scale-110">
-                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                </div>
-                                <h5 className="font-bold text-[#1e3a5f] text-lg leading-tight group-hover:text-[#0d9488] transition-colors">{item}</h5>
+                        {/* Right: Feature Masonry/Grid */}
+                        <div className="lg:w-2/3">
+                            <div className="grid sm:grid-cols-2 gap-4">
+                                {features.map((item, index) => (
+                                    <div
+                                        key={index}
+                                        className={`p-6 rounded-2xl border transition-all duration-300 group relative overflow-hidden
+                                            ${index === 0 ? 'sm:col-span-2 bg-[#0d9488] text-white border-transparent' : 'bg-white border-gray-100 hover:border-[#0d9488]/30 hover:shadow-xl hover:-translate-y-1'}
+                                        `}
+                                    >
+                                        {/* Hover Gradient for White Cards */}
+                                        {index !== 0 && (
+                                            <div className="absolute inset-0 bg-gradient-to-br from-[#0d9488]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                        )}
+
+                                        <div className="relative z-10 flex items-start justify-between gap-4">
+                                            <div>
+                                                {index === 0 && <span className="text-white/60 text-xs font-bold uppercase tracking-wider mb-2 block">Top Priority</span>}
+                                                <h5 className={`font-bold text-lg leading-tight mb-2 ${index === 0 ? 'text-white text-2xl' : 'text-[#1e3a5f]'}`}>{item}</h5>
+                                                {index === 0 && <p className="text-white/80 mt-2 max-w-lg">Experience the most cost-effective and transparent pricing models in the industry.</p>}
+                                            </div>
+
+                                            <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 
+                                                ${index === 0 ? 'bg-white/20 text-white' : 'bg-[#1e3a5f]/5 text-[#1e3a5f] group-hover:bg-[#0d9488] group-hover:text-white'}
+                                            `}>
+                                                {index === 0 ? (
+                                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                                ) : (
+                                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
+                        </div>
+
                     </div>
 
                 </div>
