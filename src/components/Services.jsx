@@ -63,35 +63,45 @@ const Services = () => {
                     </p>
                 </div>
 
-                {/* Service Cards Grid */}
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {services.map((service, index) => (
-                        <div
-                            key={index}
-                            className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group"
-                        >
-                            {/* Icon */}
-                            <div className="w-16 h-16 bg-[#1e3a5f]/5 rounded-xl flex items-center justify-center text-[#1e3a5f] mb-6 group-hover:bg-[#0d9488] group-hover:text-white transition-all duration-300">
-                                {service.icon}
+                {/* Service Cards - Blueprint Grid Layout (No Boxes) */}
+                <div className="border-t border-l border-gray-200">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3">
+                        {services.map((service, index) => (
+                            <div key={index} className="group relative border-r border-b border-gray-200 p-10 hover:bg-white transition-all duration-500 overflow-hidden">
+
+                                {/* Hover Gradient Background */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#0d9488]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                                {/* Background Number */}
+                                <div className="absolute top-4 right-4 text-6xl font-bold text-gray-100/50 group-hover:text-[#0d9488]/10 transition-colors duration-500 select-none">
+                                    0{index + 1}
+                                </div>
+
+                                <div className="relative z-10 flex flex-col items-start h-full">
+                                    {/* Icon with Morphing Background */}
+                                    <div className="relative w-16 h-16 mb-8">
+                                        <div className="absolute inset-0 bg-[#1e3a5f] rounded-lg rotate-0 scale-0 group-hover:scale-100 group-hover:rotate-45 transition-all duration-500 ease-out opacity-10"></div>
+                                        <div className="relative w-full h-full flex items-center justify-center text-[#1e3a5f] group-hover:text-[#0d9488] transition-colors duration-300">
+                                            {service.icon}
+                                        </div>
+                                    </div>
+
+                                    <h3 className="text-2xl font-bold text-[#1e3a5f] mb-4 group-hover:translate-x-2 transition-transform duration-300">
+                                        {service.title}
+                                    </h3>
+
+                                    <p className="text-gray-500 leading-relaxed mb-8 flex-1 group-hover:text-gray-600">
+                                        {service.desc}
+                                    </p>
+
+                                    <a href="#contact" className="inline-flex items-center gap-2 text-sm font-bold text-[#0d9488] opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 delay-100">
+                                        <span className="uppercase tracking-wider">Details</span>
+                                        <svg className="w-4 h-4 text-[#1e3a5f]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                                    </a>
+                                </div>
                             </div>
-
-                            {/* Title */}
-                            <h3 className="text-xl font-bold text-[#1e3a5f] mb-3 group-hover:text-[#0d9488] transition-colors">
-                                {service.title}
-                            </h3>
-
-                            {/* Description */}
-                            <p className="text-gray-500 leading-relaxed mb-6">
-                                {service.desc}
-                            </p>
-
-                            {/* Link */}
-                            <a href="#contact" className="inline-flex items-center gap-2 text-sm font-bold text-[#1e3a5f] group-hover:text-[#0d9488] transition-colors">
-                                Learn More
-                                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                            </a>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
 
             </div>
