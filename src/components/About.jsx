@@ -35,66 +35,71 @@ const About = () => {
                     </p>
                 </div>
 
-                {/* Vision & Mission Cards - Unique Styling */}
-                <div className="grid lg:grid-cols-2 gap-10 mb-24 max-w-7xl mx-auto">
-                    {/* Vision Card */}
-                    <div className="group relative bg-white p-10 rounded-[2rem] shadow-xl overflow-hidden hover:-translate-y-2 transition-all duration-500 border border-gray-100">
-                        {/* Decorative Background Blob */}
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#0d9488]/20 to-transparent rounded-bl-[10rem] -mr-16 -mt-16 transition-transform duration-700 group-hover:scale-110"></div>
-                        <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#0d9488]/5 rounded-tr-[5rem] -ml-10 -mb-10"></div>
+                {/* Vision & Mission Cards - Material UI Style */}
+                <div className="grid lg:grid-cols-2 gap-8 mb-24 max-w-7xl mx-auto">
+                    {/* Vision Card - Material Design */}
+                    <div className="group bg-white p-10 rounded-[2.5rem] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_60px_-15px_rgba(13,148,136,0.2)] transition-all duration-300 border border-gray-100 relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-2 bg-[#0d9488]"></div>
 
-                        <div className="relative z-10">
-                            <div className="flex items-center gap-6 mb-8">
-                                <div className="w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center text-[#0d9488] relative overflow-hidden group-hover:shadow-[#0d9488]/20 transition-all duration-300">
-                                    <div className="absolute inset-0 bg-[#0d9488]/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                                    <svg className="w-10 h-10 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+                        <div className="flex flex-col h-full">
+                            <div className="flex items-center gap-5 mb-8">
+                                <div className="w-16 h-16 bg-[#0d9488]/10 rounded-2xl flex items-center justify-center text-[#0d9488] shadow-sm">
+                                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
                                 </div>
                                 <div>
-                                    <span className="text-[#0d9488] font-bold tracking-widest uppercase text-xs mb-1 block">Future Goal</span>
-                                    <h3 className="text-4xl font-bold text-[#1e3a5f]">Our Vision</h3>
+                                    <span className="text-gray-400 font-bold uppercase tracking-wider text-xs block mb-1">Our Aspiration</span>
+                                    <h3 className="text-3xl font-bold text-[#1e3a5f]">Our Vision</h3>
                                 </div>
                             </div>
 
-                            <p className="text-gray-600 text-lg leading-relaxed relative">
-                                <span className="text-6xl absolute -top-4 -left-2 text-[#0d9488]/10 font-serif">"</span>
+                            <p className="text-gray-600 text-lg leading-relaxed flex-1">
                                 To deliver cost-effective & customer-centric Housekeeping & Facility Management solutions, helping our Business Partners & Society build an eco-friendly environment.
                             </p>
+
+                            <div className="mt-8 flex justify-end">
+                                <div className="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center text-gray-300 group-hover:bg-[#0d9488] group-hover:text-white group-hover:border-[#0d9488] transition-all duration-300">
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    {/* Mission Card */}
-                    <div className="group relative bg-[#1e3a5f] p-10 rounded-[2rem] shadow-xl overflow-hidden hover:-translate-y-2 transition-all duration-500 text-white">
-                        {/* Decorative Pattern */}
-                        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#fff 2px, transparent 2px)', backgroundSize: '30px 30px' }}></div>
-                        <div className="absolute top-0 right-0 w-80 h-80 bg-[#0d9488] opacity-20 blur-[80px] rounded-full -mr-20 -mt-20"></div>
+                    {/* Mission Card - Material Design */}
+                    <div className="group bg-white p-10 rounded-[2.5rem] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_60px_-15px_rgba(30,58,95,0.2)] transition-all duration-300 border border-gray-100 relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-2 bg-[#1e3a5f]"></div>
 
-                        <div className="relative z-10">
-                            <div className="flex items-center gap-6 mb-8">
-                                <div className="w-20 h-20 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center text-white border border-white/20">
-                                    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
+                        <div className="flex flex-col h-full">
+                            <div className="flex items-center gap-5 mb-8">
+                                <div className="w-16 h-16 bg-[#1e3a5f]/10 rounded-2xl flex items-center justify-center text-[#1e3a5f] shadow-sm">
+                                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
                                 </div>
                                 <div>
-                                    <span className="text-[#0d9488] font-bold tracking-widest uppercase text-xs mb-1 block">Daily Purpose</span>
-                                    <h3 className="text-4xl font-bold text-white">Our Mission</h3>
+                                    <span className="text-gray-400 font-bold uppercase tracking-wider text-xs block mb-1">Our Purpose</span>
+                                    <h3 className="text-3xl font-bold text-[#1e3a5f]">Our Mission</h3>
                                 </div>
                             </div>
 
-                            <ul className="grid gap-4">
+                            <ul className="grid gap-3 flex-1">
                                 {[
                                     'Quality Service',
                                     'Continuous Training',
-                                    'Customer Satisfaction',
-                                    'Time Bound Commitments',
-                                    'Professionalism'
+                                    'Customer Satisfaction'
                                 ].map((item, idx) => (
-                                    <li key={idx} className="flex items-center gap-4 text-white/90 font-medium p-3 rounded-xl hover:bg-white/10 transition-colors border border-transparent hover:border-white/10">
-                                        <div className="w-8 h-8 rounded-full bg-[#0d9488] flex items-center justify-center text-xs font-bold shadow-lg">
-                                            {idx + 1}
-                                        </div>
+                                    <li key={idx} className="flex items-center gap-3 text-gray-600 font-medium p-2 rounded-lg hover:bg-gray-50 transition-colors">
+                                        <div className="w-2 h-2 rounded-full bg-[#1e3a5f]"></div>
                                         {item}
                                     </li>
                                 ))}
+                                <li className="text-[#0d9488] font-bold text-sm mt-2 flex items-center gap-1">
+                                    + Time Bound Commitments & Professionalism
+                                </li>
                             </ul>
+
+                            <div className="mt-8 flex justify-end">
+                                <div className="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center text-gray-300 group-hover:bg-[#1e3a5f] group-hover:text-white group-hover:border-[#1e3a5f] transition-all duration-300">
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
