@@ -50,8 +50,8 @@ const Hero = () => {
                             />
                         </div>
                         {/* Cinematic Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#1e3a5f]/95 via-[#1e3a5f]/70 to-transparent"></div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#1e3a5f]/50 via-transparent to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#623004]/70 via-[#623004]/40 to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#623004]/40 via-transparent to-transparent"></div>
                     </div>
                 ))}
             </div>
@@ -62,8 +62,8 @@ const Hero = () => {
                     {/* Badge */}
                     <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-8 animate-fade-in-up hover:bg-white/15 transition-colors cursor-default">
                         <span className="relative flex shrink-0 w-3 h-3">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0d9488] opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-3 w-3 bg-[#0d9488]"></span>
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C1311C] opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-3 w-3 bg-[#C1311C]"></span>
                         </span>
                         <span className="text-white font-semibold tracking-wide text-xs uppercase">ISO Certified Facility Management</span>
                     </div>
@@ -71,7 +71,7 @@ const Hero = () => {
                     {/* Main heading - Apple Style Typography */}
                     <h1 className="text-5xl sm:text-7xl lg:text-[5.5rem] font-extrabold text-white leading-[1.1] mb-8 animate-fade-in-up delay-100 tracking-tight">
                         Reach New Heights in <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2dd4bf] via-[#0d9488] to-[#14b8a6]">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C1311C] via-[#C1311C] to-[#623004]">
                             Facility Excellence.
                         </span>
                     </h1>
@@ -85,7 +85,7 @@ const Hero = () => {
                     <div className="flex flex-col sm:flex-row gap-5 animate-fade-in-up delay-300">
                         <button
                             onClick={scrollToContact}
-                            className="group relative px-8 py-4 bg-[#0d9488] text-white font-bold rounded-2xl shadow-[0_20px_40px_-15px_rgba(13,148,136,0.3)] hover:shadow-[0_25px_50px_-12px_rgba(13,148,136,0.5)] transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                            className="group relative px-8 py-4 bg-[#C1311C] text-white font-bold rounded-2xl shadow-[0_20px_40px_-15px_rgba(13,148,136,0.3)] hover:shadow-[0_25px_50px_-12px_rgba(13,148,136,0.5)] transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                         >
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700 ease-in-out"></div>
                             <span className="relative flex items-center gap-3 text-sm uppercase tracking-widest">
@@ -114,7 +114,7 @@ const Hero = () => {
                             <button
                                 key={index}
                                 onClick={() => goToSlide(index)}
-                                className={`transition-all duration-500 rounded-full h-1.5 ${currentSlide === index ? 'w-12 bg-[#0d9488]' : 'w-2 bg-white/20 hover:bg-white/40'
+                                className={`transition-all duration-500 rounded-full h-1.5 ${currentSlide === index ? 'w-12 bg-[#C1311C]' : 'w-2 bg-white/20 hover:bg-white/40'
                                     }`}
                                 aria-label={`Go to slide ${index + 1}`}
                             />

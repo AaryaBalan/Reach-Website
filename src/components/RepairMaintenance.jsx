@@ -76,9 +76,9 @@ const RepairMaintenance = () => {
 
                 {/* Header */}
                 <div className="mb-16">
-                    <span className="text-[#0d9488] font-bold tracking-widest uppercase text-sm mb-2 block">Technical Support</span>
-                    <h2 className="text-4xl lg:text-5xl font-bold text-[#1e3a5f] mb-4">
-                        Maintenance <span className="text-[#0d9488]">Expertise</span>
+                    <span className="text-[#C1311C] font-bold tracking-widest uppercase text-sm mb-2 block">Technical Support</span>
+                    <h2 className="text-4xl lg:text-5xl font-bold text-[#623004] mb-4">
+                        Maintenance <span className="text-[#C1311C]">Expertise</span>
                     </h2>
                     <p className="text-gray-500 text-lg max-w-2xl">
                         Ensuring operational efficiency through precise engineering solutions.
@@ -96,12 +96,12 @@ const RepairMaintenance = () => {
                                 onClick={() => setActiveTab(s.key)}
                                 className={`flex items-center gap-4 p-4 rounded-xl text-left transition-all duration-300
                                     ${activeTab === s.key
-                                        ? 'bg-white text-[#1e3a5f] shadow-md border border-gray-100'
-                                        : 'text-gray-500 hover:text-[#1e3a5f] hover:bg-white/50'
+                                        ? 'bg-white text-[#623004] shadow-md border border-gray-100'
+                                        : 'text-gray-500 hover:text-[#623004] hover:bg-white/50'
                                     }
                                 `}
                             >
-                                <div className={`${activeTab === s.key ? 'text-[#0d9488]' : 'text-gray-400'}`}>
+                                <div className={`${activeTab === s.key ? 'text-[#C1311C]' : 'text-gray-400'}`}>
                                     {s.icon}
                                 </div>
                                 <span className={`font-bold ${activeTab === s.key ? 'font-bold' : 'font-medium'}`}>
@@ -115,16 +115,16 @@ const RepairMaintenance = () => {
                     <div className="lg:w-2/3 p-8 lg:p-12">
                         <div className="animate-fade-in-up">
                             <div className="flex items-center gap-4 mb-8">
-                                <div className="p-3 bg-[#1e3a5f]/5 rounded-xl text-[#1e3a5f]">
+                                <div className="p-3 bg-[#623004]/5 rounded-xl text-[#623004]">
                                     {activeData.icon}
                                 </div>
-                                <h3 className="text-3xl font-bold text-[#1e3a5f]">{activeData.title}</h3>
+                                <h3 className="text-3xl font-bold text-[#623004]">{activeData.title}</h3>
                             </div>
 
                             <div className="grid sm:grid-cols-2 gap-4">
                                 {activeData.specs.map((spec, idx) => (
                                     <div key={idx} className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
-                                        <svg className="w-5 h-5 text-[#0d9488] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                                        <svg className="w-5 h-5 text-[#C1311C] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                                         <span className="text-gray-600 font-medium text-sm">{spec}</span>
                                     </div>
                                 ))}

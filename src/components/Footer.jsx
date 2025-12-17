@@ -2,17 +2,17 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="bg-[#1e3a5f] text-white font-['Poppins'] pt-16 pb-8">
+        <footer className="bg-[#623004] text-white font-['Poppins'] pt-16 pb-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid md:grid-cols-4 gap-12 mb-12">
 
                     {/* Brand */}
                     <div className="col-span-1 md:col-span-2">
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="w-10 h-10 bg-white text-[#1e3a5f] rounded-lg flex items-center justify-center font-bold text-xl shadow-lg">R</div>
+                            <div className="w-10 h-10 bg-white text-[#623004] rounded-lg flex items-center justify-center font-bold text-xl shadow-lg">R</div>
                             <div>
                                 <h3 className="font-bold text-xl tracking-wide leading-none">REACH</h3>
-                                <p className="text-[#0d9488] text-[10px] tracking-[0.2em] font-bold">FACILITY MANAGEMENT</p>
+                                <p className="text-[#C1311C] text-[10px] tracking-[0.2em] font-bold">FACILITY MANAGEMENT</p>
                             </div>
                         </div>
                         <p className="text-white/80 leading-relaxed max-w-sm">

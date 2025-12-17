@@ -42,14 +42,14 @@ const Navbar = () => {
                     {/* Logo - Premium Glass Effect */}
                     <div className="flex-shrink-0">
                         <a href="#home" className="flex items-center gap-3 group">
-                            <div className="w-12 h-12 bg-gradient-to-br from-[#1e3a5f] to-[#0d9488] rounded-2xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 ease-out border border-white/20">
+                            <div className="w-12 h-12 bg-gradient-to-br from-[#623004] to-[#C1311C] rounded-2xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 ease-out border border-white/20">
                                 <span className="text-white font-extrabold text-2xl tracking-tight">R</span>
                             </div>
                             <div className="hidden sm:block">
-                                <span className={`font-bold text-xl block leading-none tracking-tight transition-colors duration-300 ${isScrolled ? 'text-[#1e3a5f]' : 'text-white'}`}>
+                                <span className={`font-bold text-xl block leading-none tracking-tight transition-colors duration-300 ${isScrolled ? 'text-[#623004]' : 'text-white'}`}>
                                     REACH
                                 </span>
-                                <span className={`font-medium text-[11px] uppercase tracking-[0.2em] block mt-1 transition-colors duration-300 ${isScrolled ? 'text-[#0d9488]' : 'text-white/80'}`}>
+                                <span className={`font-medium text-[11px] uppercase tracking-[0.2em] block mt-1 transition-colors duration-300 ${isScrolled ? 'text-[#C1311C]' : 'text-white/80'}`}>
                                     Facility Management
                                 </span>
                             </div>
@@ -64,7 +64,7 @@ const Navbar = () => {
                                 href={item.href}
                                 onClick={(e) => scrollToSection(e, item.href)}
                                 className={`px-4 py-2 text-[13px] font-bold tracking-wide rounded-full transition-all duration-300 ${isScrolled
-                                    ? 'text-gray-600 hover:text-[#1e3a5f] hover:bg-gray-50'
+                                    ? 'text-gray-600 hover:text-[#623004] hover:bg-gray-50'
                                     : 'text-white/90 hover:text-white hover:bg-white/10'
                                     }`}
                             >
@@ -75,8 +75,8 @@ const Navbar = () => {
                             href="#contact"
                             onClick={(e) => scrollToSection(e, '#contact')}
                             className={`ml-6 px-7 py-3 rounded-full font-bold text-xs tracking-widest uppercase transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 ${isScrolled
-                                ? 'bg-[#1e3a5f] text-white hover:bg-[#162c46]'
-                                : 'bg-white text-[#1e3a5f] hover:bg-gray-50'
+                                ? 'bg-[#623004] text-white hover:bg-[#162c46]'
+                                : 'bg-white text-[#623004] hover:bg-gray-50'
                                 }`}
                         >
                             Get Quote
@@ -87,7 +87,7 @@ const Navbar = () => {
                     <div className="lg:hidden">
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className={`p-2.5 rounded-xl transition-all duration-300 ${isScrolled ? 'text-[#1e3a5f] bg-gray-50' : 'text-white bg-white/10 backdrop-blur-md'
+                            className={`p-2.5 rounded-xl transition-all duration-300 ${isScrolled ? 'text-[#623004] bg-gray-50' : 'text-white bg-white/10 backdrop-blur-md'
                                 }`}
                         >
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -112,7 +112,7 @@ const Navbar = () => {
                                 key={item.name}
                                 href={item.href}
                                 onClick={(e) => scrollToSection(e, item.href)}
-                                className="block px-6 py-4 text-sm font-bold text-gray-700 hover:text-[#0d9488] hover:bg-teal-50/50 rounded-xl transition-all duration-200 border border-transparent hover:border-teal-100/50"
+                                className="block px-6 py-4 text-sm font-bold text-gray-700 hover:text-[#C1311C] hover:bg-red-50/50 rounded-xl transition-all duration-200 border border-transparent hover:border-red-100/50"
                             >
                                 {item.name}
                             </a>
@@ -121,7 +121,7 @@ const Navbar = () => {
                             <a
                                 href="#contact"
                                 onClick={(e) => scrollToSection(e, '#contact')}
-                                className="block w-full py-4 text-center bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162c46] shadow-lg hover:shadow-xl transition-all active:scale-[0.98]"
+                                className="block w-full py-4 text-center bg-[#623004] text-white font-bold rounded-xl hover:bg-[#162c46] shadow-lg hover:shadow-xl transition-all active:scale-[0.98]"
                             >
                                 Get Quote
                             </a>

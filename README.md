@@ -1,18 +1,70 @@
-# React + Vite
+# Reach Facility Management Services Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive corporate website for Reach Facility Management Services, built with React, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## 🚀 Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Follow these instructions to get the project up and running on your local machine for development and testing purposes.
 
-## React Compiler
+### Prerequisites
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+Ensure you have the following installed on your system:
+- **Node.js**: (Version 16.0.0 or higher recommended)
+- **npm**: (Node Package Manager, usually comes with Node.js)
 
-Note: This will impact Vite dev & build performances.
+### 🛠️ Installation
 
-## Expanding the ESLint configuration
+1.  **Clone the repository** (if applicable) or navigate to the project directory:
+    ```bash
+    cd "My Space/Reach Website"
+    ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+
+## 💻 Development
+
+To start the local development server with Hot Module Replacement (HMR):
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173` (or the port shown in your terminal).
+
+## 📦 Building for Production
+
+To create a production-ready build:
+
+```bash
+npm run build
+```
+
+This command will:
+1.  Compile the React application.
+2.  Optimize assets (images, CSS, JS).
+3.  Output the build files to the `dist` directory.
+
+### Preview Production Build
+
+To locally preview the production build after running the build command:
+
+```bash
+npm run preview
+```
+
+## 📂 Project Structure
+
+- **`src/components`**: Reusable UI components (Hero, Services, Contact, etc.).
+- **`src/pages`**: Full-page components (TrainingPage).
+- **`src/App.jsx`**: Main application component and routing setup.
+- **`src/index.css`**: Global styles and Tailwind directives.
+
+## 🎨 Tech Stack
+
+- **Framework**: [React](https://react.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Routing**: [React Router](https://reactrouter.com/)
