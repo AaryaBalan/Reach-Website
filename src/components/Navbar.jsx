@@ -32,39 +32,39 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-['Poppins'] ${isScrolled
-                ? 'bg-white/90 backdrop-blur-md shadow-lg py-2'
-                : 'bg-transparent py-4'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 font-['Poppins'] ${isScrolled
+                ? 'bg-white/90 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.03)] border-b border-white/20 py-3'
+                : 'bg-transparent py-5'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between">
-                    {/* Logo */}
+                    {/* Logo - Premium Glass Effect */}
                     <div className="flex-shrink-0">
                         <a href="#home" className="flex items-center gap-3 group">
-                            <div className="w-12 h-12 bg-gradient-to-br from-[#1e3a5f] to-[#0d9488] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300">
-                                <span className="text-white font-bold text-xl">R</span>
+                            <div className="w-12 h-12 bg-gradient-to-br from-[#1e3a5f] to-[#0d9488] rounded-2xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 ease-out border border-white/20">
+                                <span className="text-white font-extrabold text-2xl tracking-tight">R</span>
                             </div>
                             <div className="hidden sm:block">
-                                <span className={`font-bold text-xl block leading-none transition-colors duration-300 ${isScrolled ? 'text-[#1e3a5f]' : 'text-white'}`}>
+                                <span className={`font-bold text-xl block leading-none tracking-tight transition-colors duration-300 ${isScrolled ? 'text-[#1e3a5f]' : 'text-white'}`}>
                                     REACH
                                 </span>
-                                <span className={`font-medium text-xs block mt-1 transition-colors duration-300 ${isScrolled ? 'text-[#0d9488]' : 'text-white/80'}`}>
+                                <span className={`font-medium text-[11px] uppercase tracking-[0.2em] block mt-1 transition-colors duration-300 ${isScrolled ? 'text-[#0d9488]' : 'text-white/80'}`}>
                                     Facility Management
                                 </span>
                             </div>
                         </a>
                     </div>
 
-                    {/* Desktop Navigation */}
-                    <div className="hidden lg:flex items-center gap-1">
+                    {/* Desktop Navigation - Professional Spacing */}
+                    <div className="hidden lg:flex items-center gap-2">
                         {navItems.map((item) => (
                             <a
                                 key={item.name}
                                 href={item.href}
                                 onClick={(e) => scrollToSection(e, item.href)}
-                                className={`px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-300 ${isScrolled
-                                    ? 'text-gray-700 hover:text-[#0d9488] hover:bg-teal-50'
+                                className={`px-4 py-2 text-[13px] font-bold tracking-wide rounded-full transition-all duration-300 ${isScrolled
+                                    ? 'text-gray-600 hover:text-[#1e3a5f] hover:bg-gray-50'
                                     : 'text-white/90 hover:text-white hover:bg-white/10'
                                     }`}
                             >
@@ -74,9 +74,9 @@ const Navbar = () => {
                         <a
                             href="#contact"
                             onClick={(e) => scrollToSection(e, '#contact')}
-                            className={`ml-4 px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 ${isScrolled
+                            className={`ml-6 px-7 py-3 rounded-full font-bold text-xs tracking-widest uppercase transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 ${isScrolled
                                 ? 'bg-[#1e3a5f] text-white hover:bg-[#162c46]'
-                                : 'bg-white text-[#1e3a5f] hover:bg-gray-100'
+                                : 'bg-white text-[#1e3a5f] hover:bg-gray-50'
                                 }`}
                         >
                             Get Quote
@@ -87,7 +87,7 @@ const Navbar = () => {
                     <div className="lg:hidden">
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className={`p-2 rounded-lg transition-colors ${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/10'
+                            className={`p-2.5 rounded-xl transition-all duration-300 ${isScrolled ? 'text-[#1e3a5f] bg-gray-50' : 'text-white bg-white/10 backdrop-blur-md'
                                 }`}
                         >
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -101,27 +101,27 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                {/* Mobile Navigation */}
+                {/* Mobile Navigation - Glassmorphism Card */}
                 <div
-                    className={`lg:hidden absolute top-full left-0 right-0 bg-white border-t border-gray-100 shadow-xl transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-[32rem]' : 'max-h-0'
+                    className={`lg:hidden absolute top-full left-4 right-4 mt-2 bg-white/95 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden origin-top ${isMenuOpen ? 'max-h-[32rem] opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95'
                         }`}
                 >
-                    <div className="p-4 space-y-2">
+                    <div className="p-2 space-y-1">
                         {navItems.map((item) => (
                             <a
                                 key={item.name}
                                 href={item.href}
                                 onClick={(e) => scrollToSection(e, item.href)}
-                                className="block px-4 py-3 text-sm font-semibold text-gray-700 hover:text-[#0d9488] hover:bg-teal-50 rounded-xl transition-all duration-200"
+                                className="block px-6 py-4 text-sm font-bold text-gray-700 hover:text-[#0d9488] hover:bg-teal-50/50 rounded-xl transition-all duration-200 border border-transparent hover:border-teal-100/50"
                             >
                                 {item.name}
                             </a>
                         ))}
-                        <div className="pt-2">
+                        <div className="p-2 pt-4 border-t border-gray-100 mt-2">
                             <a
                                 href="#contact"
                                 onClick={(e) => scrollToSection(e, '#contact')}
-                                className="block w-full py-3 text-center bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162c46] transition-colors"
+                                className="block w-full py-4 text-center bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162c46] shadow-lg hover:shadow-xl transition-all active:scale-[0.98]"
                             >
                                 Get Quote
                             </a>

@@ -97,110 +97,122 @@ const Contact = () => {
     ];
 
     return (
-        <section id="contact" className="py-20 lg:py-28 bg-white font-['Poppins']">
+        <section id="contact" className="py-24 lg:py-32 bg-white font-['Poppins']">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <span className="inline-block px-4 py-1.5 bg-[#0d9488]/10 text-[#0d9488] text-sm font-semibold rounded-full mb-4 uppercase tracking-wider">
-                        Contact Us
+                <div className="text-center max-w-3xl mx-auto mb-20 animate-fade-in-up">
+                    <span className="inline-flex items-center gap-2 px-3 py-1 bg-[#0d9488]/5 text-[#0d9488] rounded-full text-[11px] font-bold tracking-[0.2em] uppercase mb-6 border border-[#0d9488]/10">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#0d9488]"></span>
+                        Get in Touch
                     </span>
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#1e3a5f] mb-6">
-                        Get in Touch With Us
+                    <h2 className="text-4xl lg:text-6xl font-bold text-[#1e3a5f] mb-6 tracking-tight">
+                        Let's Start a <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0d9488] to-[#2dd4bf]">Conversation.</span>
                     </h2>
-                    <p className="text-gray-600 text-lg leading-relaxed">
-                        We are here to help you with all your facility management needs.
+                    <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
+                        We are here to help you with all your facility management needs. Reach out to us for a personalized quote.
                     </p>
                 </div>
 
-                <div className="grid xl:grid-cols-3 gap-8 lg:gap-12 mb-16">
-                    {/* Left Column - General Info & Form */}
-                    <div className="xl:col-span-1 space-y-8">
-                        {/* Address Card */}
-                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                            <h3 className="font-bold text-[#1e3a5f] mb-6 text-lg">Contact Information</h3>
-                            <div className="space-y-6">
+                <div className="grid xl:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+                    {/* Left Column - Contact Info & Form (Span 5) */}
+                    <div className="xl:col-span-5 space-y-8 animate-fade-in-up delay-100">
+                        {/* Address & Info Card */}
+                        <div className="bg-white p-8 rounded-[2rem] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] border border-gray-100 relative overflow-hidden group">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-[#1e3a5f]/5 rounded-full blur-2xl -mr-10 -mt-10 transition-transform duration-500 group-hover:scale-150"></div>
+
+                            <h3 className="font-bold text-[#1e3a5f] mb-8 text-xl relative z-10">Contact Information</h3>
+                            <div className="space-y-8 relative z-10">
                                 {mainContacts.map((info, index) => (
-                                    <div key={index} className="flex gap-4">
-                                        <div className="w-10 h-10 bg-[#0d9488]/10 rounded-lg flex items-center justify-center text-[#0d9488] flex-shrink-0">
+                                    <div key={index} className="flex gap-5 group/item">
+                                        <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-[#1e3a5f] shadow-sm border border-gray-100 shrink-0 group-hover/item:border-[#0d9488]/30 group-hover/item:text-[#0d9488] transition-all duration-300">
                                             {info.icon}
                                         </div>
                                         <div>
-                                            <p className="text-sm text-gray-400 font-medium mb-1">{info.title}</p>
+                                            <p className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">{info.title}</p>
                                             {info.link ? (
-                                                <a href={info.link} className="text-[#1e3a5f] font-medium hover:text-[#0d9488] transition-colors">
+                                                <a href={info.link} className="text-[#1e3a5f] font-medium hover:text-[#0d9488] transition-colors leading-relaxed block">
                                                     {info.content}
                                                 </a>
                                             ) : (
-                                                <p className="text-[#1e3a5f] font-medium text-sm leading-relaxed">{info.content}</p>
+                                                <p className="text-[#1e3a5f] font-medium text-sm leading-relaxed text-balance">{info.content}</p>
                                             )}
                                         </div>
                                     </div>
                                 ))}
                             </div>
-
-                            <div className="mt-8 pt-8 border-t border-gray-100">
-                                <p className="text-sm text-gray-400 font-medium mb-3">Department Emails</p>
-                                <div className="flex flex-wrap gap-2">
-                                    {emails.map((email, idx) => (
-                                        <a href={`mailto:${email}`} key={idx} className="px-3 py-1 bg-gray-50 text-gray-600 text-xs rounded-md hover:bg-[#0d9488] hover:text-white transition-colors border border-gray-100">
-                                            {email}
-                                        </a>
-                                    ))}
-                                </div>
-                            </div>
                         </div>
 
                         {/* Quick Message Form */}
-                        <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                        <div className="bg-gray-50/50 p-8 rounded-[2rem] border border-gray-100 backdrop-blur-sm">
+                            <h3 className="font-bold text-[#1e3a5f] mb-6 text-xl">Quick Enquiry</h3>
                             <form onSubmit={handleSubmit} className="space-y-4">
-                                <input
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    placeholder="Your Name"
-                                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-[#0d9488]"
-                                    required
-                                />
-                                <input
-                                    name="phone"
-                                    value={formData.phone}
-                                    onChange={handleChange}
-                                    placeholder="Phone Number"
-                                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-[#0d9488]"
-                                    required
-                                />
-                                <textarea
-                                    name="message"
-                                    value={formData.message}
-                                    onChange={handleChange}
-                                    placeholder="Message"
-                                    rows={3}
-                                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-[#0d9488]"
-                                    required
-                                />
-                                <button type="submit" className="w-full py-3 bg-[#1e3a5f] text-white font-bold rounded-xl hover:bg-[#162c46] transition-colors text-sm">
+                                <div>
+                                    <input
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        placeholder="Your Name"
+                                        className="w-full px-5 py-4 bg-white border border-gray-200 rounded-xl text-sm font-medium text-[#1e3a5f] placeholder-gray-400 focus:ring-4 focus:ring-[#0d9488]/10 focus:border-[#0d9488] transition-all duration-300 outline-none"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <input
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                        placeholder="Phone Number"
+                                        className="w-full px-5 py-4 bg-white border border-gray-200 rounded-xl text-sm font-medium text-[#1e3a5f] placeholder-gray-400 focus:ring-4 focus:ring-[#0d9488]/10 focus:border-[#0d9488] transition-all duration-300 outline-none"
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <textarea
+                                        name="message"
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                        placeholder="How can we help you?"
+                                        rows={3}
+                                        className="w-full px-5 py-4 bg-white border border-gray-200 rounded-xl text-sm font-medium text-[#1e3a5f] placeholder-gray-400 focus:ring-4 focus:ring-[#0d9488]/10 focus:border-[#0d9488] transition-all duration-300 outline-none resize-none"
+                                        required
+                                    />
+                                </div>
+                                <button type="submit" className="w-full py-4 bg-[#1e3a5f] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 hover:bg-[#162c46] transition-all duration-300 text-sm tracking-wide">
                                     Send Message
                                 </button>
                             </form>
                         </div>
                     </div>
 
-                    {/* Right Column - Team Grid */}
-                    <div className="xl:col-span-2 space-y-8">
-                        <div>
-                            <h3 className="font-bold text-[#1e3a5f] mb-6 flex items-center gap-2">
-                                <span className="w-2 h-6 bg-[#0d9488] rounded-full"></span>
-                                Key Management
-                            </h3>
+                    {/* Right Column - Team Grid & Interaction (Span 7) */}
+                    <div className="xl:col-span-7 space-y-8 animate-fade-in-up delay-200">
+
+                        {/* Key Management Bento Grid */}
+                        <div className="space-y-6">
+                            <div className="flex items-center gap-3 mb-2">
+                                <div className="h-px bg-gray-200 flex-1"></div>
+                                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Leadership Team</h3>
+                                <div className="h-px bg-gray-200 flex-1"></div>
+                            </div>
+
                             <div className="grid md:grid-cols-2 gap-4">
                                 {personnel.map((person, index) => (
-                                    <div key={index} className={`p-5 rounded-xl border transition-all duration-300 ${person.highlight ? 'bg-white border-[#0d9488]/30 shadow-md hover:shadow-lg' : 'bg-gray-50 border-gray-100 hover:bg-white hover:shadow-md'}`}>
-                                        <p className={`text-xs font-bold uppercase tracking-wider mb-2 ${person.highlight ? 'text-[#0d9488]' : 'text-gray-500'}`}>
-                                            {person.role}
-                                        </p>
-                                        <h4 className="text-lg font-bold text-[#1e3a5f] mb-1">{person.name}</h4>
-                                        <a href={`tel:${person.phone}`} className="flex items-center gap-2 text-gray-600 hover:text-[#0d9488] text-sm group">
-                                            <svg className="w-4 h-4 text-gray-400 group-hover:text-[#0d9488]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <div key={index} className={`group p-6 rounded-2xl border transition-all duration-300 ${person.highlight
+                                        ? 'bg-white border-gray-100 shadow-sm hover:border-[#0d9488]/30 hover:shadow-lg'
+                                        : 'bg-gray-50 border-transparent hover:bg-white hover:border-gray-100 hover:shadow-md'}`}>
+
+                                        <div className="flex justify-between items-start mb-2">
+                                            <p className={`text-[10px] font-bold uppercase tracking-widest ${person.highlight ? 'text-[#0d9488]' : 'text-gray-400'}`}>
+                                                {person.role}
+                                            </p>
+                                            {person.highlight && <div className="w-2 h-2 rounded-full bg-[#0d9488]"></div>}
+                                        </div>
+
+                                        <h4 className="text-lg font-bold text-[#1e3a5f] mb-3">{person.name}</h4>
+
+                                        <a href={`tel:${person.phone}`} className="inline-flex items-center gap-2 text-sm text-gray-500 font-medium group-hover:text-[#0d9488] transition-colors">
+                                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                             </svg>
                                             {person.phone}
@@ -210,41 +222,56 @@ const Contact = () => {
                             </div>
                         </div>
 
-                        <div>
-                            <h3 className="font-bold text-[#1e3a5f] mb-6 flex items-center gap-2">
-                                <span className="w-2 h-6 bg-[#0d9488] rounded-full"></span>
-                                Technical Leads
-                            </h3>
-                            <div className="grid md:grid-cols-3 gap-4">
-                                {technicalTeam.map((tech, index) => (
-                                    <div key={index} className="bg-white p-5 rounded-xl border border-gray-100 hover:shadow-lg hover:border-[#0d9488]/30 transition-all duration-300">
-                                        <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-[#1e3a5f] mb-3">
-                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                            </svg>
+                        <div className="grid md:grid-cols-2 gap-8 pt-4">
+                            {/* Emails List */}
+                            <div className="bg-white p-6 rounded-2xl border border-gray-100">
+                                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Direct Lines</h3>
+                                <ul className="space-y-3">
+                                    {emails.map((email, idx) => (
+                                        <li key={idx}>
+                                            <a href={`mailto:${email}`} className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors group">
+                                                <div className="w-8 h-8 rounded-full bg-[#1e3a5f]/5 flex items-center justify-center text-[#1e3a5f] group-hover:bg-[#1e3a5f] group-hover:text-white transition-all duration-300">
+                                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                                                </div>
+                                                <span className="text-sm font-medium text-gray-600 group-hover:text-[#1e3a5f]">{email}</span>
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Technical Leads Compact Grid */}
+                            <div className="space-y-4">
+                                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Technical Support</h3>
+                                <div className="space-y-3">
+                                    {technicalTeam.map((tech, index) => (
+                                        <div key={index} className="flex items-center justify-between p-4 bg-white rounded-xl border border-gray-100 shadow-sm hover:border-[#0d9488]/30 transition-all duration-300">
+                                            <div>
+                                                <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-0.5">{tech.role}</p>
+                                                <h4 className="font-bold text-[#1e3a5f] text-sm">{tech.name}</h4>
+                                            </div>
+                                            <a href={`tel:${tech.phone}`} className="w-8 h-8 rounded-full bg-[#0d9488]/10 flex items-center justify-center text-[#0d9488] hover:bg-[#0d9488] hover:text-white transition-all">
+                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                                            </a>
                                         </div>
-                                        <p className="text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">{tech.role}</p>
-                                        <h4 className="font-bold text-[#1e3a5f] text-sm mb-2">{tech.name}</h4>
-                                        <a href={`tel:${tech.phone}`} className="text-xs text-[#0d9488] font-medium hover:underline block">
-                                            {tech.phone}
-                                        </a>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
                             </div>
                         </div>
 
-                        {/* Map */}
-                        <div className="bg-gray-100 rounded-2xl overflow-hidden h-64 border border-gray-200">
+                        {/* Map - Premium Rounded */}
+                        <div className="bg-gray-100 rounded-[2rem] overflow-hidden h-64 border border-gray-200 shadow-inner mt-4 relative group">
+                            <div className="absolute inset-0 border-4 border-white/50 rounded-[2rem] pointer-events-none z-10 transition-colors group-hover:border-white/20"></div>
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15549.6200685987!2d80.208119!3d13.009848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52676b1f3c3a9f%3A0xc9c1b3f3f3f3f3f3!2sMathur%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
                                 width="100%"
                                 height="100%"
-                                style={{ border: 0 }}
+                                style={{ border: 0, filter: 'grayscale(0.2) contrast(1.1)' }}
                                 allowFullScreen=""
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
                                 title="Location Map"
+                                className="transition-all duration-700 group-hover:filter-none group-hover:scale-105"
                             ></iframe>
                         </div>
                     </div>

@@ -19,7 +19,7 @@ const Hero = () => {
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % slides.length);
-        }, 5000); // Slower interval for better viewing
+        }, 6000); // 6s duration for better viewing
         return () => clearInterval(timer);
     }, [slides.length]);
 
@@ -33,55 +33,62 @@ const Hero = () => {
 
     return (
         <section id="home" className="relative h-screen flex items-center overflow-hidden font-['Poppins']">
-            {/* Background Image Carousel */}
-            <div className="absolute inset-0">
+            {/* Background Image Carousel with Ken Burns Effect */}
+            <div className="absolute inset-0 bg-black">
                 {slides.map((slide, index) => (
                     <div
                         key={index}
-                        className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+                        className={`absolute inset-0 transition-opacity duration-[1500ms] ease-in-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
                             }`}
                     >
-                        <img
-                            src={slide.image}
-                            alt={slide.alt}
-                            className="w-full h-full object-cover"
-                        />
-                        {/* Professional Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#1e3a5f]/95 via-[#1e3a5f]/80 to-transparent"></div>
+                        {/* Ken Burns Zoom Animation */}
+                        <div className={`w-full h-full transition-transform duration-[10000ms] ease-linear transform ${index === currentSlide ? 'scale-110' : 'scale-100'}`}>
+                            <img
+                                src={slide.image}
+                                alt={slide.alt}
+                                className="w-full h-full object-cover opacity-80"
+                            />
+                        </div>
+                        {/* Cinematic Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#1e3a5f]/95 via-[#1e3a5f]/70 to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#1e3a5f]/50 via-transparent to-transparent"></div>
                     </div>
                 ))}
             </div>
 
             {/* Content */}
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                <div className="max-w-3xl">
+            <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-16">
+                <div className="max-w-4xl">
                     {/* Badge */}
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-8 animate-fade-in-up">
-                        <span className="w-2 h-2 bg-[#0d9488] rounded-full animate-pulse"></span>
-                        <span className="text-white font-medium tracking-wide text-sm">ISO Certified Facility Management</span>
+                    <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-8 animate-fade-in-up hover:bg-white/15 transition-colors cursor-default">
+                        <span className="relative flex shrink-0 w-3 h-3">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0d9488] opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-3 w-3 bg-[#0d9488]"></span>
+                        </span>
+                        <span className="text-white font-semibold tracking-wide text-xs uppercase">ISO Certified Facility Management</span>
                     </div>
 
-                    {/* Main heading */}
-                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 animate-fade-in-up delay-100">
-                        Reach New Heights in
-                        <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#0d9488] to-[#5eead4]">
-                            Facility Excellence
+                    {/* Main heading - Apple Style Typography */}
+                    <h1 className="text-5xl sm:text-7xl lg:text-[5.5rem] font-extrabold text-white leading-[1.1] mb-8 animate-fade-in-up delay-100 tracking-tight">
+                        Reach New Heights in <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2dd4bf] via-[#0d9488] to-[#14b8a6]">
+                            Facility Excellence.
                         </span>
                     </h1>
 
-                    {/* Subtitle */}
-                    <p className="text-lg sm:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl animate-fade-in-up delay-200">
-                        We offer a wide range of management services, from technical maintenance to soft services,
-                        ensuring your infrastructure operates at its highest potential.
+                    {/* Subsubtitle */}
+                    <p className="text-lg sm:text-2xl text-gray-200 font-light leading-relaxed mb-12 max-w-2xl animate-fade-in-up delay-200">
+                        We offer integrated management services, ensuring your infrastructure operates at its <strong className="text-white font-medium">highest potential</strong> through technical expertise and precise care.
                     </p>
 
                     {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-300">
+                    <div className="flex flex-col sm:flex-row gap-5 animate-fade-in-up delay-300">
                         <button
                             onClick={scrollToContact}
-                            className="group px-8 py-4 bg-[#0d9488] text-white font-bold rounded-xl shadow-lg shadow-teal-900/20 hover:bg-[#0f766e] transform hover:-translate-y-1 transition-all duration-300"
+                            className="group relative px-8 py-4 bg-[#0d9488] text-white font-bold rounded-2xl shadow-[0_20px_40px_-15px_rgba(13,148,136,0.3)] hover:shadow-[0_25px_50px_-12px_rgba(13,148,136,0.5)] transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                         >
-                            <span className="flex items-center gap-2">
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700 ease-in-out"></div>
+                            <span className="relative flex items-center gap-3 text-sm uppercase tracking-widest">
                                 Get a Quote
                                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -94,19 +101,20 @@ const Hero = () => {
                                 e.preventDefault();
                                 document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' });
                             }}
-                            className="px-8 py-4 bg-white/10 backdrop-blur-md text-white font-bold rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300 text-center"
+                            className="px-8 py-4 bg-white/5 backdrop-blur-md text-white font-bold rounded-2xl border border-white/10 hover:bg-white/10 hover:border-white/30 transition-all duration-300 text-center text-sm uppercase tracking-widest flex items-center justify-center gap-2 group"
                         >
                             Explore Services
+                            <svg className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                         </a>
                     </div>
 
-                    {/* Carousel Indicators */}
-                    <div className="mt-16 flex items-center gap-4 animate-fade-in-up delay-500">
+                    {/* Carousel Indicators - Refined */}
+                    <div className="mt-20 flex items-center gap-3 animate-fade-in-up delay-500">
                         {slides.map((_, index) => (
                             <button
                                 key={index}
                                 onClick={() => goToSlide(index)}
-                                className={`transition-all duration-300 rounded-full ${currentSlide === index ? 'w-12 h-1.5 bg-[#0d9488]' : 'w-2 h-2 bg-white/40 hover:bg-white/60'
+                                className={`transition-all duration-500 rounded-full h-1.5 ${currentSlide === index ? 'w-12 bg-[#0d9488]' : 'w-2 bg-white/20 hover:bg-white/40'
                                     }`}
                                 aria-label={`Go to slide ${index + 1}`}
                             />
