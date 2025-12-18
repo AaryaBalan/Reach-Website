@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -90,17 +91,59 @@ const Navbar = () => {
                     {/* Desktop Navigation - Professional Spacing */}
                     <div className="hidden lg:flex items-center gap-2">
                         {navItems.map((item) => (
-                            <a
-                                key={item.name}
-                                href={item.href}
-                                onClick={(e) => handleNavigation(e, item.href)}
-                                className={`px-4 py-2 text-[13px] font-bold tracking-wide rounded-full transition-all duration-300 ${isScrolled || location.pathname !== '/'
-                                    ? 'text-gray-600 hover:text-[#623004] hover:bg-gray-50'
-                                    : 'text-white/90 hover:text-white hover:bg-white/10'
-                                    }`}
-                            >
-                                {item.name}
-                            </a>
+                            item.submenu ? (
+                                // Services dropdown menu
+                                <div
+                                    key={item.name}
+                                    className="relative"
+                                    onMouseEnter={() => setServicesDropdownOpen(true)}
+                                    onMouseLeave={() => setServicesDropdownOpen(false)}
+                                >
+                                    <button
+                                        className={`px-4 py-2 text-[13px] font-bold tracking-wide rounded-full transition-all duration-300 flex items-center gap-1 ${isScrolled || location.pathname !== '/'
+                                            ? 'text-gray-600 hover:text-[#623004] hover:bg-gray-50'
+                                            : 'text-white/90 hover:text-white hover:bg-white/10'
+                                            }`}
+                                    >
+                                        {item.name}
+                                        <svg className={`w-4 h-4 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+
+                                    {/* Dropdown menu */}
+                                    <div className={`absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden transition-all duration-200 ${servicesDropdownOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
+                                        }`}>
+                                        {item.submenu.map((subItem, index) => (
+                                            <a
+                                                key={index}
+                                                href={subItem.href}
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    setServicesDropdownOpen(false);
+                                                    handleNavigation(e, subItem.href);
+                                                }}
+                                                className="block px-5 py-3 text-sm font-semibold text-gray-700 hover:bg-gradient-to-r hover:from-[#623004] hover:to-[#C1311C] hover:text-white transition-all duration-200"
+                                            >
+                                                {subItem.name}
+                                            </a>
+                                        ))}
+                                    </div>
+                                </div>
+                            ) : (
+                                // Regular menu item
+                                <a
+                                    key={item.name}
+                                    href={item.href}
+                                    onClick={(e) => handleNavigation(e, item.href)}
+                                    className={`px-4 py-2 text-[13px] font-bold tracking-wide rounded-full transition-all duration-300 ${isScrolled || location.pathname !== '/'
+                                        ? 'text-gray-600 hover:text-[#623004] hover:bg-gray-50'
+                                        : 'text-white/90 hover:text-white hover:bg-white/10'
+                                        }`}
+                                >
+                                    {item.name}
+                                </a>
+                            )
                         ))}
                         <button
                             onClick={(e) => handleNavigation(e, '/#contact')}
@@ -138,14 +181,48 @@ const Navbar = () => {
                 >
                     <div className="p-2 space-y-1">
                         {navItems.map((item) => (
-                            <a
-                                key={item.name}
-                                href={item.href}
-                                onClick={(e) => handleNavigation(e, item.href)}
-                                className="block px-6 py-4 text-sm font-bold text-gray-700 hover:text-[#C1311C] hover:bg-red-50/50 rounded-xl transition-all duration-200 border border-transparent hover:border-red-100/50"
-                            >
-                                {item.name}
-                            </a>
+                            item.submenu ? (
+                                // Services dropdown for mobile
+                                <div key={item.name}>
+                                    <button
+                                        onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+                                        className="w-full flex items-center justify-between px-6 py-4 text-sm font-bold text-gray-700 hover:text-[#C1311C] hover:bg-red-50/50 rounded-xl transition-all duration-200 border border-transparent hover:border-red-100/50"
+                                    >
+                                        <span>{item.name}</span>
+                                        <svg className={`w-4 h-4 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                    {/* Mobile submenu */}
+                                    <div className={`overflow-hidden transition-all duration-200 ${servicesDropdownOpen ? 'max-h-40' : 'max-h-0'}`}>
+                                        <div className="pl-4 space-y-1 mt-1">
+                                            {item.submenu.map((subItem, index) => (
+                                                <a
+                                                    key={index}
+                                                    href={subItem.href}
+                                                    onClick={(e) => {
+                                                        handleNavigation(e, subItem.href);
+                                                        setServicesDropdownOpen(false);
+                                                    }}
+                                                    className="block px-6 py-3 text-sm font-semibold text-gray-600 hover:text-[#C1311C] hover:bg-red-50/50 rounded-lg transition-all duration-200"
+                                                >
+                                                    {subItem.name}
+                                                </a>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            ) : (
+                                // Regular mobile menu item
+                                <a
+                                    key={item.name}
+                                    href={item.href}
+                                    onClick={(e) => handleNavigation(e, item.href)}
+                                    className="block px-6 py-4 text-sm font-bold text-gray-700 hover:text-[#C1311C] hover:bg-red-50/50 rounded-xl transition-all duration-200 border border-transparent hover:border-red-100/50"
+                                >
+                                    {item.name}
+                                </a>
+                            )
                         ))}
                         <div className="p-2 pt-4 border-t border-gray-100 mt-2">
                             <button

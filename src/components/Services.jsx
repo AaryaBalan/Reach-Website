@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Importing images for the detailed view
 import img1 from '../assets/carousel-1.png'; // Using available assets as placeholders
@@ -10,6 +11,7 @@ import img6 from '../assets/workflow.png'; // Using another available asset
 
 const Services = () => {
     const [activeId, setActiveId] = useState(0); // Default first card active
+    const navigate = useNavigate();
 
     const services = [
         {
@@ -17,6 +19,7 @@ const Services = () => {
             title: 'Housekeeping',
             desc: 'Reach FMS understands the importance of cleanliness, hygiene and proper housekeeping. Good Housekeeping and a clean environment improves the productivity and motivation of employees.',
             image: img1,
+            route: '/soft-services',
             icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
             )
@@ -26,6 +29,7 @@ const Services = () => {
             title: 'Security',
             desc: 'Reach FMS provides security services to its clients as per their needs. We provide a comprehensive range of disciplined and professionally trained security staff to perform a wide range of security functions.',
             image: img2,
+            route: '/soft-services',
             icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
             )
@@ -35,6 +39,7 @@ const Services = () => {
             title: 'Landscaping',
             desc: 'We offer complete maintenance solution of gardening and landscaping. In addition to creation of the beautiful landscape, we also have a monthly maintenance scheme for all our clients.',
             image: img3,
+            route: '/soft-services',
             icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
             )
@@ -44,6 +49,7 @@ const Services = () => {
             title: 'Pest Control',
             desc: 'Pests can really be an annoying problem, both at home and in office. While short-term solutions are easily available, effective and long-term solution is only possible with the help of professional pest-control services.',
             image: img4,
+            route: '/soft-services',
             icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
             )
@@ -53,8 +59,9 @@ const Services = () => {
             title: 'Training & Jobs',
             desc: 'Reach FMS provides Manpower Supply in Chennai offering a host of integrated services that cater to the various requirements of clients and candidates. Apart from providing hiring services, we also offer training programs.',
             image: img5,
+            route: '/training',
             icon: (
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7  10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
             )
         },
         {
@@ -62,6 +69,7 @@ const Services = () => {
             title: 'Event Management',
             desc: 'End-to-end logistics and management for Product Launches, Exhibitions, Conferences, and corporate functions. We handle the details so you can focus on the big picture.',
             image: img6,
+            route: '/soft-services',
             icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
             )
@@ -71,6 +79,7 @@ const Services = () => {
             title: 'Front Office',
             desc: 'Professional front office and reception management services. We provide trained personnel to manage visitor reception, phone handling, and administrative support for a seamless office experience.',
             image: img1,
+            route: '/soft-services',
             icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
             )
@@ -80,11 +89,16 @@ const Services = () => {
             title: 'Pantry & Cafeteria',
             desc: 'Complete pantry and cafeteria management solutions. From daily refreshments to full-scale cafeteria operations, we ensure hygienic food service and efficient kitchen management.',
             image: img2,
+            route: '/soft-services',
             icon: (
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             )
         }
     ];
+
+    const handleLearnMore = (route) => {
+        navigate(route);
+    };
 
     return (
         <section id="services" className="py-24 bg-gray-50 font-['Poppins']">
@@ -151,7 +165,13 @@ const Services = () => {
                                 <p className="text-gray-200 text-lg leading-relaxed max-w-xl mb-6">
                                     {service.desc}
                                 </p>
-                                <button className="px-6 py-2.5 bg-white text-[#623004] font-bold rounded-lg hover:bg-[#C1311C] hover:text-white transition-colors duration-300">
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        handleLearnMore(service.route);
+                                    }}
+                                    className="px-6 py-2.5 bg-white text-[#623004] font-bold rounded-lg hover:bg-[#C1311C] hover:text-white transition-colors duration-300"
+                                >
                                     Learn More
                                 </button>
                             </div>
