@@ -28,9 +28,15 @@ const Navbar = () => {
     }, [location]);
 
     const navItems = [
-        { name: 'HOME', href: '/#home' },
-        { name: 'ABOUT US', href: '/#about' },
-        { name: 'SERVICES', href: '/#services' },
+        { name: 'HOME', href: '/' },
+        { name: 'ABOUT US', href: '/about' },
+        {
+            name: 'SERVICES',
+            submenu: [
+                { name: 'Soft Services', href: '/soft-services' },
+                { name: 'Technical Services', href: '/technical-services' }
+            ]
+        },
         { name: 'REPAIR & MAINTENANCE', href: '/repair-maintenance' },
         { name: 'TRAINING & JOBS', href: '/training' },
         { name: 'CONTACT US', href: '/#contact' },

@@ -11,6 +11,9 @@ import Training from './components/Training'
 import Clients from './components/Clients'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import AboutPage from './pages/AboutPage'
+import SoftServicesPage from './pages/SoftServicesPage'
+import TechnicalServicesPage from './pages/TechnicalServicesPage'
 import TrainingPage from './pages/TrainingPage'
 import RepairMaintenancePage from './pages/RepairMaintenancePage'
 
@@ -39,6 +42,9 @@ const App = () => {
       <div className="min-h-screen bg-white">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/soft-services" element={<SoftServicesPage />} />
+          <Route path="/technical-services" element={<TechnicalServicesPage />} />
           <Route path="/training" element={<TrainingPage />} />
           <Route path="/repair-maintenance" element={<RepairMaintenancePage />} />
         </Routes>
