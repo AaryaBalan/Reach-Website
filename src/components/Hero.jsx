@@ -46,11 +46,11 @@ const Hero = () => {
                             <img
                                 src={slide.image}
                                 alt={slide.alt}
-                                className="w-full h-full object-cover opacity-80"
+                                className="w-full h-full object-cover opacity-100"
                             />
                         </div>
                         {/* Cinematic Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#623004]/70 via-[#623004]/40 to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#623004]/50 via-[#623004]/20 to-transparent"></div>
                         <div className="absolute inset-0 bg-gradient-to-t from-[#623004]/40 via-transparent to-transparent"></div>
                     </div>
                 ))}

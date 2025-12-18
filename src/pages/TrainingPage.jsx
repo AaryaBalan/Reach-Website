@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 const TrainingPage = () => {
     useEffect(() => {
@@ -30,14 +31,8 @@ const TrainingPage = () => {
         <div className="min-h-screen bg-[#FAFAFA] font-['Poppins'] selection:bg-[#C1311C] selection:text-white">
 
             {/* Navigation / Back Button */}
-            <nav className="fixed top-0 left-0 right-0 z-50 p-6 pointer-events-none">
-                <div className="max-w-7xl mx-auto flex justify-between items-center">
-                    <Link to="/" className="pointer-events-auto inline-flex items-center gap-2 px-5 py-2.5 bg-white/80 backdrop-blur-md text-[#623004] rounded-full text-sm font-bold shadow-sm hover:bg-white hover:shadow-md transition-all duration-300 border border-white/20">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                        Back to Home
-                    </Link>
-                </div>
-            </nav>
+            {/* Navigation */}
+            <Navbar />
 
             {/* Hero Section */}
             <div className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">

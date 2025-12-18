@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, useSpring, useMotionValue, useMotionTemplate } from 'framer-motion';
 import heroImg from '../assets/carousel-4.png';
+import Navbar from '../components/Navbar';
 
 // --- Animated 3D Card Component ---
 const TiltCard = ({ children, className }) => {
@@ -112,20 +113,8 @@ const RepairMaintenancePage = () => {
         <div ref={containerRef} className="min-h-screen bg-[#FAFAFA] font-['Poppins'] selection:bg-[#C1311C] selection:text-white overflow-x-hidden">
 
             {/* Navigation / Back Button */}
-            <motion.nav
-                initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.6, ease: "circOut" }}
-                className="fixed top-0 left-0 right-0 z-50 p-6 pointer-events-none"
-            >
-                <div className="max-w-7xl mx-auto flex justify-between items-center">
-                    <Link to="/" className="pointer-events-auto inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-md text-white rounded-full text-sm font-bold shadow-lg hover:bg-white hover:text-[#623004] transition-all duration-300 border border-white/20 group">
-                        <motion.svg
-                            whileHover={{ x: -4 }}
-                            className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                        </motion.svg>
-                        Back to Home
-                    </Link>
-                </div>
-            </motion.nav>
+            {/* Navigation */}
+            <Navbar />
 
             {/* Hero Section */}
             <section className="relative h-screen flex items-center overflow-hidden bg-[#623004]">
@@ -141,13 +130,13 @@ const RepairMaintenancePage = () => {
                         <img
                             src={heroImg}
                             alt="Facility Maintenance"
-                            className="w-full h-full object-cover opacity-60"
+                            className="w-full h-full object-cover opacity-90"
                         />
                     </motion.div>
 
                     {/* Cinematic Gradients Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#623004] via-[#623004]/60 to-transparent"></div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#623004] via-transparent to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#623004]/70 via-[#623004]/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#623004]/60 via-transparent to-transparent"></div>
                 </div>
 
                 <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full mt-16">
