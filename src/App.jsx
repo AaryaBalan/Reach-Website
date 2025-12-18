@@ -12,6 +12,7 @@ import Clients from './components/Clients'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import TrainingPage from './pages/TrainingPage'
+import RepairMaintenancePage from './pages/RepairMaintenancePage'
 
 // Home Page Component
 const HomePage = () => (
@@ -39,6 +40,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/training" element={<TrainingPage />} />
+          <Route path="/repair-maintenance" element={<RepairMaintenancePage />} />
         </Routes>
       </div>
     </Router>
