@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../assets/reach-logo.png';
 
 const Footer = () => {
     return (
@@ -9,7 +10,7 @@ const Footer = () => {
                     {/* Brand */}
                     <div className="col-span-1 md:col-span-2">
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="w-10 h-10 bg-white text-[#623004] rounded-lg flex items-center justify-center font-bold text-xl shadow-lg">R</div>
+                            <img src={logo} alt="Reach Facility Management" className="h-12 w-auto object-contain bg-white rounded-lg p-1" />
                             <div>
                                 <h3 className="font-bold text-xl tracking-wide leading-none">REACH</h3>
                                 <p className="text-[#C1311C] text-[10px] tracking-[0.2em] font-bold">FACILITY MANAGEMENT</p>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import logo from '../assets/reach-logo.png';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -74,17 +75,7 @@ const Navbar = () => {
                     {/* Logo - Premium Glass Effect */}
                     <div className="flex-shrink-0">
                         <a href="/" onClick={(e) => handleNavigation(e, '/#home')} className="flex items-center gap-3 group">
-                            <div className="w-12 h-12 bg-gradient-to-br from-[#623004] to-[#C1311C] rounded-2xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 ease-out border border-white/20">
-                                <span className="text-white font-extrabold text-2xl tracking-tight">R</span>
-                            </div>
-                            <div className="hidden sm:block">
-                                <span className={`font-bold text-xl block leading-none tracking-tight transition-colors duration-300 ${isScrolled || location.pathname !== '/' ? 'text-[#623004]' : 'text-white'}`}>
-                                    REACH
-                                </span>
-                                <span className={`font-medium text-[11px] uppercase tracking-[0.2em] block mt-1 transition-colors duration-300 ${isScrolled || location.pathname !== '/' ? 'text-[#C1311C]' : 'text-white/80'}`}>
-                                    Facility Management
-                                </span>
-                            </div>
+                            <img src={logo} alt="Reach Facility Management" className="h-16 w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
                         </a>
                     </div>
 
@@ -123,7 +114,7 @@ const Navbar = () => {
                                                     setServicesDropdownOpen(false);
                                                     handleNavigation(e, subItem.href);
                                                 }}
-                                                className="block px-5 py-3 text-sm font-semibold text-gray-700 hover:bg-gradient-to-r hover:from-[#623004] hover:to-[#C1311C] hover:text-white transition-all duration-200"
+                                                className="block px-5 py-3 text-sm font-semibold text-gray-700 hover:bg-linear-to-r hover:from-[#623004] hover:to-[#C1311C] hover:text-white transition-all duration-200"
                                             >
                                                 {subItem.name}
                                             </a>
@@ -176,7 +167,7 @@ const Navbar = () => {
 
                 {/* Mobile Navigation - Glassmorphism Card */}
                 <div
-                    className={`lg:hidden absolute top-full left-4 right-4 mt-2 bg-white/95 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] overflow-hidden origin-top ${isMenuOpen ? 'max-h-[32rem] opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95'
+                    className={`lg:hidden absolute top-full left-4 right-4 mt-2 bg-white/95 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl transition-all duration-500 ease-in-out overflow-hidden origin-top ${isMenuOpen ? 'max-h-128 opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95'
                         }`}
                 >
                     <div className="p-2 space-y-1">
