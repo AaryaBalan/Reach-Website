@@ -1,296 +1,215 @@
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
+import React, { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import { softServices } from '../data/serviceContent'
+
+// Import Images
+import imgHousekeeping from '../assets/service-housekeeping.png'
+import imgGarden from '../assets/service-garden.png'
+import imgGardenMachinery from '../assets/service-garden-machinery.png'
+import imgEvent from '../assets/service-event.png'
+import imgLoading from '../assets/service-loading.jpg'
+
+// Placeholder images for services without specific uploads
+import imgSecurity from '../assets/carousel-2.png' // Reusing existing asset
+import imgPest from '../assets/carousel-4.png' // Reusing existing asset
+import imgFrontOffice from '../assets/carousel-1.png' // Reusing existing asset
+import imgPantry from '../assets/carousel-2.png' // Reusing existing asset
 
 const SoftServicesPage = () => {
-    const [activeService, setActiveService] = useState(0)
+    const [activeService, setActiveService] = useState('housekeeping')
 
-    const services = [
-        {
-            name: 'Housekeeping',
-            icon: '🏢',
-            description: 'Daily Sweeping Mopping of Reception, Office',
-            longDescription: 'Reach FMS understands the importance of cleanliness, hygienic and proper housekeeping. Good Housekeeping and clean environment improves the productivity and motivation of employees.',
-            features: [
-                'Daily sweeping and mopping',
-                'Reception area maintenance',
-                'Office cleaning services',
-                'Restroom sanitization',
-                'Common area upkeep'
-            ]
-        },
-        {
-            name: 'Office Assistant',
-            icon: '👔',
-            description: 'Total Infrastructure',
-            longDescription: 'Professional office assistance services to support your daily operations and maintain smooth workflow.',
-            features: [
-                'Administrative support',
-                'Document management',
-                'Front desk coordination',
-                'Mail and courier handling',
-                'General office assistance'
-            ]
-        },
-        {
-            name: 'Garden Services',
-            icon: '🌳',
-            description: 'We offer a wide variety of services to achieve a high quality design',
-            longDescription: 'We offer a wide variety of services to achieve a high quality design. Our services are for both residential and commercial property.',
-            categories: [
-                {
-                    title: 'General Maintenance Landscaping',
-                    items: [
-                        'Lawn mowing & care',
-                        'Weeding & pruning',
-                        'Tree surgery',
-                        'Path & driveway clearance'
-                    ]
-                },
-                {
-                    title: 'Landscaping',
-                    items: [
-                        'Soft garden design',
-                        'Border development',
-                        'Plant selection & placing'
-                    ]
-                },
-                {
-                    title: 'Hard Landscaping',
-                    items: [
-                        'Patio construction',
-                        'Pond installation',
-                        'Water feature installation',
-                        'Brick wall and pathway construction',
-                        'Fencing construction (any type)'
-                    ]
-                }
-            ]
-        },
-        {
-            name: 'Garden Machinery',
-            icon: '🛠️',
-            description: 'Professional garden machinery services and maintenance',
-            longDescription: 'Comprehensive garden machinery services to keep your equipment in top condition.',
-            features: [
-                'Mower servicing (including Ride-on)',
-                'Sharpening of garden tools (shears, edge clippers etc.)',
-                'General garden maintenance of your property',
-                'Landscape Gardening services',
-                'Hard Landscape gardening in your property',
-                'Professional Garden Design services'
-            ]
-        },
-        {
-            name: 'Event Management',
-            icon: '🎉',
-            description: 'Product Launch, Exhibitions, Conferences',
-            longDescription: 'Complete event management services for corporate and personal events.',
-            features: [
-                'Product Launch',
-                'Exhibitions',
-                'Conferences',
-                'Corporate Events',
-                'Theme parties',
-                'Promotions',
-                'Sporting Events',
-                'Balloon decorators',
-                'Party entertainer',
-                'Mall decorations'
-            ]
-        },
-        {
-            name: 'Loading & Unloading',
-            icon: '📦',
-            description: 'Loading and unloading services',
-            longDescription: 'Professional loading and unloading services with trained personnel to ensure safe handling of your goods.',
-            features: [
-                'Skilled labour guidance',
-                'Safe goods handling',
-                'Door-to-door transportation',
-                'Proper coordination and sequence',
-                'Special equipment handling',
-                'Residential and commercial moves'
-            ]
-        },
-        {
-            name: 'Pest Control',
-            icon: '🐛',
-            description: 'Pest control services',
-            longDescription: 'Effective and long-term pest control solutions for homes and offices.',
-            features: [
-                'Rats control',
-                'Cockroaches elimination',
-                'Mosquito treatment',
-                'Termite control',
-                'Professional pest management',
-                'Long-term solutions'
-            ]
-        },
-        {
-            name: 'Security',
-            icon: '🛡️',
-            description: 'Security services',
-            longDescription: 'Comprehensive range of disciplined and professionally trained security staff to perform a wide range of security functions.',
-            features: [
-                'Trained security personnel',
-                '24/7 security coverage',
-                'Access control',
-                'Surveillance monitoring',
-                'Emergency response',
-                'Professional security management'
-            ]
-        }
-    ]
+    // Map service keys to images and icons
+    const servicesMap = {
+        housekeeping: { ...softServices.housekeeping, image: imgHousekeeping, icon: '🏢' },
+        gardenServices: { ...softServices.gardenServices, image: imgGarden, icon: '🌳' },
+        gardenMachinery: { ...softServices.gardenMachinery, image: imgGardenMachinery, icon: '🛠️' },
+        eventManagement: { ...softServices.eventManagement, image: imgEvent, icon: '🎉' },
+        loadingUnloading: { ...softServices.loadingUnloading, image: imgLoading, icon: '📦' },
+        pestControl: { ...softServices.pestControl, image: imgPest, icon: '🐛' },
+        security: { ...softServices.security, image: imgSecurity, icon: '🛡️' },
+        frontOffice: { ...softServices.frontOffice, image: imgFrontOffice, icon: '👔' },
+        pantryCafeteria: { ...softServices.pantryCafeteria, image: imgPantry, icon: '☕' }
+    }
+
+    const serviceKeys = Object.keys(servicesMap)
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-neutral-50 font-['Poppins']">
             <Navbar />
 
-            {/* Hero Section */}
-            <section className="relative py-24 bg-gradient-to-br from-green-600 via-emerald-700 to-teal-800 text-white overflow-hidden">
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnptMCAyYy0yLjIxIDAtNCA1.3OS00IDQgMS43OSA0IDQgNC00LTEuNzktNC00LTR6IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMDUiLz48L2c+PC9zdmc+')] opacity-10"></div>
+            {/* Cinematic Hero Section */}
+            <section className="relative h-[60vh] min-h-125 flex items-center justify-center overflow-hidden bg-gray-900">
+                <div className="absolute inset-0 z-0">
+                    <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-neutral-50 z-10"></div>
+                    <motion.img
+                        initial={{ scale: 1.1 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
+                        src={servicesMap[activeService].image}
+                        alt="Hero Background"
+                        className="w-full h-full object-cover opacity-60 blur-sm"
+                    />
+                </div>
 
-                <div className="max-w-7xl mx-auto px-6 relative z-10">
+                <div className="relative z-20 text-center px-6 max-w-5xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="text-center"
                     >
-                        <h1 className="text-5xl md:text-6xl font-bold mb-6">Soft Services</h1>
-                        <p className="text-xl text-green-100 max-w-3xl mx-auto">
-                            Comprehensive facility management solutions to keep your spaces clean, secure, and well-maintained
+                        <span className="inline-block py-1 px-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/90 text-sm font-medium tracking-wider uppercase mb-6">
+                            Premium Facility Management
+                        </span>
+                        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+                            Soft Services
+                        </h1>
+                        <p className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed font-light">
+                            Elevating your environment with professional, reliable, and comprehensive service solutions.
                         </p>
-                        <div className="w-24 h-1 bg-white mx-auto mt-6"></div>
                     </motion.div>
                 </div>
             </section>
 
-            {/* Services Grid */}
-            <section className="py-20 bg-white">
-                <div className="max-w-7xl mx-auto px-6">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="text-center mb-12"
-                    >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Soft Services</h2>
-                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                            We offer a comprehensive range of soft services tailored to meet your facility management needs
-                        </p>
-                    </motion.div>
+            {/* Main Content Area */}
+            <section className="relative z-30 -mt-20 pb-24 px-6">
+                <div className="max-w-7xl mx-auto">
+                    <div className="grid lg:grid-cols-12 gap-8">
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                        {services.map((service, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
-                                onClick={() => setActiveService(index)}
-                                className={`cursor-pointer rounded-xl p-6 transition-all duration-300 ${activeService === index
-                                    ? 'bg-gradient-to-br from-green-500 to-emerald-600 text-white shadow-xl scale-105'
-                                    : 'bg-gradient-to-br from-gray-50 to-green-50 hover:shadow-lg hover:-translate-y-1'
-                                    }`}
-                            >
-                                <div className="text-4xl mb-4">{service.icon}</div>
-                                <h3 className={`text-lg font-bold mb-2 ${activeService === index ? 'text-white' : 'text-gray-900'}`}>
-                                    {service.name}
-                                </h3>
-                                <p className={`text-sm ${activeService === index ? 'text-green-100' : 'text-gray-600'}`}>
-                                    {service.description}
-                                </p>
-                            </motion.div>
-                        ))}
-                    </div>
-
-                    {/* Active Service Details */}
-                    <motion.div
-                        key={activeService}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="bg-gradient-to-br from-gray-50 to-green-50 rounded-2xl p-10 md:p-14 shadow-xl"
-                    >
-                        <div className="flex items-center gap-4 mb-6">
-                            <div className="text-6xl">{services[activeService].icon}</div>
-                            <div>
-                                <h3 className="text-3xl font-bold text-gray-900">{services[activeService].name}</h3>
-                                <p className="text-gray-600 mt-1">{services[activeService].description}</p>
-                            </div>
-                        </div>
-
-                        <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                            {services[activeService].longDescription}
-                        </p>
-
-                        {services[activeService].features && (
-                            <div>
-                                <h4 className="text-xl font-bold text-gray-900 mb-4">Key Features:</h4>
-                                <ul className="grid md:grid-cols-2 gap-4">
-                                    {services[activeService].features.map((feature, idx) => (
-                                        <li key={idx} className="flex items-start gap-3">
-                                            <svg className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                            </svg>
-                                            <span className="text-gray-700">{feature}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-
-                        {services[activeService].categories && (
-                            <div className="mt-8">
-                                <h4 className="text-xl font-bold text-gray-900 mb-6">Service Categories:</h4>
-                                <div className="grid md:grid-cols-3 gap-6">
-                                    {services[activeService].categories.map((category, idx) => (
-                                        <div key={idx} className="bg-white rounded-xl p-6 shadow-lg">
-                                            <h5 className="font-bold text-gray-900 mb-4">{category.title}</h5>
-                                            <ul className="space-y-2">
-                                                {category.items.map((item, itemIdx) => (
-                                                    <li key={itemIdx} className="flex items-start gap-2">
-                                                        <div className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
-                                                        <span className="text-gray-700 text-sm">{item}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
+                        {/* Sidebar Navigation */}
+                        <div className="lg:col-span-4">
+                            <div className="bg-white rounded-2xl shadow-xl shadow-gray-200/50 overflow-hidden sticky top-24">
+                                <div className="p-6 bg-gray-50 border-b border-gray-100">
+                                    <h3 className="text-lg font-bold text-gray-800">Our Services</h3>
+                                </div>
+                                <div className="p-2 max-h-[70vh] overflow-y-auto custom-scrollbar">
+                                    {serviceKeys.map((key) => (
+                                        <button
+                                            key={key}
+                                            onClick={() => setActiveService(key)}
+                                            className={`w-full text-left p-4 rounded-xl flex items-center gap-4 transition-all duration-300 group ${activeService === key
+                                                ? 'bg-gray-900 text-white shadow-lg'
+                                                : 'hover:bg-gray-50 text-gray-600'
+                                                }`}
+                                        >
+                                            <span className={`text-2xl transition-transform duration-300 ${activeService === key ? 'scale-110' : 'group-hover:scale-110'}`}>
+                                                {servicesMap[key].icon}
+                                            </span>
+                                            <span className={`font-semibold ${activeService === key ? 'text-white' : 'text-gray-700'}`}>
+                                                {servicesMap[key].title}
+                                            </span>
+                                            {activeService === key && (
+                                                <motion.div
+                                                    layoutId="activeIndicator"
+                                                    className="ml-auto w-1.5 h-1.5 rounded-full bg-green-400"
+                                                />
+                                            )}
+                                        </button>
                                     ))}
                                 </div>
                             </div>
-                        )}
-                    </motion.div>
-                </div>
-            </section>
+                        </div>
 
-            {/* CTA Section */}
-            <section className="py-16 bg-gradient-to-r from-green-600 to-emerald-600">
-                <div className="max-w-7xl mx-auto px-6 text-center">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                            Need Soft Services for Your Facility?
-                        </h2>
-                        <p className="text-green-100 text-lg mb-8 max-w-2xl mx-auto">
-                            Get in touch with our team to discuss your facility management requirements
-                        </p>
-                        <a
-                            href="/#contact"
-                            className="inline-block bg-white text-green-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
-                        >
-                            Request a Quote
-                        </a>
-                    </motion.div>
+                        {/* Content Display */}
+                        <div className="lg:col-span-8">
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={activeService}
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -20 }}
+                                    transition={{ duration: 0.4 }}
+                                    className="bg-white rounded-3xl shadow-xl shadow-gray-200/50 overflow-hidden"
+                                >
+                                    {/* Service Image Banner */}
+                                    <div className="relative h-64 md:h-80 overflow-hidden group">
+                                        <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent z-10"></div>
+                                        <img
+                                            src={servicesMap[activeService].image}
+                                            alt={servicesMap[activeService].title}
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                        />
+                                        <div className="absolute bottom-0 left-0 p-8 z-20">
+                                            <div className="flex items-center gap-3 mb-2">
+                                                <span className="text-4xl">{servicesMap[activeService].icon}</span>
+                                                <h2 className="text-3xl md:text-4xl font-bold text-white">
+                                                    {servicesMap[activeService].title}
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="p-8 md:p-10">
+                                        {/* Short Description */}
+                                        <div className="text-xl text-gray-600 font-medium mb-8 leading-relaxed border-l-4 border-green-500 pl-6">
+                                            {servicesMap[activeService].shortDesc}
+                                        </div>
+
+                                        {/* Full Content */}
+                                        <div className="prose prose-lg max-w-none text-gray-600">
+                                            <div className="whitespace-pre-line leading-relaxed">
+                                                {servicesMap[activeService].fullContent}
+                                            </div>
+                                        </div>
+
+                                        {/* Categories / Features Grid */}
+                                        {servicesMap[activeService].categories && (
+                                            <div className="mt-10 grid md:grid-cols-2 gap-6">
+                                                {servicesMap[activeService].categories.map((category, idx) => (
+                                                    <div key={idx} className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
+                                                        <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                                            <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                                                            {category.title}
+                                                        </h4>
+                                                        <ul className="space-y-3">
+                                                            {category.items.map((item, i) => (
+                                                                <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
+                                                                    <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                                                    </svg>
+                                                                    {item}
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        )}
+
+                                        {servicesMap[activeService].services && (
+                                            <div className="mt-10">
+                                                <h4 className="text-xl font-bold text-gray-900 mb-6">Our Services Include:</h4>
+                                                <div className="grid md:grid-cols-2 gap-4">
+                                                    {servicesMap[activeService].services.map((service, idx) => (
+                                                        <div key={idx} className="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100">
+                                                            <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 flex-shrink-0 font-bold text-sm">
+                                                                {idx + 1}
+                                                            </div>
+                                                            <span className="text-gray-700 font-medium">{service}</span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {/* CTA Button */}
+                                        <div className="mt-12 pt-8 border-t border-gray-100 flex justify-end">
+                                            <a
+                                                href="/#contact"
+                                                className="inline-flex items-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+                                            >
+                                                <span>Get a Quote</span>
+                                                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            </AnimatePresence>
+                        </div>
+                    </div>
                 </div>
             </section>
 
