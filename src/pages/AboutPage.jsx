@@ -2,25 +2,39 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import aboutHero from '../assets/carousel-1.png'
 
 const AboutPage = () => {
     return (
         <div className="min-h-screen bg-white">
             <Navbar />
 
-            {/* Hero Section */}
-            <section className="relative py-24 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white overflow-hidden">
-                <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnptMCAyYy0yLjIxIDAtNCA1.3OS00IDQgMS43OSA0IDQgNC00LTEuNzktNC00LTR6IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMDUiLz48L2c+PC9zdmc+')] opacity-10"></div>
 
-                <div className="max-w-7xl mx-auto px-6 relative z-10">
+
+            {/* Hero Section */}
+            <section className="relative h-[60vh] min-h-125 flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0">
+                    <img
+                        src={aboutHero}
+                        alt="About Reach FMS"
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-r from-gray-900/90 via-gray-900/70 to-gray-900/40"></div>
+                </div>
+
+                <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="text-center"
                     >
-                        <h1 className="text-5xl md:text-6xl font-bold mb-6">About Us</h1>
-                        <div className="w-24 h-1 bg-white mx-auto"></div>
+                        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+                            About Us
+                        </h1>
+                        <div className="w-24 h-1 bg-linear-to-r from-blue-500 to-indigo-500 mx-auto mb-6"></div>
+                        <p className="text-xl text-gray-200 max-w-2xl mx-auto font-light leading-relaxed">
+                            Building trust through excellence in facility management since 2018.
+                        </p>
                     </motion.div>
                 </div>
             </section>
