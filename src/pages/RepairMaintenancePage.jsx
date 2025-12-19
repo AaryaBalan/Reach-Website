@@ -135,7 +135,7 @@ const RepairMaintenancePage = () => {
                     </motion.div>
 
                     {/* Cinematic Gradients Overlay */}
-                    <div className="absolute inset-0 bg-linear-to-r from-brand-900/70 via-brand-900/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-linear-to-r from-brand-900/80 via-brand-900/40 to-transparent"></div>
                     <div className="absolute inset-0 bg-linear-to-t from-brand-900/60 via-transparent to-transparent"></div>
                 </div>
 
@@ -175,7 +175,7 @@ const RepairMaintenancePage = () => {
             </section>
 
             {/* Services List */}
-            <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-32 pt-16">
+            <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-16 pt-8 md:pb-32 md:pt-16">
                 <div className="flex flex-col gap-32">
                     {services.map((service, index) => (
                         <motion.div

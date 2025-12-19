@@ -50,8 +50,8 @@ const Hero = () => {
                             />
                         </div>
                         {/* Cinematic Gradient Overlay */}
-                        <div className="absolute inset-0 bg-linear-to-r from-brand-900/50 via-brand-900/20 to-transparent"></div>
-                        <div className="absolute inset-0 bg-linear-to-t from-brand-900/40 via-transparent to-transparent"></div>
+                        <div className="absolute inset-0 bg-linear-to-r from-brand-900/80 via-brand-900/40 to-transparent"></div>
+                        <div className="absolute inset-0 bg-linear-to-t from-brand-900/60 via-transparent to-transparent"></div>
                     </div>
                 ))}
             </div>

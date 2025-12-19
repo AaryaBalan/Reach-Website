@@ -97,7 +97,7 @@ const Contact = () => {
     ];
 
     return (
-        <section id="contact" className="py-24 lg:py-32 bg-white font-['Poppins']">
+        <section id="contact" className="py-12 md:py-24 lg:py-32 bg-white font-['Poppins']">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-20 animate-fade-in-up">
@@ -113,7 +113,7 @@ const Contact = () => {
                     </p>
                 </div>
 
-                <div className="grid xl:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div className="grid xl:grid-cols-12 gap-8 lg:gap-16 items-start">
 
                     {/* Left Column - Contact Info & Form (Span 5) */}
                     <div className="xl:col-span-5 space-y-8 animate-fade-in-up delay-100">

@@ -19,7 +19,7 @@ const AboutPage = () => {
                         alt="About Reach FMS"
                         className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-linear-to-r from-gray-900/90 via-gray-900/70 to-gray-900/40"></div>
+                    <div className="absolute inset-0 bg-linear-to-r from-gray-900/95 via-gray-900/80 to-gray-900/60"></div>
                 </div>
 
                 <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
@@ -40,7 +40,7 @@ const AboutPage = () => {
             </section>
 
             {/* Introduction Section */}
-            <section className="py-20 bg-white">
+            <section className="py-12 md:py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -85,7 +85,7 @@ const AboutPage = () => {
             </section>
 
             {/* Vision & Mission Section */}
-            <section className="py-20 bg-linear-to-br from-gray-50 to-brand-50">
+            <section className="py-12 md:py-20 bg-linear-to-br from-gray-50 to-brand-50">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid md:grid-cols-2 gap-8">
                         {/* Vision */}
@@ -154,7 +154,7 @@ const AboutPage = () => {
             </section>
 
             {/* Values Section */}
-            <section className="py-20 bg-white">
+            <section className="py-12 md:py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}

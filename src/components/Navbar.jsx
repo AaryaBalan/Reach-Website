@@ -65,7 +65,7 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 font-['Poppins'] ${isScrolled || location.pathname !== '/'
+            className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 font-['Poppins'] ${isScrolled || location.pathname !== '/'
                 ? 'bg-white/90 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.03)] border-b border-white/20 py-3'
                 : 'bg-transparent py-5'
                 }`}
@@ -167,7 +167,7 @@ const Navbar = () => {
 
                 {/* Mobile Navigation - Glassmorphism Card */}
                 <div
-                    className={`lg:hidden fixed inset-x-0 top-[72px] bottom-0 bg-white/95 backdrop-blur-xl border-t border-white/20 shadow-2xl transition-all duration-500 ease-in-out overflow-y-auto ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
+                    className={`lg:hidden fixed inset-x-0 top-[72px] bottom-0 bg-white/95 backdrop-blur-xl border-t border-white/20 shadow-2xl transition-all duration-500 ease-in-out overflow-y-auto z-[90] ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
                         }`}
                 >
                     <div className="p-2 space-y-1">

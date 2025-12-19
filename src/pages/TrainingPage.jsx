@@ -36,7 +36,7 @@ const TrainingPage = () => {
             {/* Cinematic Hero Section */}
             <section className="relative h-[70vh] min-h-125 flex items-center justify-center overflow-hidden bg-brand-900">
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-neutral-50 z-10"></div>
+                    <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/60 to-neutral-50 z-10"></div>
                     <motion.img
                         initial={{ scale: 1.1 }}
                         animate={{ scale: 1 }}
@@ -68,7 +68,7 @@ const TrainingPage = () => {
             </section>
 
             {/* Definition Card - Glassmorphism */}
-            <section className="relative z-30 -mt-20 px-6 pb-24">
+            <section className="relative z-30 -mt-20 px-6 pb-12 md:pb-24">
                 <div className="max-w-5xl mx-auto relative group">
                     <div className="absolute -inset-1 bg-linear-to-r from-brand-500 to-brand-600 rounded-3xl md:rounded-[2.5rem] opacity-20 blur-xl group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl md:rounded-[2rem] p-6 md:p-8 lg:p-14 shadow-2xl border border-white/50 flex flex-col md:flex-row gap-10 items-center">

@@ -34,7 +34,7 @@ const TechnicalServicesPage = () => {
             {/* Cinematic Hero Section */}
             <section className="relative h-[60vh] min-h-125 flex items-center justify-center overflow-hidden bg-gray-900">
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-neutral-50 z-10"></div>
+                    <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/60 to-neutral-50 z-10"></div>
                     <motion.img
                         initial={{ scale: 1.1 }}
                         animate={{ scale: 1 }}
@@ -65,7 +65,7 @@ const TechnicalServicesPage = () => {
             </section>
 
             {/* Main Content Area */}
-            <section className="relative z-30 -mt-20 pb-24 px-6">
+            <section className="relative z-30 -mt-20 pb-12 md:pb-24 px-6">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid lg:grid-cols-12 gap-8">
 

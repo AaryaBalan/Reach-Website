@@ -36,7 +36,7 @@ const About = () => {
                 </div>
 
                 {/* Vision & Mission Cards - Material UI Style */}
-                <div className="grid lg:grid-cols-2 gap-8 mb-24 max-w-7xl mx-auto">
+                <div className="grid lg:grid-cols-2 gap-6 md:gap-8 mb-12 md:mb-24 max-w-7xl mx-auto">
                     {/* Vision Card - Material Design */}
                     <div className="group bg-white p-6 md:p-10 rounded-3xl md:rounded-[2.5rem] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_60px_-15px_rgba(13,148,136,0.2)] transition-all duration-300 border border-gray-100 relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-full h-2 bg-brand-600"></div>

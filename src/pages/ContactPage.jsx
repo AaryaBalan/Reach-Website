@@ -42,7 +42,7 @@ const ContactPage = () => {
             <Navbar />
 
             {/* Hero Section */}
-            <section className="relative py-24 bg-linear-to-br from-brand-600 via-brand-500 to-brand-400 text-white overflow-hidden">
+            <section className="relative py-12 md:py-24 bg-linear-to-br from-brand-600 via-brand-500 to-brand-400 text-white overflow-hidden">
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnptMCAyYy0yLjIxIDAtNCA1LjNOS00IDQgMS43OSA0IDQgNC00LTEuNzktNC00LTR6IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMDUiLz48L2c+PC9zdmc+')] opacity-10"></div>
 
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -62,7 +62,7 @@ const ContactPage = () => {
             </section>
 
             {/* Contact Form & Info Section */}
-            <section className="py-20 bg-white">
+            <section className="py-12 md:py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid lg:grid-cols-2 gap-12">
                         {/* Contact Form */}
@@ -255,7 +255,7 @@ const ContactPage = () => {
             </section>
 
             {/* Team Positions Section */}
-            <section className="py-20 bg-linear-to-br from-gray-50 to-brand-50">
+            <section className="py-12 md:py-20 bg-linear-to-br from-gray-50 to-brand-50">
                 <div className="max-w-7xl mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}

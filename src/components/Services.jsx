@@ -101,7 +101,7 @@ const Services = () => {
     };
 
     return (
-        <section id="services" className="py-24 bg-gray-50 font-['Poppins']">
+        <section id="services" className="py-12 md:py-24 bg-gray-50 font-['Poppins']">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
                 {/* Header */}
