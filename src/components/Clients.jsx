@@ -17,7 +17,7 @@ const Clients = () => {
     ];
 
     return (
-        <section className="py-16 bg-white border-t border-gray-100 overflow-hidden font-['Poppins']">
+        <section className="py-12 md:py-16 bg-white border-t border-gray-100 overflow-hidden font-['Poppins']">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
                 <h3 className="text-2xl font-bold text-brand-900 mb-2">Precious & Happy Clients</h3>
                 <p className="text-gray-500 text-sm">Trusted by leading organizations across the region</p>
@@ -29,7 +29,7 @@ const Clients = () => {
                     {[...clients, ...clients, ...clients, ...clients].map((client, index) => (
                         <div
                             key={index}
-                            className="flex-shrink-0 w-48 h-24 bg-white rounded-xl border border-gray-100 p-4 hover:shadow-lg hover:border-brand-600/30 transition-all duration-300 flex items-center justify-center group"
+                            className="shrink-0 w-32 h-16 md:w-48 md:h-24 bg-white rounded-xl border border-gray-100 p-4 hover:shadow-lg hover:border-brand-600/30 transition-all duration-300 flex items-center justify-center group"
                         >
                             <img
                                 src={client.logo}
@@ -41,8 +41,8 @@ const Clients = () => {
                 </div>
 
                 {/* Gradient Fade Edges */}
-                <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
-                <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
+                <div className="absolute top-0 left-0 w-16 md:w-32 h-full bg-linear-to-r from-white to-transparent pointer-events-none z-10"></div>
+                <div className="absolute top-0 right-0 w-16 md:w-32 h-full bg-linear-to-l from-white to-transparent pointer-events-none z-10"></div>
             </div>
         </section>
     );

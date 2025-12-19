@@ -101,7 +101,7 @@ const Services = () => {
     };
 
     return (
-        <section id="services" className="py-8 md:py-24 bg-gray-50 font-['Poppins']">
+        <section id="services" className="py-12 md:py-24 bg-gray-50 font-['Poppins']">
             <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
 
                 {/* Header */}
@@ -118,7 +118,7 @@ const Services = () => {
                 </div>
 
                 {/* Expanding Cards Container */}
-                <div className="flex flex-col lg:flex-row min-h-[800px] lg:min-h-[500px] lg:h-[500px] gap-3 md:gap-4 w-full">
+                <div className="flex flex-col lg:flex-row min-h-[600px] md:min-h-200 lg:min-h-[500px] lg:h-[500px] gap-3 md:gap-4 w-full">
                     {services.map((service) => (
                         <div
                             key={service.id}

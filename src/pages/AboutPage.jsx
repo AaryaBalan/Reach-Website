@@ -69,7 +69,7 @@ const AboutPage = () => {
                                     'Repair and Maintenance'
                                 ].map((service, index) => (
                                     <li key={index} className="flex items-start gap-2 md:gap-3 text-sm md:text-base">
-                                        <svg className="w-5 h-5 md:w-6 md:h-6 text-brand-600 mt-0.5 md:mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <svg className="w-5 h-5 md:w-6 md:h-6 text-brand-600 mt-0.5 md:mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
                                         <span className="text-gray-700">{service}</span>
@@ -97,7 +97,7 @@ const AboutPage = () => {
                             className="bg-white rounded-2xl p-5 md:p-10 shadow-xl hover:shadow-2xl transition-shadow duration-300 border-t-4 border-brand-600"
                         >
                             <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                                <div className="w-12 h-12 md:w-16 md:h-16 bg-linear-to-br from-brand-500 to-brand-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-12 h-12 md:w-16 md:h-16 bg-linear-to-br from-brand-500 to-brand-600 rounded-full flex items-center justify-center shrink-0">
                                     <svg className="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -121,7 +121,7 @@ const AboutPage = () => {
                             className="bg-white rounded-2xl p-5 md:p-10 shadow-xl hover:shadow-2xl transition-shadow duration-300 border-t-4 border-brand-800"
                         >
                             <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                                <div className="w-12 h-12 md:w-16 md:h-16 bg-linear-to-br from-brand-700 to-brand-800 rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-12 h-12 md:w-16 md:h-16 bg-linear-to-br from-brand-700 to-brand-800 rounded-full flex items-center justify-center shrink-0">
                                     <svg className="w-6 h-6 md:w-8 md:h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                                     </svg>
@@ -140,7 +140,7 @@ const AboutPage = () => {
                                     'High degree of Professionalism'
                                 ].map((point, index) => (
                                     <li key={index} className="flex items-center gap-2 md:gap-3 text-sm md:text-base">
-                                        <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-brand-600 rounded-full flex-shrink-0"></div>
+                                        <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-brand-600 rounded-full shrink-0"></div>
                                         <span className="text-gray-700 font-medium">{point}</span>
                                     </li>
                                 ))}

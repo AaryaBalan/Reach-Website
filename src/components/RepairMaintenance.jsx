@@ -71,7 +71,7 @@ const RepairMaintenance = () => {
     const activeData = services.find(s => s.key === activeTab);
 
     return (
-        <section id="repair" className="py-24 bg-white font-['Poppins']">
+        <section id="repair" className="py-12 md:py-24 bg-white font-['Poppins']">
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
                 {/* Header */}

@@ -57,7 +57,7 @@ const Hero = () => {
             </div>
 
             {/* Content */}
-            <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-24 md:pt-32 pb-12">
+            <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-28 md:pt-32 pb-12">
                 <div className="max-w-4xl">
                     {/* Badge */}
                     <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-8 animate-fade-in-up hover:bg-white/15 transition-colors cursor-default">
@@ -69,7 +69,7 @@ const Hero = () => {
                     </div>
 
                     {/* Main heading - Apple Style Typography */}
-                    <h1 className="text-4xl sm:text-6xl lg:text-[5.5rem] font-extrabold text-white leading-[1.1] mb-8 animate-fade-in-up delay-100 tracking-tight">
+                    <h1 className="text-4xl sm:text-6xl lg:text-[5.5rem] font-extrabold text-white leading-[1.1] mb-6 md:mb-8 animate-fade-in-up delay-100 tracking-tight">
                         Reach New Heights in <br />
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-600 via-brand-600 to-brand-900">
                             Facility Excellence.
@@ -77,7 +77,7 @@ const Hero = () => {
                     </h1>
 
                     {/* Subsubtitle */}
-                    <p className="text-lg sm:text-2xl text-gray-200 font-light leading-relaxed mb-12 max-w-2xl animate-fade-in-up delay-200">
+                    <p className="text-lg sm:text-2xl text-gray-200 font-light leading-relaxed mb-8 md:mb-12 max-w-2xl animate-fade-in-up delay-200">
                         We offer integrated management services, ensuring your infrastructure operates at its <strong className="text-white font-medium">highest potential</strong> through technical expertise and precise care.
                     </p>
 
@@ -109,7 +109,7 @@ const Hero = () => {
                     </div>
 
                     {/* Carousel Indicators - Refined */}
-                    <div className="mt-20 flex items-center gap-3 animate-fade-in-up delay-500">
+                    <div className="mt-12 md:mt-20 flex items-center gap-3 animate-fade-in-up delay-500">
                         {slides.map((_, index) => (
                             <button
                                 key={index}

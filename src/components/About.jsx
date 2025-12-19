@@ -16,11 +16,11 @@ const About = () => {
     ];
 
     return (
-        <section id="about" className="py-24 bg-white relative overflow-hidden font-['Poppins']">
+        <section id="about" className="py-12 md:py-24 bg-white relative overflow-hidden font-['Poppins']">
             {/* Background Decoration */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-brand-600/5 rounded-bl-[10rem] -z-0"></div>
+            <div className="absolute top-0 right-0 w-48 h-48 md:w-96 md:h-96 bg-brand-600/5 rounded-bl-[5rem] md:rounded-bl-[10rem] z-0"></div>
 
-            <div className="max-w-[1920px] mx-auto px-6 lg:px-12 relative z-10">
+            <div className="max-w-480 mx-auto px-4 md:px-6 lg:px-12 relative z-10">
 
                 {/* Intro */}
                 <div className="max-w-4xl mx-auto text-center mb-20">
@@ -105,7 +105,7 @@ const About = () => {
                 </div>
 
                 {/* Why Partner With Us - Modern Bento Grid UI */}
-                <div className="mb-32 max-w-[1920px] mx-auto">
+                <div className="mb-16 md:mb-32 max-w-480 mx-auto">
 
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
 
@@ -126,7 +126,7 @@ const About = () => {
                             </div>
 
                             {/* Highlight Bento Block */}
-                            <div className="relative group overflow-hidden rounded-[2rem] bg-brand-900 p-8 text-white shadow-2xl">
+                            <div className="relative group overflow-hidden rounded-3xl md:rounded-4xl bg-brand-900 p-6 md:p-8 text-white shadow-2xl">
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-brand-600 opacity-20 blur-[80px] rounded-full translate-x-1/2 -translate-y-1/2 group-hover:scale-125 transition-transform duration-700"></div>
                                 <div className="absolute bottom-0 left-0 w-40 h-40 bg-white opacity-5 blur-[50px] rounded-full -translate-x-1/2 translate-y-1/2"></div>
 

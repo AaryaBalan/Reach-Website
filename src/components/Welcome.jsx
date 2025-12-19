@@ -2,13 +2,13 @@ import React from 'react';
 
 const Welcome = () => {
     return (
-        <section className="py-16 md:py-24 bg-gray-50 font-['Poppins'] overflow-hidden">
+        <section className="py-12 md:py-24 bg-gray-50 font-['Poppins'] overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
 
                     <div className="relative mb-12 lg:mb-0">
-                        <div className="absolute -inset-4 bg-brand-600/10 rounded-tr-[4rem] rounded-bl-[4rem]"></div>
-                        <div className="relative bg-white p-6 md:p-8 lg:p-12 rounded-tr-[3rem] rounded-bl-[3rem] shadow-xl border border-gray-100">
+                        <div className="absolute -inset-4 bg-brand-600/10 rounded-tr-[3rem] rounded-bl-[3rem] md:rounded-tr-[4rem] md:rounded-bl-[4rem]"></div>
+                        <div className="relative bg-white p-6 md:p-8 lg:p-12 rounded-tr-4xl rounded-bl-4xl md:rounded-tr-[3rem] md:rounded-bl-[3rem] shadow-xl border border-gray-100">
                             <h2 className="text-3xl lg:text-5xl font-bold text-[#623004] mb-6 leading-tight">
                                 Cleanliness is <br />
                                 <span className="text-brand-600">Power.</span>

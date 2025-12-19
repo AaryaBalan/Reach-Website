@@ -29,7 +29,7 @@ const FAQ = () => {
     ];
 
     return (
-        <section id="faq" className="py-24 bg-gray-50 font-['Poppins']">
+        <section id="faq" className="py-12 md:py-24 bg-gray-50 font-['Poppins']">
             <div className="max-w-4xl mx-auto px-6 lg:px-8">
 
                 {/* Header */}

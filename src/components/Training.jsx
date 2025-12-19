@@ -10,12 +10,12 @@ const Training = () => {
     ];
 
     return (
-        <section id="training" className="py-24 bg-white font-['Poppins'] overflow-hidden">
+        <section id="training" className="py-12 md:py-24 bg-white font-['Poppins'] overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
                 {/* Header */}
                 <div className="relative mb-16">
-                    <div className="absolute -top-20 -left-20 w-72 h-72 bg-brand-600/5 rounded-full blur-3xl"></div>
+                    <div className="absolute -top-20 -left-20 w-48 h-48 md:w-72 md:h-72 bg-brand-600/5 rounded-full blur-3xl"></div>
 
                     <div className="relative text-center max-w-4xl mx-auto">
                         <span className="inline-flex items-center gap-2 px-4 py-2 bg-brand-600/10 text-brand-600 rounded-full text-xs font-bold tracking-widest uppercase mb-6">
