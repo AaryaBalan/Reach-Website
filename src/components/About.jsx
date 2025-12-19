@@ -102,24 +102,30 @@ const About = () => {
 
                         {/* Left: Sticky Narrative */}
                         <div className="lg:w-5/12 lg:sticky top-32 h-fit">
-                            <span className="text-brand-600 font-bold tracking-widest uppercase text-[10px] md:text-sm mb-2 md:mb-4 block">The Reach Advantage</span>
-                            <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-900 leading-[1.1] mb-4 md:mb-8">
-                                Redefining <br />
-                                <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-600 to-brand-400">Excellence.</span>
-                            </h3>
-                            <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-6 md:mb-10">
-                                We go beyond standard maintenance. We engineer environments that enhance productivity, safety, and comfort through our comprehensive facility management solutions.
-                            </p>
+                            <div className="flex flex-col items-start">
+                                <span className="inline-block py-1.5 px-4 rounded-full bg-brand-50 text-brand-600 font-bold tracking-widest uppercase text-[10px] md:text-sm mb-4 md:mb-6 border border-brand-100">The Reach Advantage</span>
+                                <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-900 leading-[1.1] mb-4 md:mb-8">
+                                    Redefining <br />
+                                    <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-600 to-brand-400">Excellence.</span>
+                                </h3>
+                                <p className="text-gray-600 text-base md:text-lg leading-relaxed mb-8 md:mb-10">
+                                    We go beyond standard maintenance. We engineer environments that enhance productivity, safety, and comfort through our comprehensive facility management solutions.
+                                </p>
+                            </div>
 
                             {/* Highlight Card */}
-                            <div className="relative overflow-hidden rounded-2xl md:rounded-3xl bg-brand-900 p-6 md:p-8 text-white shadow-2xl group cursor-pointer">
+                            <div className="relative overflow-hidden rounded-2xl md:rounded-3xl bg-brand-900 p-6 md:p-8 text-white shadow-2xl shadow-brand-900/20 group cursor-pointer transform transition-all duration-300 hover:-translate-y-1 active:scale-[0.98]">
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-brand-600 opacity-20 blur-[80px] rounded-full translate-x-1/2 -translate-y-1/2 group-hover:scale-125 transition-transform duration-700"></div>
                                 <div className="relative z-10">
-                                    <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-xl flex items-center justify-center mb-4 md:mb-6 backdrop-blur-sm">
-                                        <svg className="w-5 h-5 md:w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                                    <div className="flex items-center justify-between mb-6">
+                                        <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-md border border-white/10 group-hover:bg-white/20 transition-colors">
+                                            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                                        </div>
+                                        <span className="px-3 py-1 rounded-full bg-white/10 text-brand-100 text-[10px] font-bold uppercase tracking-wider border border-white/10 backdrop-blur-sm">Premium Feature</span>
                                     </div>
-                                    <h4 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">Dedicated Relationship Manager</h4>
-                                    <p className="text-white/70 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">Every partner is assigned a single point of contact for seamless, personalized communication and instant resolutions.</p>
+                                    
+                                    <h4 className="text-xl md:text-2xl font-bold mb-3">Dedicated Relationship Manager</h4>
+                                    <p className="text-white/70 mb-6 leading-relaxed text-sm md:text-base">Every partner is assigned a single point of contact for seamless, personalized communication and instant resolutions.</p>
                                     <div className="flex items-center gap-2 text-xs md:text-sm font-bold uppercase tracking-widest text-brand-400 group-hover:text-white transition-colors">
                                         Learn More <span className="transform group-hover:translate-x-1 transition-transform">→</span>
                                     </div>
