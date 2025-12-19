@@ -12,7 +12,7 @@ const AboutPage = () => {
 
 
             {/* Hero Section */}
-            <section className="relative h-[40vh] min-h-[300px] md:h-[60vh] md:min-h-125 flex items-center justify-center overflow-hidden">
+            <section className="relative h-[40vh] min-h-75 md:h-[60vh] flex items-center justify-center overflow-hidden bg-gray-900">
                 <div className="absolute inset-0">
                     <img
                         src={aboutHero}

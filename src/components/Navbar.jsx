@@ -67,7 +67,7 @@ const Navbar = () => {
     return (
         <>
             <nav
-                className={`fixed top-0 left-0 right-0 z-1000 transition-all duration-500 font-['Poppins'] ${isScrolled || location.pathname !== '/'
+                className={`fixed top-0 left-0 right-0 z-1000 transition-all duration-500 font-['Poppins'] ${isScrolled
                     ? 'bg-white/90 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.03)] border-b border-white/20 py-3'
                     : 'bg-transparent py-5'
                     }`}
@@ -93,7 +93,7 @@ const Navbar = () => {
                                         onMouseLeave={() => setServicesDropdownOpen(false)}
                                     >
                                         <button
-                                            className={`px-4 py-2 text-[13px] font-bold tracking-wide rounded-full transition-all duration-300 flex items-center gap-1 ${isScrolled || location.pathname !== '/'
+                                            className={`px-4 py-2 text-[13px] font-bold tracking-wide rounded-full transition-all duration-300 flex items-center gap-1 ${isScrolled
                                                 ? 'text-gray-600 hover:text-brand-900 hover:bg-gray-50'
                                                 : 'text-white/90 hover:text-white hover:bg-white/10'
                                                 }`}
@@ -129,7 +129,7 @@ const Navbar = () => {
                                         key={item.name}
                                         href={item.href}
                                         onClick={(e) => handleNavigation(e, item.href)}
-                                        className={`px-4 py-2 text-[13px] font-bold tracking-wide rounded-full transition-all duration-300 ${isScrolled || location.pathname !== '/'
+                                        className={`px-4 py-2 text-[13px] font-bold tracking-wide rounded-full transition-all duration-300 ${isScrolled
                                             ? 'text-gray-600 hover:text-brand-900 hover:bg-gray-50'
                                             : 'text-white/90 hover:text-white hover:bg-white/10'
                                             }`}
@@ -140,7 +140,7 @@ const Navbar = () => {
                             ))}
                             <button
                                 onClick={(e) => handleNavigation(e, '/#contact')}
-                                className={`ml-6 px-7 py-3 rounded-full font-bold text-xs tracking-widest uppercase transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 ${isScrolled || location.pathname !== '/'
+                                className={`ml-6 px-7 py-3 rounded-full font-bold text-xs tracking-widest uppercase transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 ${isScrolled
                                     ? 'bg-brand-900 text-white hover:bg-brand-950'
                                     : 'bg-white text-brand-900 hover:bg-gray-50'
                                     }`}
@@ -153,7 +153,7 @@ const Navbar = () => {
                         <div className="lg:hidden">
                             <button
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                className={`p-2.5 rounded-xl transition-all duration-300 ${isScrolled || location.pathname !== '/' ? 'text-brand-900 bg-gray-50' : 'text-white bg-white/10 backdrop-blur-md'
+                                className={`p-2.5 rounded-xl transition-all duration-300 ${isScrolled ? 'text-brand-900 bg-gray-50' : 'text-white bg-white/10 backdrop-blur-md'
                                     }`}
                             >
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -172,9 +172,9 @@ const Navbar = () => {
             {/* Mobile Navigation - Portal to Body */}
             {createPortal(
                 <div
-                    className={`lg:hidden fixed inset-x-0 bottom-0 bg-white/95 backdrop-blur-xl border-t border-white/20 shadow-2xl transition-all duration-500 ease-in-out overflow-y-auto z-[9999] ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
+                    className={`lg:hidden fixed inset-x-0 bottom-0 bg-white/95 backdrop-blur-xl border-t border-white/20 shadow-2xl transition-all duration-500 ease-in-out overflow-y-auto z-9999 ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
                         }`}
-                    style={{ top: isScrolled || location.pathname !== '/' ? '88px' : '104px' }}
+                    style={{ top: isScrolled ? '88px' : '104px' }}
                 >
                     <div className="p-2 space-y-1">
                         {navItems.map((item) => (
