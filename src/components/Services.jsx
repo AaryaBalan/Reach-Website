@@ -118,15 +118,15 @@ const Services = () => {
                 </div>
 
                 {/* Expanding Cards Container */}
-                <div className="flex flex-col lg:flex-row min-h-[600px] md:min-h-200 lg:min-h-[500px] lg:h-[500px] gap-3 md:gap-4 w-full">
+                <div className="hidden lg:flex flex-row min-h-[500px] h-[500px] gap-4 w-full">
                     {services.map((service) => (
                         <div
                             key={service.id}
                             onClick={() => setActiveId(service.id)}
                             className={`relative cursor-pointer bg-white rounded-3xl overflow-hidden shadow-lg transition-all duration-[700ms] ease-[cubic-bezier(0.25,1,0.5,1)]
                                 ${activeId === service.id
-                                    ? 'lg:flex-[5] flex-[5] opacity-100 ring-2 ring-brand-600/20'
-                                    : 'lg:flex-[1] flex-[1] opacity-70 hover:opacity-100'
+                                    ? 'flex-[5] opacity-100 ring-2 ring-brand-600/20'
+                                    : 'flex-[1] opacity-70 hover:opacity-100'
                                 }
                             `}
                         >
@@ -142,27 +142,27 @@ const Services = () => {
                             <div className={`absolute inset-0 flex flex-col items-center justify-center p-4 transition-all duration-500
                                 ${activeId === service.id ? 'opacity-0 translate-y-20 pointer-events-none' : 'opacity-100 translate-y-0'}
                             `}>
-                                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-100 flex items-center justify-center text-brand-900 mb-3 md:mb-4">
+                                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-brand-900 mb-4">
                                     {service.icon}
                                 </div>
                                 <h3
-                                    className="text-base md:text-lg font-bold text-brand-900 lg:rotate-180 whitespace-nowrap lg:mt-4 lg:[writing-mode:vertical-rl]"
+                                    className="text-lg font-bold text-brand-900 rotate-180 whitespace-nowrap mt-4 [writing-mode:vertical-rl]"
                                 >
                                     {service.title}
                                 </h3>
                             </div>
 
                             {/* Active Content */}
-                            <div className={`absolute bottom-0 left-0 right-0 p-5 md:p-8 text-white transition-all duration-700 delay-200
+                            <div className={`absolute bottom-0 left-0 right-0 p-8 text-white transition-all duration-700 delay-200
                                 ${activeId === service.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
                             `}>
-                                <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
-                                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-brand-600 flex items-center justify-center text-white shadow-lg shadow-brand-600/30">
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="w-12 h-12 rounded-xl bg-brand-600 flex items-center justify-center text-white shadow-lg shadow-brand-600/30">
                                         {service.icon}
                                     </div>
-                                    <h3 className="text-2xl md:text-3xl font-bold">{service.title}</h3>
+                                    <h3 className="text-3xl font-bold">{service.title}</h3>
                                 </div>
-                                <p className="text-gray-200 text-sm md:text-lg leading-relaxed max-w-xl mb-4 md:mb-6">
+                                <p className="text-gray-200 text-lg leading-relaxed max-w-xl mb-6">
                                     {service.desc}
                                 </p>
                                 <button
@@ -170,10 +170,51 @@ const Services = () => {
                                         e.stopPropagation();
                                         handleLearnMore(service.route);
                                     }}
-                                    className="px-5 py-2 md:px-6 md:py-2.5 bg-white text-brand-900 font-bold rounded-lg hover:bg-brand-600 hover:text-white transition-colors duration-300 text-sm md:text-base"
+                                    className="px-6 py-2.5 bg-white text-brand-900 font-bold rounded-lg hover:bg-brand-600 hover:text-white transition-colors duration-300"
                                 >
                                     Learn More
                                 </button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Mobile/Tablet Grid Layout */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:hidden">
+                    {services.map((service) => (
+                        <div
+                            key={service.id}
+                            className="group relative h-[400px] rounded-3xl overflow-hidden shadow-lg"
+                        >
+                            {/* Background Image */}
+                            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                style={{ backgroundImage: `url(${service.image})` }}
+                            >
+                                <div className="absolute inset-0 bg-linear-to-t from-brand-900/90 via-brand-900/20 to-transparent"></div>
+                            </div>
+
+                            {/* Content */}
+                            <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                                <div className="transform transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                                    <div className="flex items-center gap-3 mb-3">
+                                        <div className="w-10 h-10 rounded-xl bg-brand-600/90 backdrop-blur-sm flex items-center justify-center text-white shadow-lg">
+                                            {service.icon}
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-white">{service.title}</h3>
+                                    </div>
+
+                                    <p className="text-gray-200 text-sm leading-relaxed mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 h-0 group-hover:h-auto overflow-hidden">
+                                        {service.desc}
+                                    </p>
+
+                                    <button
+                                        onClick={() => handleLearnMore(service.route)}
+                                        className="w-full py-3 bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold rounded-xl hover:bg-brand-600 hover:border-brand-600 transition-all duration-300 flex items-center justify-center gap-2 group/btn"
+                                    >
+                                        Explore Service
+                                        <svg className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     ))}
