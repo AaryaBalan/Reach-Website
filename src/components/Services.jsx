@@ -106,11 +106,11 @@ const Services = () => {
 
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <span className="inline-block px-4 py-1.5 bg-[#C1311C]/10 text-[#C1311C] rounded-full text-xs font-bold tracking-widest uppercase mb-4">
+                    <span className="inline-block px-4 py-1.5 bg-brand-600/10 text-brand-600 rounded-full text-xs font-bold tracking-widest uppercase mb-4">
                         Our Expertise
                     </span>
-                    <h2 className="text-4xl lg:text-5xl font-bold text-[#623004] mb-6">
-                        Premimum <span className="text-[#C1311C]">Services</span>
+                    <h2 className="text-4xl lg:text-5xl font-bold text-brand-900 mb-6">
+                        Premimum <span className="text-brand-600">Services</span>
                     </h2>
                     <p className="text-gray-500 text-lg leading-relaxed">
                         Click on any service to explore our comprehensive facility solutions.
@@ -125,7 +125,7 @@ const Services = () => {
                             onClick={() => setActiveId(service.id)}
                             className={`relative cursor-pointer bg-white rounded-3xl overflow-hidden shadow-lg transition-all duration-[700ms] ease-[cubic-bezier(0.25,1,0.5,1)]
                                 ${activeId === service.id
-                                    ? 'lg:flex-[5] flex-[5] opacity-100 ring-2 ring-[#C1311C]/20'
+                                    ? 'lg:flex-[5] flex-[5] opacity-100 ring-2 ring-brand-600/20'
                                     : 'lg:flex-[1] flex-[1] opacity-70 hover:opacity-100'
                                 }
                             `}
@@ -135,18 +135,18 @@ const Services = () => {
                                 ${activeId === service.id ? 'scale-100 opacity-100' : 'scale-125 opacity-0'}`}
                                 style={{ backgroundImage: `url(${service.image})` }}
                             >
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#623004]/90 via-[#623004]/40 to-transparent"></div>
+                                <div className="absolute inset-0 bg-linear-to-t from-brand-900/90 via-brand-900/40 to-transparent"></div>
                             </div>
 
                             {/* Inactive State Visuals (Simple Icon/Label) */}
                             <div className={`absolute inset-0 flex flex-col items-center justify-center p-4 transition-all duration-500
                                 ${activeId === service.id ? 'opacity-0 translate-y-20 pointer-events-none' : 'opacity-100 translate-y-0'}
                             `}>
-                                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-[#623004] mb-4">
+                                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-brand-900 mb-4">
                                     {service.icon}
                                 </div>
                                 <h3
-                                    className="text-lg font-bold text-[#623004] lg:rotate-180 whitespace-nowrap lg:mt-4 lg:[writing-mode:vertical-rl]"
+                                    className="text-lg font-bold text-brand-900 lg:rotate-180 whitespace-nowrap lg:mt-4 lg:[writing-mode:vertical-rl]"
                                 >
                                     {service.title}
                                 </h3>
@@ -157,7 +157,7 @@ const Services = () => {
                                 ${activeId === service.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
                             `}>
                                 <div className="flex items-center gap-4 mb-4">
-                                    <div className="w-12 h-12 rounded-xl bg-[#C1311C] flex items-center justify-center text-white shadow-lg shadow-[#C1311C]/30">
+                                    <div className="w-12 h-12 rounded-xl bg-brand-600 flex items-center justify-center text-white shadow-lg shadow-brand-600/30">
                                         {service.icon}
                                     </div>
                                     <h3 className="text-3xl font-bold">{service.title}</h3>
@@ -170,7 +170,7 @@ const Services = () => {
                                         e.stopPropagation();
                                         handleLearnMore(service.route);
                                     }}
-                                    className="px-6 py-2.5 bg-white text-[#623004] font-bold rounded-lg hover:bg-[#C1311C] hover:text-white transition-colors duration-300"
+                                    className="px-6 py-2.5 bg-white text-brand-900 font-bold rounded-lg hover:bg-brand-600 hover:text-white transition-colors duration-300"
                                 >
                                     Learn More
                                 </button>

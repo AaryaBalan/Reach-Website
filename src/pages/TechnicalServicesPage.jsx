@@ -81,8 +81,8 @@ const TechnicalServicesPage = () => {
                                             key={key}
                                             onClick={() => setActiveService(key)}
                                             className={`w-full text-left p-4 rounded-xl flex items-center gap-4 transition-all duration-300 group ${activeService === key
-                                                ? 'bg-gray-900 text-white shadow-lg'
-                                                : 'hover:bg-gray-50 text-gray-600'
+                                                ? 'bg-brand-900 text-white shadow-lg'
+                                                : 'hover:bg-brand-50 text-gray-600'
                                                 }`}
                                         >
                                             <span className={`text-2xl transition-transform duration-300 ${activeService === key ? 'scale-110' : 'group-hover:scale-110'}`}>
@@ -94,7 +94,7 @@ const TechnicalServicesPage = () => {
                                             {activeService === key && (
                                                 <motion.div
                                                     layoutId="activeIndicator"
-                                                    className="ml-auto w-1.5 h-1.5 rounded-full bg-orange-500"
+                                                    className="ml-auto w-1.5 h-1.5 rounded-full bg-brand-500"
                                                 />
                                             )}
                                         </button>
@@ -134,7 +134,7 @@ const TechnicalServicesPage = () => {
 
                                     <div className="p-8 md:p-10">
                                         {/* Short Description */}
-                                        <div className="text-xl text-gray-600 font-medium mb-8 leading-relaxed border-l-4 border-orange-500 pl-6">
+                                        <div className="text-xl text-gray-600 font-medium mb-8 leading-relaxed border-l-4 border-brand-500 pl-6">
                                             {servicesMap[activeService].shortDesc}
                                         </div>
 
@@ -152,7 +152,7 @@ const TechnicalServicesPage = () => {
                                                 <div className="grid md:grid-cols-2 gap-4">
                                                     {servicesMap[activeService].features.map((feature, idx) => (
                                                         <div key={idx} className="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100">
-                                                            <svg className="w-5 h-5 text-orange-500 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <svg className="w-5 h-5 text-brand-500 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                                             </svg>
                                                             <span className="text-gray-700 font-medium">{feature}</span>
@@ -169,7 +169,7 @@ const TechnicalServicesPage = () => {
                                                 <div className="space-y-4">
                                                     {servicesMap[activeService].points.map((point, idx) => (
                                                         <div key={idx} className="flex items-start gap-4 p-4 rounded-xl bg-gray-50 border border-gray-100">
-                                                            <div className="w-6 h-6 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                                                            <div className="w-6 h-6 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center flex-shrink-0 font-bold text-sm">
                                                                 {idx + 1}
                                                             </div>
                                                             <span className="text-gray-700">{point}</span>
@@ -183,7 +183,7 @@ const TechnicalServicesPage = () => {
                                         <div className="mt-12 pt-8 border-t border-gray-100 flex justify-end">
                                             <a
                                                 href="/#contact"
-                                                className="inline-flex items-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+                                                className="inline-flex items-center gap-2 bg-brand-900 text-white px-8 py-4 rounded-full font-semibold hover:bg-brand-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
                                             >
                                                 <span>Request Service</span>
                                                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

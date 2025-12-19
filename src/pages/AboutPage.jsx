@@ -31,7 +31,7 @@ const AboutPage = () => {
                         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
                             About Us
                         </h1>
-                        <div className="w-24 h-1 bg-linear-to-r from-blue-500 to-indigo-500 mx-auto mb-6"></div>
+                        <div className="w-24 h-1 bg-linear-to-r from-brand-500 to-brand-600 mx-auto mb-6"></div>
                         <p className="text-xl text-gray-200 max-w-2xl mx-auto font-light leading-relaxed">
                             Building trust through excellence in facility management since 2018.
                         </p>
@@ -49,12 +49,12 @@ const AboutPage = () => {
                         transition={{ duration: 0.6 }}
                         className="max-w-4xl mx-auto"
                     >
-                        <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-10 md:p-14 shadow-lg border border-gray-100">
+                        <div className="bg-linear-to-br from-gray-50 to-brand-50 rounded-2xl p-10 md:p-14 shadow-lg border border-gray-100">
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                                 Welcome to Reach FMS
                             </h2>
                             <p className="text-lg text-gray-700 leading-relaxed">
-                                We would like to introduce ourselves as <span className="font-semibold text-blue-600">M/S REACH FACILITY MANAGEMENT SERVICE</span>,
+                                We would like to introduce ourselves as <span className="font-semibold text-brand-700">M/S REACH FACILITY MANAGEMENT SERVICE</span>,
                                 a leading professionally managed concern providing Facility management, Manpower Consultancy and Project Management.
                             </p>
                             <p className="text-lg text-gray-700 leading-relaxed mt-4">
@@ -69,7 +69,7 @@ const AboutPage = () => {
                                     'Repair and Maintenance'
                                 ].map((service, index) => (
                                     <li key={index} className="flex items-start gap-3">
-                                        <svg className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <svg className="w-6 h-6 text-brand-600 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
                                         <span className="text-gray-700">{service}</span>
@@ -85,7 +85,7 @@ const AboutPage = () => {
             </section>
 
             {/* Vision & Mission Section */}
-            <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+            <section className="py-20 bg-linear-to-br from-gray-50 to-brand-50">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid md:grid-cols-2 gap-8">
                         {/* Vision */}
@@ -94,10 +94,10 @@ const AboutPage = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="bg-white rounded-2xl p-8 md:p-10 shadow-xl hover:shadow-2xl transition-shadow duration-300 border-t-4 border-blue-600"
+                            className="bg-white rounded-2xl p-8 md:p-10 shadow-xl hover:shadow-2xl transition-shadow duration-300 border-t-4 border-brand-600"
                         >
                             <div className="flex items-center gap-4 mb-6">
-                                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-16 h-16 bg-linear-to-br from-brand-500 to-brand-600 rounded-full flex items-center justify-center flex-shrink-0">
                                     <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -106,7 +106,7 @@ const AboutPage = () => {
                                 <h2 className="text-3xl font-bold text-gray-900">Our Vision</h2>
                             </div>
                             <p className="text-gray-700 leading-relaxed text-lg">
-                                We at REACH FMS thrive to deliver <span className="font-semibold text-blue-600">cost effective & Customer centric</span> Housekeeping &
+                                We at REACH FMS thrive to deliver <span className="font-semibold text-brand-600">cost effective & Customer centric</span> Housekeeping &
                                 Facility Management solutions to help our business Partners & Society at large in building an
                                 <span className="font-semibold text-green-600"> eco-friendly and cleaner Environment</span>.
                             </p>
@@ -118,10 +118,10 @@ const AboutPage = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="bg-white rounded-2xl p-8 md:p-10 shadow-xl hover:shadow-2xl transition-shadow duration-300 border-t-4 border-indigo-600"
+                            className="bg-white rounded-2xl p-8 md:p-10 shadow-xl hover:shadow-2xl transition-shadow duration-300 border-t-4 border-brand-800"
                         >
                             <div className="flex items-center gap-4 mb-6">
-                                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                <div className="w-16 h-16 bg-linear-to-br from-brand-700 to-brand-800 rounded-full flex items-center justify-center flex-shrink-0">
                                     <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                                     </svg>
@@ -140,7 +140,7 @@ const AboutPage = () => {
                                     'High degree of Professionalism'
                                 ].map((point, index) => (
                                     <li key={index} className="flex items-center gap-3">
-                                        <div className="w-2 h-2 bg-indigo-600 rounded-full flex-shrink-0"></div>
+                                        <div className="w-2 h-2 bg-brand-600 rounded-full flex-shrink-0"></div>
                                         <span className="text-gray-700 font-medium">{point}</span>
                                     </li>
                                 ))}
@@ -164,7 +164,7 @@ const AboutPage = () => {
                         className="text-center mb-12"
                     >
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
-                        <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+                        <div className="w-24 h-1 bg-brand-600 mx-auto"></div>
                     </motion.div>
 
                     <div className="grid md:grid-cols-3 gap-6">
@@ -203,9 +203,9 @@ const AboutPage = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                                className="bg-linear-to-br from-gray-50 to-brand-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                             >
-                                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white mb-4 mx-auto">
+                                <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center text-white mb-4 mx-auto">
                                     {value.icon}
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">{value.title}</h3>
@@ -217,7 +217,7 @@ const AboutPage = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-16 bg-gradient-to-r from-blue-600 to-indigo-600">
+            <section className="py-16 bg-linear-to-r from-brand-600 to-brand-800">
                 <div className="max-w-7xl mx-auto px-6 text-center">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -228,12 +228,12 @@ const AboutPage = () => {
                         <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                             Ready to Work With Us?
                         </h2>
-                        <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+                        <p className="text-brand-100 text-lg mb-8 max-w-2xl mx-auto">
                             Get in touch with our team to discuss your facility management needs
                         </p>
                         <a
                             href="/#contact"
-                            className="inline-block bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                            className="inline-block bg-white text-brand-700 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl"
                         >
                             Contact Us Today
                         </a>

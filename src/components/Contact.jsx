@@ -101,12 +101,12 @@ const Contact = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-20 animate-fade-in-up">
-                    <span className="inline-flex items-center gap-2 px-3 py-1 bg-[#C1311C]/5 text-[#C1311C] rounded-full text-[11px] font-bold tracking-[0.2em] uppercase mb-6 border border-[#C1311C]/10">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#C1311C]"></span>
+                    <span className="inline-flex items-center gap-2 px-3 py-1 bg-brand-600/5 text-brand-600 rounded-full text-[11px] font-bold tracking-[0.2em] uppercase mb-6 border border-brand-600/10">
+                        <span className="w-1.5 h-1.5 rounded-full bg-brand-600"></span>
                         Get in Touch
                     </span>
-                    <h2 className="text-4xl lg:text-6xl font-bold text-[#623004] mb-6 tracking-tight">
-                        Let's Start a <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C1311C] to-[#C1311C]">Conversation.</span>
+                    <h2 className="text-4xl lg:text-6xl font-bold text-brand-900 mb-6 tracking-tight">
+                        Let's Start a <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-600 to-brand-600">Conversation.</span>
                     </h2>
                     <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
                         We are here to help you with all your facility management needs. Reach out to us for a personalized quote.
@@ -119,23 +119,23 @@ const Contact = () => {
                     <div className="xl:col-span-5 space-y-8 animate-fade-in-up delay-100">
                         {/* Address & Info Card */}
                         <div className="bg-white p-8 rounded-[2rem] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] border border-gray-100 relative overflow-hidden group">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-[#623004]/5 rounded-full blur-2xl -mr-10 -mt-10 transition-transform duration-500 group-hover:scale-150"></div>
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-900/5 rounded-full blur-2xl -mr-10 -mt-10 transition-transform duration-500 group-hover:scale-150"></div>
 
-                            <h3 className="font-bold text-[#623004] mb-8 text-xl relative z-10">Contact Information</h3>
+                            <h3 className="font-bold text-brand-900 mb-8 text-xl relative z-10">Contact Information</h3>
                             <div className="space-y-8 relative z-10">
                                 {mainContacts.map((info, index) => (
                                     <div key={index} className="flex gap-5 group/item">
-                                        <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-[#623004] shadow-sm border border-gray-100 shrink-0 group-hover/item:border-[#C1311C]/30 group-hover/item:text-[#C1311C] transition-all duration-300">
+                                        <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-brand-900 shadow-sm border border-gray-100 shrink-0 group-hover/item:border-brand-600/30 group-hover/item:text-brand-600 transition-all duration-300">
                                             {info.icon}
                                         </div>
                                         <div>
                                             <p className="text-xs text-gray-400 font-bold uppercase tracking-wider mb-1">{info.title}</p>
                                             {info.link ? (
-                                                <a href={info.link} className="text-[#623004] font-medium hover:text-[#C1311C] transition-colors leading-relaxed block">
+                                                <a href={info.link} className="text-brand-900 font-medium hover:text-brand-600 transition-colors leading-relaxed block">
                                                     {info.content}
                                                 </a>
                                             ) : (
-                                                <p className="text-[#623004] font-medium text-sm leading-relaxed text-balance">{info.content}</p>
+                                                <p className="text-brand-900 font-medium text-sm leading-relaxed text-balance">{info.content}</p>
                                             )}
                                         </div>
                                     </div>
@@ -145,7 +145,7 @@ const Contact = () => {
 
                         {/* Quick Message Form */}
                         <div className="bg-gray-50/50 p-8 rounded-[2rem] border border-gray-100 backdrop-blur-sm">
-                            <h3 className="font-bold text-[#623004] mb-6 text-xl">Quick Enquiry</h3>
+                            <h3 className="font-bold text-brand-900 mb-6 text-xl">Quick Enquiry</h3>
                             <form onSubmit={handleSubmit} className="space-y-4">
                                 <div>
                                     <input
@@ -153,7 +153,7 @@ const Contact = () => {
                                         value={formData.name}
                                         onChange={handleChange}
                                         placeholder="Your Name"
-                                        className="w-full px-5 py-4 bg-white border border-gray-200 rounded-xl text-sm font-medium text-[#623004] placeholder-gray-400 focus:ring-4 focus:ring-[#C1311C]/10 focus:border-[#C1311C] transition-all duration-300 outline-none"
+                                        className="w-full px-5 py-4 bg-white border border-gray-200 rounded-xl text-sm font-medium text-brand-900 placeholder-gray-400 focus:ring-4 focus:ring-brand-600/10 focus:border-brand-600 transition-all duration-300 outline-none"
                                         required
                                     />
                                 </div>
@@ -163,7 +163,7 @@ const Contact = () => {
                                         value={formData.phone}
                                         onChange={handleChange}
                                         placeholder="Phone Number"
-                                        className="w-full px-5 py-4 bg-white border border-gray-200 rounded-xl text-sm font-medium text-[#623004] placeholder-gray-400 focus:ring-4 focus:ring-[#C1311C]/10 focus:border-[#C1311C] transition-all duration-300 outline-none"
+                                        className="w-full px-5 py-4 bg-white border border-gray-200 rounded-xl text-sm font-medium text-brand-900 placeholder-gray-400 focus:ring-4 focus:ring-brand-600/10 focus:border-brand-600 transition-all duration-300 outline-none"
                                         required
                                     />
                                 </div>
@@ -174,11 +174,11 @@ const Contact = () => {
                                         onChange={handleChange}
                                         placeholder="How can we help you?"
                                         rows={3}
-                                        className="w-full px-5 py-4 bg-white border border-gray-200 rounded-xl text-sm font-medium text-[#623004] placeholder-gray-400 focus:ring-4 focus:ring-[#C1311C]/10 focus:border-[#C1311C] transition-all duration-300 outline-none resize-none"
+                                        className="w-full px-5 py-4 bg-white border border-gray-200 rounded-xl text-sm font-medium text-brand-900 placeholder-gray-400 focus:ring-4 focus:ring-brand-600/10 focus:border-brand-600 transition-all duration-300 outline-none resize-none"
                                         required
                                     />
                                 </div>
-                                <button type="submit" className="w-full py-4 bg-[#623004] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 hover:bg-[#162c46] transition-all duration-300 text-sm tracking-wide">
+                                <button type="submit" className="w-full py-4 bg-brand-900 text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 hover:bg-brand-950 transition-all duration-300 text-sm tracking-wide">
                                     Send Message
                                 </button>
                             </form>
@@ -199,19 +199,19 @@ const Contact = () => {
                             <div className="grid md:grid-cols-2 gap-4">
                                 {personnel.map((person, index) => (
                                     <div key={index} className={`group p-6 rounded-2xl border transition-all duration-300 ${person.highlight
-                                        ? 'bg-white border-gray-100 shadow-sm hover:border-[#C1311C]/30 hover:shadow-lg'
+                                        ? 'bg-white border-gray-100 shadow-sm hover:border-brand-600/30 hover:shadow-lg'
                                         : 'bg-gray-50 border-transparent hover:bg-white hover:border-gray-100 hover:shadow-md'}`}>
 
                                         <div className="flex justify-between items-start mb-2">
-                                            <p className={`text-[10px] font-bold uppercase tracking-widest ${person.highlight ? 'text-[#C1311C]' : 'text-gray-400'}`}>
+                                            <p className={`text-[10px] font-bold uppercase tracking-widest ${person.highlight ? 'text-brand-600' : 'text-gray-400'}`}>
                                                 {person.role}
                                             </p>
-                                            {person.highlight && <div className="w-2 h-2 rounded-full bg-[#C1311C]"></div>}
+                                            {person.highlight && <div className="w-2 h-2 rounded-full bg-brand-600"></div>}
                                         </div>
 
-                                        <h4 className="text-lg font-bold text-[#623004] mb-3">{person.name}</h4>
+                                        <h4 className="text-lg font-bold text-brand-900 mb-3">{person.name}</h4>
 
-                                        <a href={`tel:${person.phone}`} className="inline-flex items-center gap-2 text-sm text-gray-500 font-medium group-hover:text-[#C1311C] transition-colors">
+                                        <a href={`tel:${person.phone}`} className="inline-flex items-center gap-2 text-sm text-gray-500 font-medium group-hover:text-brand-600 transition-colors">
                                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                             </svg>
@@ -230,10 +230,10 @@ const Contact = () => {
                                     {emails.map((email, idx) => (
                                         <li key={idx}>
                                             <a href={`mailto:${email}`} className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors group">
-                                                <div className="w-8 h-8 rounded-full bg-[#623004]/5 flex items-center justify-center text-[#623004] group-hover:bg-[#623004] group-hover:text-white transition-all duration-300">
+                                                <div className="w-8 h-8 rounded-full bg-brand-900/5 flex items-center justify-center text-brand-900 group-hover:bg-brand-900 group-hover:text-white transition-all duration-300">
                                                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                                                 </div>
-                                                <span className="text-sm font-medium text-gray-600 group-hover:text-[#623004]">{email}</span>
+                                                <span className="text-sm font-medium text-gray-600 group-hover:text-brand-900">{email}</span>
                                             </a>
                                         </li>
                                     ))}
@@ -245,12 +245,12 @@ const Contact = () => {
                                 <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest">Technical Support</h3>
                                 <div className="space-y-3">
                                     {technicalTeam.map((tech, index) => (
-                                        <div key={index} className="flex items-center justify-between p-4 bg-white rounded-xl border border-gray-100 shadow-sm hover:border-[#C1311C]/30 transition-all duration-300">
+                                        <div key={index} className="flex items-center justify-between p-4 bg-white rounded-xl border border-gray-100 shadow-sm hover:border-brand-600/30 transition-all duration-300">
                                             <div>
                                                 <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-0.5">{tech.role}</p>
-                                                <h4 className="font-bold text-[#623004] text-sm">{tech.name}</h4>
+                                                <h4 className="font-bold text-brand-900 text-sm">{tech.name}</h4>
                                             </div>
-                                            <a href={`tel:${tech.phone}`} className="w-8 h-8 rounded-full bg-[#C1311C]/10 flex items-center justify-center text-[#C1311C] hover:bg-[#C1311C] hover:text-white transition-all">
+                                            <a href={`tel:${tech.phone}`} className="w-8 h-8 rounded-full bg-brand-600/10 flex items-center justify-center text-brand-600 hover:bg-brand-600 hover:text-white transition-all">
                                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                                             </a>
                                         </div>

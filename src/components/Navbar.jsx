@@ -92,7 +92,7 @@ const Navbar = () => {
                                 >
                                     <button
                                         className={`px-4 py-2 text-[13px] font-bold tracking-wide rounded-full transition-all duration-300 flex items-center gap-1 ${isScrolled || location.pathname !== '/'
-                                            ? 'text-gray-600 hover:text-[#623004] hover:bg-gray-50'
+                                            ? 'text-gray-600 hover:text-brand-900 hover:bg-gray-50'
                                             : 'text-white/90 hover:text-white hover:bg-white/10'
                                             }`}
                                     >
@@ -114,7 +114,7 @@ const Navbar = () => {
                                                     setServicesDropdownOpen(false);
                                                     handleNavigation(e, subItem.href);
                                                 }}
-                                                className="block px-5 py-3 text-sm font-semibold text-gray-700 hover:bg-linear-to-r hover:from-[#623004] hover:to-[#C1311C] hover:text-white transition-all duration-200"
+                                                className="block px-5 py-3 text-sm font-semibold text-gray-700 hover:bg-linear-to-r hover:from-brand-900 hover:to-brand-600 hover:text-white transition-all duration-200"
                                             >
                                                 {subItem.name}
                                             </a>
@@ -128,7 +128,7 @@ const Navbar = () => {
                                     href={item.href}
                                     onClick={(e) => handleNavigation(e, item.href)}
                                     className={`px-4 py-2 text-[13px] font-bold tracking-wide rounded-full transition-all duration-300 ${isScrolled || location.pathname !== '/'
-                                        ? 'text-gray-600 hover:text-[#623004] hover:bg-gray-50'
+                                        ? 'text-gray-600 hover:text-brand-900 hover:bg-gray-50'
                                         : 'text-white/90 hover:text-white hover:bg-white/10'
                                         }`}
                                 >
@@ -139,8 +139,8 @@ const Navbar = () => {
                         <button
                             onClick={(e) => handleNavigation(e, '/#contact')}
                             className={`ml-6 px-7 py-3 rounded-full font-bold text-xs tracking-widest uppercase transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 ${isScrolled || location.pathname !== '/'
-                                ? 'bg-[#623004] text-white hover:bg-[#162c46]'
-                                : 'bg-white text-[#623004] hover:bg-gray-50'
+                                ? 'bg-brand-900 text-white hover:bg-brand-950'
+                                : 'bg-white text-brand-900 hover:bg-gray-50'
                                 }`}
                         >
                             Get Quote
@@ -151,7 +151,7 @@ const Navbar = () => {
                     <div className="lg:hidden">
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className={`p-2.5 rounded-xl transition-all duration-300 ${isScrolled || location.pathname !== '/' ? 'text-[#623004] bg-gray-50' : 'text-white bg-white/10 backdrop-blur-md'
+                            className={`p-2.5 rounded-xl transition-all duration-300 ${isScrolled || location.pathname !== '/' ? 'text-brand-900 bg-gray-50' : 'text-white bg-white/10 backdrop-blur-md'
                                 }`}
                         >
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -177,7 +177,7 @@ const Navbar = () => {
                                 <div key={item.name}>
                                     <button
                                         onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                                        className="w-full flex items-center justify-between px-6 py-4 text-sm font-bold text-gray-700 hover:text-[#C1311C] hover:bg-red-50/50 rounded-xl transition-all duration-200 border border-transparent hover:border-red-100/50"
+                                        className="w-full flex items-center justify-between px-6 py-4 text-sm font-bold text-gray-700 hover:text-brand-600 hover:bg-brand-50/50 rounded-xl transition-all duration-200 border border-transparent hover:border-brand-100/50"
                                     >
                                         <span>{item.name}</span>
                                         <svg className={`w-4 h-4 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -195,7 +195,7 @@ const Navbar = () => {
                                                         handleNavigation(e, subItem.href);
                                                         setServicesDropdownOpen(false);
                                                     }}
-                                                    className="block px-6 py-3 text-sm font-semibold text-gray-600 hover:text-[#C1311C] hover:bg-red-50/50 rounded-lg transition-all duration-200"
+                                                    className="block px-6 py-3 text-sm font-semibold text-gray-600 hover:text-brand-600 hover:bg-brand-50/50 rounded-lg transition-all duration-200"
                                                 >
                                                     {subItem.name}
                                                 </a>
@@ -209,7 +209,7 @@ const Navbar = () => {
                                     key={item.name}
                                     href={item.href}
                                     onClick={(e) => handleNavigation(e, item.href)}
-                                    className="block px-6 py-4 text-sm font-bold text-gray-700 hover:text-[#C1311C] hover:bg-red-50/50 rounded-xl transition-all duration-200 border border-transparent hover:border-red-100/50"
+                                    className="block px-6 py-4 text-sm font-bold text-gray-700 hover:text-brand-600 hover:bg-brand-50/50 rounded-xl transition-all duration-200 border border-transparent hover:border-brand-100/50"
                                 >
                                     {item.name}
                                 </a>
@@ -218,7 +218,7 @@ const Navbar = () => {
                         <div className="p-2 pt-4 border-t border-gray-100 mt-2">
                             <button
                                 onClick={(e) => handleNavigation(e, '/#contact')}
-                                className="block w-full py-4 text-center bg-[#623004] text-white font-bold rounded-xl hover:bg-[#162c46] shadow-lg hover:shadow-xl transition-all active:scale-[0.98]"
+                                className="block w-full py-4 text-center bg-brand-900 text-white font-bold rounded-xl hover:bg-brand-950 shadow-lg hover:shadow-xl transition-all active:scale-[0.98]"
                             >
                                 Get Quote
                             </button>

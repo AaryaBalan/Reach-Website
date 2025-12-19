@@ -3,7 +3,7 @@ import logo from '../assets/reach-logo.png';
 
 const Footer = () => {
     return (
-        <footer className="bg-[#623004] text-white font-['Poppins'] pt-16 pb-8">
+        <footer className="bg-brand-900 text-white font-['Poppins'] pt-16 pb-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid md:grid-cols-4 gap-12 mb-12">
 
@@ -13,7 +13,7 @@ const Footer = () => {
                             <img src={logo} alt="Reach Facility Management" className="h-12 w-auto object-contain bg-white rounded-lg p-1" />
                             <div>
                                 <h3 className="font-bold text-xl tracking-wide leading-none">REACH</h3>
-                                <p className="text-[#C1311C] text-[10px] tracking-[0.2em] font-bold">FACILITY MANAGEMENT</p>
+                                <p className="text-brand-600 text-[10px] tracking-[0.2em] font-bold">FACILITY MANAGEMENT</p>
                             </div>
                         </div>
                         <p className="text-white/80 leading-relaxed max-w-sm">

@@ -34,11 +34,11 @@ const FAQ = () => {
 
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <span className="inline-block px-4 py-1.5 bg-[#C1311C]/10 text-[#C1311C] rounded-full text-xs font-bold tracking-widest uppercase mb-4">
+                    <span className="inline-block px-4 py-1.5 bg-brand-600/10 text-brand-600 rounded-full text-xs font-bold tracking-widest uppercase mb-4">
                         Questions & Answers
                     </span>
-                    <h2 className="text-4xl lg:text-5xl font-bold text-[#623004] mb-6">
-                        Frequently Asked <span className="text-[#C1311C]">Questions</span>
+                    <h2 className="text-4xl lg:text-5xl font-bold text-brand-900 mb-6">
+                        Frequently Asked <span className="text-brand-600">Questions</span>
                     </h2>
                     <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
                         Learn more about what makes Reach FMS the preferred choice for facility management.
@@ -51,18 +51,18 @@ const FAQ = () => {
                         <div
                             key={index}
                             className={`bg-white rounded-2xl border transition-all duration-300 overflow-hidden
-                                ${openIndex === index ? 'border-[#C1311C]/30 shadow-lg' : 'border-gray-100 hover:border-gray-200'}
+                                ${openIndex === index ? 'border-brand-600/30 shadow-lg' : 'border-gray-100 hover:border-gray-200'}
                             `}
                         >
                             <button
                                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
                                 className="w-full flex items-center justify-between p-6 text-left"
                             >
-                                <span className={`font-bold text-lg ${openIndex === index ? 'text-[#623004]' : 'text-gray-700'}`}>
+                                <span className={`font-bold text-lg ${openIndex === index ? 'text-brand-900' : 'text-gray-700'}`}>
                                     {faq.question}
                                 </span>
                                 <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-all duration-300
-                                    ${openIndex === index ? 'bg-[#C1311C] text-white rotate-180' : 'bg-gray-100 text-gray-500'}
+                                    ${openIndex === index ? 'bg-brand-600 text-white rotate-180' : 'bg-gray-100 text-gray-500'}
                                 `}>
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -76,7 +76,7 @@ const FAQ = () => {
                                         <ul className="grid sm:grid-cols-2 gap-3">
                                             {faq.answer.map((item, idx) => (
                                                 <li key={idx} className="flex items-center gap-3 text-gray-600">
-                                                    <svg className="w-5 h-5 text-[#C1311C] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <svg className="w-5 h-5 text-brand-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                                     </svg>
                                                     {item}
