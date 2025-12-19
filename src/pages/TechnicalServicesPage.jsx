@@ -4,23 +4,25 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { technicalServices } from '../data/serviceContent'
 
-// Using placeholder images since specific technical service images weren't provided
-// We can reuse some assets or use a generic technical background
-import imgTechnical from '../assets/carousel-3.jpg' // Placeholder generic
-import imgElectrical from '../assets/carousel-5.jpg' // Placeholder
-import imgAC from '../assets/carousel-4.png' // Placeholder
+// Importing new high-quality technical service images
+import imgElectroMechanical from '../assets/tech-electro-mechanical.png'
+import imgElectrical from '../assets/tech-electrical.png'
+import imgAC from '../assets/tech-ac.png'
+import imgPlumbing from '../assets/tech-plumbing.png'
+import imgCarpentry from '../assets/tech-carpentry.png'
+import imgSTP from '../assets/tech-plumbing.png' // Reusing plumbing for STP/WTP as it's related to water treatment
 
 const TechnicalServicesPage = () => {
     const [activeService, setActiveService] = useState('electroMechanical')
 
     // Map service keys to images and icons
     const servicesMap = {
-        electroMechanical: { ...technicalServices.electroMechanical, image: imgTechnical, icon: '⚙️' },
+        electroMechanical: { ...technicalServices.electroMechanical, image: imgElectroMechanical, icon: '⚙️' },
         electrical: { ...technicalServices.electrical, image: imgElectrical, icon: '⚡' },
         acServices: { ...technicalServices.acServices, image: imgAC, icon: '❄️' },
-        plumbing: { ...technicalServices.plumbing, image: imgTechnical, icon: '🚿' },
-        carpentry: { ...technicalServices.carpentry, image: imgTechnical, icon: '🔨' },
-        stpWtp: { ...technicalServices.stpWtp, image: imgTechnical, icon: '💧' }
+        plumbing: { ...technicalServices.plumbing, image: imgPlumbing, icon: '🚿' },
+        carpentry: { ...technicalServices.carpentry, image: imgCarpentry, icon: '🔨' },
+        stpWtp: { ...technicalServices.stpWtp, image: imgSTP, icon: '💧' }
     }
 
     const serviceKeys = Object.keys(servicesMap)
