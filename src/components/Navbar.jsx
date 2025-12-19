@@ -67,7 +67,7 @@ const Navbar = () => {
     return (
         <>
             <nav
-                className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 font-['Poppins'] ${isScrolled || location.pathname !== '/'
+                className={`fixed top-0 left-0 right-0 z-1000 transition-all duration-500 font-['Poppins'] ${isScrolled || location.pathname !== '/'
                     ? 'bg-white/90 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.03)] border-b border-white/20 py-3'
                     : 'bg-transparent py-5'
                     }`}

@@ -40,7 +40,7 @@ const SoftServicesPage = () => {
             <Navbar />
 
             {/* Cinematic Hero Section */}
-            <section className="relative h-[60vh] min-h-125 flex items-center justify-center overflow-hidden bg-gray-900">
+            <section className="relative h-[40vh] min-h-75 md:h-[60vh] md:min-h-125 flex items-center justify-center overflow-hidden bg-gray-900">
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/60 to-neutral-50 z-10"></div>
                     <motion.img
@@ -53,19 +53,19 @@ const SoftServicesPage = () => {
                     />
                 </div>
 
-                <div className="relative z-20 text-center px-6 max-w-5xl mx-auto">
+                <div className="relative z-20 text-center px-4 md:px-6 max-w-5xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="inline-block py-1 px-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/90 text-sm font-medium tracking-wider uppercase mb-6">
+                        <span className="inline-block py-1 px-2 md:px-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/90 text-xs md:text-sm font-medium tracking-wider uppercase mb-4 md:mb-6">
                             Premium Facility Management
                         </span>
-                        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+                        <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white mb-4 md:mb-6 tracking-tight">
                             Soft Services
                         </h1>
-                        <p className="text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed font-light">
+                        <p className="text-base md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed font-light">
                             Elevating your environment with professional, reliable, and comprehensive service solutions.
                         </p>
                     </motion.div>
@@ -73,14 +73,14 @@ const SoftServicesPage = () => {
             </section>
 
             {/* Main Content Area */}
-            <section className="relative z-30 -mt-20 pb-12 md:pb-24 px-6">
+            <section className="relative z-30 -mt-10 md:-mt-20 pb-8 md:pb-24 px-4 md:px-6">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid lg:grid-cols-12 gap-8">
+                    <div className="grid lg:grid-cols-12 gap-6 md:gap-8">
 
                         {/* Sidebar Navigation */}
                         <div className="lg:col-span-4">
                             <div className="bg-white rounded-2xl shadow-xl shadow-gray-200/50 overflow-hidden sticky top-24">
-                                <div className="p-6 bg-gray-50 border-b border-gray-100">
+                                <div className="p-4 md:p-6 bg-gray-50 border-b border-gray-100">
                                     <h3 className="text-lg font-bold text-gray-800">Our Services</h3>
                                 </div>
                                 <div className="p-2 max-h-[70vh] overflow-y-auto custom-scrollbar">
@@ -88,15 +88,15 @@ const SoftServicesPage = () => {
                                         <button
                                             key={key}
                                             onClick={() => setActiveService(key)}
-                                            className={`w-full text-left p-4 rounded-xl flex items-center gap-4 transition-all duration-300 group ${activeService === key
+                                            className={`w-full text-left p-3 md:p-4 rounded-xl flex items-center gap-3 md:gap-4 transition-all duration-300 group ${activeService === key
                                                 ? 'bg-brand-900 text-white shadow-lg'
                                                 : 'hover:bg-brand-50 text-gray-600'
                                                 }`}
                                         >
-                                            <span className={`text-2xl transition-transform duration-300 ${activeService === key ? 'scale-110' : 'group-hover:scale-110'}`}>
+                                            <span className={`text-xl md:text-2xl transition-transform duration-300 ${activeService === key ? 'scale-110' : 'group-hover:scale-110'}`}>
                                                 {servicesMap[key].icon}
                                             </span>
-                                            <span className={`font-semibold ${activeService === key ? 'text-white' : 'text-gray-700'}`}>
+                                            <span className={`font-semibold text-sm md:text-base ${activeService === key ? 'text-white' : 'text-gray-700'}`}>
                                                 {servicesMap[key].title}
                                             </span>
                                             {activeService === key && (
@@ -123,31 +123,31 @@ const SoftServicesPage = () => {
                                     className="bg-white rounded-3xl shadow-xl shadow-gray-200/50 overflow-hidden"
                                 >
                                     {/* Service Image Banner */}
-                                    <div className="relative h-64 md:h-80 overflow-hidden group">
+                                    <div className="relative h-48 md:h-80 overflow-hidden group">
                                         <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent z-10"></div>
                                         <img
                                             src={servicesMap[activeService].image}
                                             alt={servicesMap[activeService].title}
                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                         />
-                                        <div className="absolute bottom-0 left-0 p-8 z-20">
-                                            <div className="flex items-center gap-3 mb-2">
-                                                <span className="text-4xl">{servicesMap[activeService].icon}</span>
-                                                <h2 className="text-3xl md:text-4xl font-bold text-white">
+                                        <div className="absolute bottom-0 left-0 p-5 md:p-8 z-20">
+                                            <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-2">
+                                                <span className="text-2xl md:text-4xl">{servicesMap[activeService].icon}</span>
+                                                <h2 className="text-2xl md:text-4xl font-bold text-white">
                                                     {servicesMap[activeService].title}
                                                 </h2>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div className="p-8 md:p-10">
+                                    <div className="p-5 md:p-10">
                                         {/* Short Description */}
-                                        <div className="text-xl text-gray-600 font-medium mb-8 leading-relaxed border-l-4 border-brand-500 pl-6">
+                                        <div className="text-lg md:text-xl text-gray-600 font-medium mb-6 md:mb-8 leading-relaxed border-l-4 border-brand-500 pl-4 md:pl-6">
                                             {servicesMap[activeService].shortDesc}
                                         </div>
 
                                         {/* Full Content */}
-                                        <div className="prose prose-lg max-w-none text-gray-600">
+                                        <div className="prose prose-lg max-w-none text-gray-600 text-sm md:text-base">
                                             <div className="whitespace-pre-line leading-relaxed">
                                                 {servicesMap[activeService].fullContent}
                                             </div>
@@ -155,17 +155,17 @@ const SoftServicesPage = () => {
 
                                         {/* Categories / Features Grid */}
                                         {servicesMap[activeService].categories && (
-                                            <div className="mt-10 grid md:grid-cols-2 gap-6">
+                                            <div className="mt-8 md:mt-10 grid md:grid-cols-2 gap-4 md:gap-6">
                                                 {servicesMap[activeService].categories.map((category, idx) => (
-                                                    <div key={idx} className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
-                                                        <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                                            <div className="w-2 h-2 rounded-full bg-brand-500"></div>
+                                                    <div key={idx} className="bg-gray-50 rounded-2xl p-4 md:p-6 border border-gray-100 hover:shadow-md transition-shadow">
+                                                        <h4 className="text-base md:text-lg font-bold text-gray-900 mb-3 md:mb-4 flex items-center gap-2">
+                                                            <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-brand-500"></div>
                                                             {category.title}
                                                         </h4>
-                                                        <ul className="space-y-3">
+                                                        <ul className="space-y-2 md:space-y-3">
                                                             {category.items.map((item, i) => (
-                                                                <li key={i} className="flex items-start gap-3 text-sm text-gray-600">
-                                                                    <svg className="w-5 h-5 text-brand-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <li key={i} className="flex items-start gap-2 md:gap-3 text-sm text-gray-600">
+                                                                    <svg className="w-4 h-4 md:w-5 md:h-5 text-brand-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                                                     </svg>
                                                                     {item}
@@ -178,15 +178,15 @@ const SoftServicesPage = () => {
                                         )}
 
                                         {servicesMap[activeService].services && (
-                                            <div className="mt-10">
-                                                <h4 className="text-xl font-bold text-gray-900 mb-6">Our Services Include:</h4>
-                                                <div className="grid md:grid-cols-2 gap-4">
+                                            <div className="mt-8 md:mt-10">
+                                                <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-4 md:mb-6">Our Services Include:</h4>
+                                                <div className="grid md:grid-cols-2 gap-3 md:gap-4">
                                                     {servicesMap[activeService].services.map((service, idx) => (
-                                                        <div key={idx} className="flex items-start gap-3 p-4 rounded-xl bg-gray-50 border border-gray-100">
-                                                            <div className="w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 flex-shrink-0 font-bold text-sm">
+                                                        <div key={idx} className="flex items-start gap-2 md:gap-3 p-3 md:p-4 rounded-xl bg-gray-50 border border-gray-100">
+                                                            <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 flex-shrink-0 font-bold text-xs md:text-sm">
                                                                 {idx + 1}
                                                             </div>
-                                                            <span className="text-gray-700 font-medium">{service}</span>
+                                                            <span className="text-gray-700 font-medium text-sm md:text-base">{service}</span>
                                                         </div>
                                                     ))}
                                                 </div>
@@ -194,13 +194,13 @@ const SoftServicesPage = () => {
                                         )}
 
                                         {/* CTA Button */}
-                                        <div className="mt-12 pt-8 border-t border-gray-100 flex justify-end">
+                                        <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-gray-100 flex justify-end">
                                             <a
                                                 href="/#contact"
-                                                className="inline-flex items-center gap-2 bg-brand-900 text-white px-8 py-4 rounded-full font-semibold hover:bg-brand-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+                                                className="inline-flex items-center gap-2 bg-brand-900 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:bg-brand-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-sm md:text-base"
                                             >
                                                 <span>Get a Quote</span>
-                                                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                                 </svg>
                                             </a>

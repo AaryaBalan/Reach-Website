@@ -101,24 +101,24 @@ const Services = () => {
     };
 
     return (
-        <section id="services" className="py-12 md:py-24 bg-gray-50 font-['Poppins']">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <section id="services" className="py-8 md:py-24 bg-gray-50 font-['Poppins']">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
 
                 {/* Header */}
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <span className="inline-block px-4 py-1.5 bg-brand-600/10 text-brand-600 rounded-full text-xs font-bold tracking-widest uppercase mb-4">
+                <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
+                    <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 bg-brand-600/10 text-brand-600 rounded-full text-xs font-bold tracking-widest uppercase mb-3 md:mb-4">
                         Our Expertise
                     </span>
-                    <h2 className="text-4xl lg:text-5xl font-bold text-brand-900 mb-6">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-900 mb-4 md:mb-6">
                         Premimum <span className="text-brand-600">Services</span>
                     </h2>
-                    <p className="text-gray-500 text-lg leading-relaxed">
+                    <p className="text-gray-500 text-base md:text-lg leading-relaxed">
                         Click on any service to explore our comprehensive facility solutions.
                     </p>
                 </div>
 
                 {/* Expanding Cards Container */}
-                <div className="flex flex-col lg:flex-row min-h-[1000px] lg:min-h-[500px] lg:h-[500px] gap-4 w-full">
+                <div className="flex flex-col lg:flex-row min-h-[800px] lg:min-h-[500px] lg:h-[500px] gap-3 md:gap-4 w-full">
                     {services.map((service) => (
                         <div
                             key={service.id}
@@ -142,27 +142,27 @@ const Services = () => {
                             <div className={`absolute inset-0 flex flex-col items-center justify-center p-4 transition-all duration-500
                                 ${activeId === service.id ? 'opacity-0 translate-y-20 pointer-events-none' : 'opacity-100 translate-y-0'}
                             `}>
-                                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-brand-900 mb-4">
+                                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gray-100 flex items-center justify-center text-brand-900 mb-3 md:mb-4">
                                     {service.icon}
                                 </div>
                                 <h3
-                                    className="text-lg font-bold text-brand-900 lg:rotate-180 whitespace-nowrap lg:mt-4 lg:[writing-mode:vertical-rl]"
+                                    className="text-base md:text-lg font-bold text-brand-900 lg:rotate-180 whitespace-nowrap lg:mt-4 lg:[writing-mode:vertical-rl]"
                                 >
                                     {service.title}
                                 </h3>
                             </div>
 
                             {/* Active Content */}
-                            <div className={`absolute bottom-0 left-0 right-0 p-8 text-white transition-all duration-700 delay-200
+                            <div className={`absolute bottom-0 left-0 right-0 p-5 md:p-8 text-white transition-all duration-700 delay-200
                                 ${activeId === service.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
                             `}>
-                                <div className="flex items-center gap-4 mb-4">
-                                    <div className="w-12 h-12 rounded-xl bg-brand-600 flex items-center justify-center text-white shadow-lg shadow-brand-600/30">
+                                <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-brand-600 flex items-center justify-center text-white shadow-lg shadow-brand-600/30">
                                         {service.icon}
                                     </div>
-                                    <h3 className="text-3xl font-bold">{service.title}</h3>
+                                    <h3 className="text-2xl md:text-3xl font-bold">{service.title}</h3>
                                 </div>
-                                <p className="text-gray-200 text-lg leading-relaxed max-w-xl mb-6">
+                                <p className="text-gray-200 text-sm md:text-lg leading-relaxed max-w-xl mb-4 md:mb-6">
                                     {service.desc}
                                 </p>
                                 <button
@@ -170,7 +170,7 @@ const Services = () => {
                                         e.stopPropagation();
                                         handleLearnMore(service.route);
                                     }}
-                                    className="px-6 py-2.5 bg-white text-brand-900 font-bold rounded-lg hover:bg-brand-600 hover:text-white transition-colors duration-300"
+                                    className="px-5 py-2 md:px-6 md:py-2.5 bg-white text-brand-900 font-bold rounded-lg hover:bg-brand-600 hover:text-white transition-colors duration-300 text-sm md:text-base"
                                 >
                                     Learn More
                                 </button>
