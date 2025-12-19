@@ -49,7 +49,7 @@ const AboutPage = () => {
                         transition={{ duration: 0.6 }}
                         className="max-w-4xl mx-auto"
                     >
-                        <div className="bg-linear-to-br from-gray-50 to-brand-50 rounded-2xl p-10 md:p-14 shadow-lg border border-gray-100">
+                        <div className="bg-linear-to-br from-gray-50 to-brand-50 rounded-2xl p-6 md:p-14 shadow-lg border border-gray-100">
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                                 Welcome to Reach FMS
                             </h2>
@@ -94,7 +94,7 @@ const AboutPage = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="bg-white rounded-2xl p-8 md:p-10 shadow-xl hover:shadow-2xl transition-shadow duration-300 border-t-4 border-brand-600"
+                            className="bg-white rounded-2xl p-6 md:p-10 shadow-xl hover:shadow-2xl transition-shadow duration-300 border-t-4 border-brand-600"
                         >
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="w-16 h-16 bg-linear-to-br from-brand-500 to-brand-600 rounded-full flex items-center justify-center flex-shrink-0">
@@ -118,7 +118,7 @@ const AboutPage = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
-                            className="bg-white rounded-2xl p-8 md:p-10 shadow-xl hover:shadow-2xl transition-shadow duration-300 border-t-4 border-brand-800"
+                            className="bg-white rounded-2xl p-6 md:p-10 shadow-xl hover:shadow-2xl transition-shadow duration-300 border-t-4 border-brand-800"
                         >
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="w-16 h-16 bg-linear-to-br from-brand-700 to-brand-800 rounded-full flex items-center justify-center flex-shrink-0">
@@ -203,7 +203,7 @@ const AboutPage = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="bg-linear-to-br from-gray-50 to-brand-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                                className="bg-linear-to-br from-gray-50 to-brand-50 rounded-xl p-6 md:p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
                             >
                                 <div className="w-16 h-16 bg-brand-600 rounded-full flex items-center justify-center text-white mb-4 mx-auto">
                                     {value.icon}

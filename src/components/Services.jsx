@@ -118,7 +118,7 @@ const Services = () => {
                 </div>
 
                 {/* Expanding Cards Container */}
-                <div className="flex flex-col lg:flex-row min-h-[800px] lg:min-h-[500px] lg:h-[500px] gap-4 w-full">
+                <div className="flex flex-col lg:flex-row min-h-[1000px] lg:min-h-[500px] lg:h-[500px] gap-4 w-full">
                     {services.map((service) => (
                         <div
                             key={service.id}

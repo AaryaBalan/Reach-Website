@@ -2,13 +2,13 @@ import React from 'react';
 
 const Welcome = () => {
     return (
-        <section className="py-16 md:py-24 bg-gray-50 font-['Poppins']">
+        <section className="py-16 md:py-24 bg-gray-50 font-['Poppins'] overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-                    <div className="relative">
+                    <div className="relative mb-12 lg:mb-0">
                         <div className="absolute -inset-4 bg-brand-600/10 rounded-tr-[4rem] rounded-bl-[4rem]"></div>
-                        <div className="relative bg-white p-8 lg:p-12 rounded-tr-[3rem] rounded-bl-[3rem] shadow-xl border border-gray-100">
+                        <div className="relative bg-white p-6 md:p-8 lg:p-12 rounded-tr-[3rem] rounded-bl-[3rem] shadow-xl border border-gray-100">
                             <h2 className="text-3xl lg:text-5xl font-bold text-[#623004] mb-6 leading-tight">
                                 Cleanliness is <br />
                                 <span className="text-brand-600">Power.</span>
@@ -31,7 +31,7 @@ const Welcome = () => {
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100 hover:border-brand-600 transition-colors group">
                                 <div className="w-12 h-12 bg-brand-600/10 rounded-lg flex items-center justify-center mb-4 text-brand-600">
                                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

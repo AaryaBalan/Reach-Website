@@ -242,8 +242,8 @@ const RepairMaintenancePage = () => {
                                 `}>
                                     {service.roles.length === 0 && (
                                         <>
-                                            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-brand-600/20 rounded-full blur-[80px] group-hover:scale-110 transition-transform duration-700"></div>
-                                            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-black/20 rounded-full blur-[60px]"></div>
+                                            <div className="absolute top-0 right-0 w-64 h-64 md:w-100 md:h-100 bg-brand-600/20 rounded-full blur-[60px] md:blur-[80px] group-hover:scale-110 transition-transform duration-700"></div>
+                                            <div className="absolute bottom-0 left-0 w-48 h-48 md:w-75 md:h-75 bg-black/20 rounded-full blur-2xl md:blur-[60px]"></div>
                                         </>
                                     )}
 
@@ -277,7 +277,7 @@ const RepairMaintenancePage = () => {
             {/* Footer CTA */}
             <div className="py-32 relative overflow-hidden bg-black">
                 <div className="absolute inset-0 bg-linear-to-br from-brand-900 to-black opacity-80"></div>
-                <div className="absolute -top-[20%] left-[20%] w-[600px] h-[600px] bg-brand-600 rounded-full blur-[150px] opacity-20 animate-pulse"></div>
+                <div className="absolute -top-[20%] left-[20%] w-72 h-72 md:w-150 md:h-150 bg-brand-600 rounded-full blur-[80px] md:blur-[150px] opacity-20 animate-pulse"></div>
 
                 <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
                     <motion.h2

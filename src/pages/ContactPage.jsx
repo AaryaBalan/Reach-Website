@@ -72,7 +72,7 @@ const ContactPage = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <div className="bg-linear-to-br from-gray-50 to-brand-50 rounded-2xl p-8 md:p-10 shadow-xl">
+                            <div className="bg-linear-to-br from-gray-50 to-brand-50 rounded-2xl p-6 md:p-10 shadow-xl">
                                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Send us a Message</h2>
                                 <form onSubmit={handleSubmit} className="space-y-6">
                                     <div>

@@ -32,7 +32,7 @@ const Hero = () => {
     };
 
     return (
-        <section id="home" className="relative h-screen flex items-center overflow-hidden font-['Poppins']">
+        <section id="home" className="relative min-h-[100dvh] flex items-center overflow-hidden font-['Poppins']">
             {/* Background Image Carousel with Ken Burns Effect */}
             <div className="absolute inset-0 bg-black">
                 {slides.map((slide, index) => (
@@ -57,7 +57,7 @@ const Hero = () => {
             </div>
 
             {/* Content */}
-            <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-16">
+            <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-24 md:pt-32 pb-12">
                 <div className="max-w-4xl">
                     {/* Badge */}
                     <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-8 animate-fade-in-up hover:bg-white/15 transition-colors cursor-default">
@@ -69,7 +69,7 @@ const Hero = () => {
                     </div>
 
                     {/* Main heading - Apple Style Typography */}
-                    <h1 className="text-5xl sm:text-7xl lg:text-[5.5rem] font-extrabold text-white leading-[1.1] mb-8 animate-fade-in-up delay-100 tracking-tight">
+                    <h1 className="text-4xl sm:text-6xl lg:text-[5.5rem] font-extrabold text-white leading-[1.1] mb-8 animate-fade-in-up delay-100 tracking-tight">
                         Reach New Heights in <br />
                         <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-600 via-brand-600 to-brand-900">
                             Facility Excellence.

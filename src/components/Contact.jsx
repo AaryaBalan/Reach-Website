@@ -105,7 +105,7 @@ const Contact = () => {
                         <span className="w-1.5 h-1.5 rounded-full bg-brand-600"></span>
                         Get in Touch
                     </span>
-                    <h2 className="text-4xl lg:text-6xl font-bold text-brand-900 mb-6 tracking-tight">
+                    <h2 className="text-3xl lg:text-6xl font-bold text-brand-900 mb-6 tracking-tight">
                         Let's Start a <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-600 to-brand-600">Conversation.</span>
                     </h2>
                     <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
@@ -118,7 +118,7 @@ const Contact = () => {
                     {/* Left Column - Contact Info & Form (Span 5) */}
                     <div className="xl:col-span-5 space-y-8 animate-fade-in-up delay-100">
                         {/* Address & Info Card */}
-                        <div className="bg-white p-8 rounded-[2rem] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] border border-gray-100 relative overflow-hidden group">
+                        <div className="bg-white p-6 md:p-8 rounded-3xl md:rounded-[2rem] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] border border-gray-100 relative overflow-hidden group">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-900/5 rounded-full blur-2xl -mr-10 -mt-10 transition-transform duration-500 group-hover:scale-150"></div>
 
                             <h3 className="font-bold text-brand-900 mb-8 text-xl relative z-10">Contact Information</h3>
@@ -144,7 +144,7 @@ const Contact = () => {
                         </div>
 
                         {/* Quick Message Form */}
-                        <div className="bg-gray-50/50 p-8 rounded-[2rem] border border-gray-100 backdrop-blur-sm">
+                        <div className="bg-gray-50/50 p-6 md:p-8 rounded-3xl md:rounded-[2rem] border border-gray-100 backdrop-blur-sm">
                             <h3 className="font-bold text-brand-900 mb-6 text-xl">Quick Enquiry</h3>
                             <form onSubmit={handleSubmit} className="space-y-4">
                                 <div>
@@ -260,8 +260,8 @@ const Contact = () => {
                         </div>
 
                         {/* Map - Premium Rounded */}
-                        <div className="bg-gray-100 rounded-[2rem] overflow-hidden h-64 border border-gray-200 shadow-inner mt-4 relative group">
-                            <div className="absolute inset-0 border-4 border-white/50 rounded-[2rem] pointer-events-none z-10 transition-colors group-hover:border-white/20"></div>
+                        <div className="bg-gray-100 rounded-3xl md:rounded-[2rem] overflow-hidden h-64 border border-gray-200 shadow-inner mt-4 relative group">
+                            <div className="absolute inset-0 border-4 border-white/50 rounded-3xl md:rounded-[2rem] pointer-events-none z-10 transition-colors group-hover:border-white/20"></div>
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15549.6200685987!2d80.208119!3d13.009848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52676b1f3c3a9f%3A0xc9c1b3f3f3f3f3f3!2sMathur%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
                                 width="100%"

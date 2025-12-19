@@ -70,8 +70,8 @@ const TrainingPage = () => {
             {/* Definition Card - Glassmorphism */}
             <section className="relative z-30 -mt-20 px-6 pb-24">
                 <div className="max-w-5xl mx-auto relative group">
-                    <div className="absolute -inset-1 bg-linear-to-r from-brand-500 to-brand-600 rounded-[2.5rem] opacity-20 blur-xl group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-                    <div className="relative bg-white/80 backdrop-blur-xl rounded-[2rem] p-8 lg:p-14 shadow-2xl border border-white/50 flex flex-col md:flex-row gap-10 items-center">
+                    <div className="absolute -inset-1 bg-linear-to-r from-brand-500 to-brand-600 rounded-3xl md:rounded-[2.5rem] opacity-20 blur-xl group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
+                    <div className="relative bg-white/80 backdrop-blur-xl rounded-3xl md:rounded-[2rem] p-6 md:p-8 lg:p-14 shadow-2xl border border-white/50 flex flex-col md:flex-row gap-10 items-center">
                         <div className="w-20 h-20 bg-brand-50 rounded-3xl flex items-center justify-center shrink-0 border border-brand-100">
                             <svg className="w-10 h-10 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
                         </div>
@@ -90,7 +90,7 @@ const TrainingPage = () => {
 
             {/* Benefits Grid - Modern Cards */}
             <section className="py-24 bg-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-500/5 rounded-full blur-[120px]"></div>
+                <div className="absolute top-0 right-0 w-72 h-72 md:w-125 md:h-125 bg-brand-500/5 rounded-full blur-[80px] md:blur-[120px]"></div>
 
                 <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
                     <div className="text-center mb-16">
@@ -126,7 +126,7 @@ const TrainingPage = () => {
                 <div className="grid lg:grid-cols-3 gap-6">
 
                     {/* HR Module - Large Card */}
-                    <div className="lg:col-span-2 bg-white rounded-[2.5rem] p-10 border border-gray-100 shadow-xl shadow-gray-200/50 hover:border-brand-500/20 transition-all duration-300 group">
+                    <div className="lg:col-span-2 bg-white rounded-3xl md:rounded-[2.5rem] p-6 md:p-10 border border-gray-100 shadow-xl shadow-gray-200/50 hover:border-brand-500/20 transition-all duration-300 group">
                         <div className="flex items-start justify-between mb-8">
                             <div>
                                 <h3 className="text-3xl font-bold text-gray-900 mb-2">Human Resources</h3>
@@ -147,7 +147,7 @@ const TrainingPage = () => {
                     </div>
 
                     {/* Workshops - Tall Card */}
-                    <div className="bg-brand-900 rounded-[2.5rem] p-10 text-white flex flex-col justify-between relative overflow-hidden group">
+                    <div className="bg-brand-900 rounded-3xl md:rounded-[2.5rem] p-6 md:p-10 text-white flex flex-col justify-between relative overflow-hidden group">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-brand-500 rounded-full blur-[60px] opacity-40 group-hover:scale-150 transition-transform duration-700"></div>
                         <div className="relative z-10">
                             <div className="mb-8">
@@ -166,7 +166,7 @@ const TrainingPage = () => {
                     </div>
 
                     {/* Coaching - Standard Card */}
-                    <div className="bg-white rounded-[2.5rem] p-10 border border-gray-100 shadow-xl shadow-gray-200/50 hover:shadow-2xl transition-all duration-300 group">
+                    <div className="bg-white rounded-3xl md:rounded-[2.5rem] p-6 md:p-10 border border-gray-100 shadow-xl shadow-gray-200/50 hover:shadow-2xl transition-all duration-300 group">
                         <div className="w-14 h-14 bg-gray-50 rounded-2xl flex items-center justify-center text-gray-900 mb-6 group-hover:scale-110 transition-transform">
                             <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
                         </div>
@@ -181,7 +181,7 @@ const TrainingPage = () => {
                     </div>
 
                     {/* Consultancy - Wide Card */}
-                    <div className="lg:col-span-2 bg-linear-to-br from-brand-500 to-brand-600 rounded-[2.5rem] p-10 text-white relative overflow-hidden group">
+                    <div className="lg:col-span-2 bg-linear-to-br from-brand-500 to-brand-600 rounded-3xl md:rounded-[2.5rem] p-6 md:p-10 text-white relative overflow-hidden group">
                         <div className="absolute bottom-0 left-0 w-64 h-64 bg-black rounded-full blur-[80px] opacity-30"></div>
                         <div className="relative z-10 flex flex-col md:flex-row gap-8 items-start">
                             <div className="flex-1">

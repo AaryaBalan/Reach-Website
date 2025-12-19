@@ -167,7 +167,7 @@ const Navbar = () => {
 
                 {/* Mobile Navigation - Glassmorphism Card */}
                 <div
-                    className={`lg:hidden absolute top-full left-4 right-4 mt-2 bg-white/95 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl transition-all duration-500 ease-in-out overflow-hidden origin-top ${isMenuOpen ? 'max-h-128 opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95'
+                    className={`lg:hidden fixed inset-x-0 top-[72px] bottom-0 bg-white/95 backdrop-blur-xl border-t border-white/20 shadow-2xl transition-all duration-500 ease-in-out overflow-y-auto ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
                         }`}
                 >
                     <div className="p-2 space-y-1">

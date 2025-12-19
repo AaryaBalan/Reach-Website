@@ -37,7 +37,7 @@ const FAQ = () => {
                     <span className="inline-block px-4 py-1.5 bg-brand-600/10 text-brand-600 rounded-full text-xs font-bold tracking-widest uppercase mb-4">
                         Questions & Answers
                     </span>
-                    <h2 className="text-4xl lg:text-5xl font-bold text-brand-900 mb-6">
+                    <h2 className="text-3xl lg:text-5xl font-bold text-brand-900 mb-6">
                         Frequently Asked <span className="text-brand-600">Questions</span>
                     </h2>
                     <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">

@@ -32,7 +32,7 @@ const Training = () => {
                 </div>
 
                 {/* 4 Preview Cards */}
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                     {benefits.map((benefit, index) => (
                         <div key={index} className="group bg-white p-6 rounded-2xl border border-gray-100 hover:border-brand-600/30 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                             <div className="w-12 h-12 bg-brand-600/10 rounded-xl flex items-center justify-center text-brand-600 mb-4 group-hover:bg-brand-600 group-hover:text-white transition-colors">

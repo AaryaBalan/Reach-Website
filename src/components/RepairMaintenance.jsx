@@ -89,12 +89,12 @@ const RepairMaintenance = () => {
                 <div className="flex flex-col lg:flex-row gap-12 bg-white rounded-2xl border border-gray-100 shadow-xl overflow-hidden">
 
                     {/* Sidebar Nav */}
-                    <div className="lg:w-1/3 bg-gray-50 border-r border-gray-100 p-6 flex flex-col gap-2">
+                    <div className="lg:w-1/3 bg-gray-50 border-r border-gray-100 p-4 md:p-6 flex flex-row lg:flex-col gap-2 overflow-x-auto scrollbar-hide">
                         {services.map((s) => (
                             <button
                                 key={s.key}
                                 onClick={() => setActiveTab(s.key)}
-                                className={`flex items-center gap-4 p-4 rounded-xl text-left transition-all duration-300
+                                className={`flex items-center gap-4 p-4 rounded-xl text-left transition-all duration-300 whitespace-nowrap lg:whitespace-normal shrink-0
                                     ${activeTab === s.key
                                         ? 'bg-white text-brand-900 shadow-md border border-gray-100'
                                         : 'text-gray-500 hover:text-brand-900 hover:bg-white/50'
