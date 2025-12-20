@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import bgImage from '../assets/carousel-2.png';
 
 const RepairMaintenance = () => {
     const [activeTab, setActiveTab] = useState('electrical');
@@ -73,25 +74,27 @@ const RepairMaintenance = () => {
     const activeData = services.find(s => s.key === activeTab);
 
     return (
-        <section id="repair" className="py-10 md:py-20 bg-gray-50 relative overflow-hidden font-['Poppins']">
-            {/* Cinematic Background Elements */}
-            <div className="absolute top-0 left-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-brand-600/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/3 pointer-events-none"></div>
-            <div className="absolute bottom-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-brand-900/5 rounded-full blur-3xl translate-y-1/3 translate-x-1/3 pointer-events-none"></div>
+        <section id="repair" className="relative py-16 md:py-24 font-['Poppins'] overflow-hidden">
+            {/* Background Image with Overlay */}
+            <div className="absolute inset-0 z-0">
+                <img src={bgImage} alt="Background" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-brand-950/90 backdrop-blur-[2px]"></div>
+            </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                 {/* Header */}
-                <div className="max-w-4xl mx-auto text-center mb-8 md:mb-12">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white border border-gray-200 mb-4 md:mb-6 shadow-sm animate-fade-in-up">
-                        <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-brand-600 animate-pulse"></span>
-                        <span className="text-brand-900 text-[10px] md:text-sm font-bold uppercase tracking-widest">Technical Support</span>
+                <div className="max-w-4xl mx-auto text-center mb-10 md:mb-16">
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-4 md:mb-6 shadow-lg animate-fade-in-up">
+                        <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-brand-400 animate-pulse"></span>
+                        <span className="text-white text-[10px] md:text-sm font-bold uppercase tracking-widest drop-shadow-md">Technical Support</span>
                     </div>
 
-                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-900 mb-3 md:mb-6 leading-[1.1] tracking-tight animate-fade-in-up delay-100">
-                        Maintenance <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-600 to-brand-400">Expertise</span>
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight animate-fade-in-up delay-100 drop-shadow-2xl">
+                        Maintenance <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-300 to-white drop-shadow-lg">Expertise</span>
                     </h2>
 
-                    <p className="text-gray-600 text-sm md:text-xl leading-relaxed max-w-2xl mx-auto animate-fade-in-up delay-200">
+                    <p className="text-gray-100 text-sm md:text-xl leading-relaxed max-w-2xl mx-auto animate-fade-in-up delay-200 font-light drop-shadow-lg">
                         Ensuring operational efficiency through precise engineering solutions and comprehensive maintenance services.
                     </p>
                 </div>
@@ -106,14 +109,14 @@ const RepairMaintenance = () => {
                                 <button
                                     key={s.key}
                                     onClick={() => setActiveTab(s.key)}
-                                    className={`flex items-center gap-3 md:gap-4 p-3 md:p-5 rounded-xl md:rounded-2xl text-left transition-all duration-300 whitespace-nowrap lg:whitespace-normal shrink-0 snap-start border
+                                    className={`flex items-center gap-3 md:gap-4 p-3 md:p-5 rounded-xl md:rounded-2xl text-left transition-all duration-300 whitespace-nowrap lg:whitespace-normal shrink-0 snap-start border backdrop-blur-md
                                         ${activeTab === s.key
-                                            ? 'bg-brand-900 text-white border-brand-900 shadow-lg shadow-brand-900/20 scale-[1.02]'
-                                            : 'bg-white text-gray-500 border-gray-100 hover:border-brand-200 hover:text-brand-900 hover:bg-gray-50'
+                                            ? 'bg-white/90 text-brand-900 border-white shadow-xl scale-[1.02]'
+                                            : 'bg-white/10 text-white/70 border-white/10 hover:bg-white/20 hover:text-white hover:border-white/30'
                                         }
                                     `}
                                 >
-                                    <div className={`p-2 rounded-lg ${activeTab === s.key ? 'bg-white/10 text-white' : 'bg-gray-100 text-gray-400'}`}>
+                                    <div className={`p-2 rounded-lg transition-colors ${activeTab === s.key ? 'bg-brand-100 text-brand-700' : 'bg-white/10 text-white'}`}>
                                         {s.icon}
                                     </div>
                                     <span className="font-bold text-sm md:text-lg">
@@ -126,12 +129,12 @@ const RepairMaintenance = () => {
 
                     {/* Content Panel - Glassmorphism */}
                     <div className="lg:w-2/3">
-                        <div className="bg-white rounded-2xl md:rounded-3xl p-5 md:p-10 shadow-xl shadow-gray-100/50 border border-gray-100 relative overflow-hidden min-h-[350px] md:min-h-[400px]">
+                        <div className="bg-white/90 backdrop-blur-xl rounded-2xl md:rounded-3xl p-6 md:p-10 shadow-2xl border border-white/50 relative overflow-hidden min-h-[400px]">
                             {/* Decorative Blobs inside card */}
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-600/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 
                             <div className="relative z-10 animate-fade-in-up key={activeTab}"> {/* Key forces re-render for animation */}
-                                <div className="flex items-center gap-4 mb-6 md:mb-10 border-b border-gray-100 pb-4 md:pb-8">
+                                <div className="flex items-center gap-4 mb-6 md:mb-10 border-b border-gray-200/60 pb-4 md:pb-8">
                                     <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-50 rounded-2xl flex items-center justify-center text-brand-600 shadow-inner">
                                         {activeData.icon}
                                     </div>
@@ -141,18 +144,18 @@ const RepairMaintenance = () => {
                                     </div>
                                 </div>
 
-                                <div className="grid sm:grid-cols-2 gap-2 md:gap-4">
+                                <div className="grid sm:grid-cols-2 gap-2 md:gap-3">
                                     {activeData.specs.map((spec, idx) => (
-                                        <div key={idx} className="group flex items-start gap-3 p-2 md:p-4 rounded-xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-100">
-                                            <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 shrink-0 group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                                                <svg className="w-3 h-3 md:w-3.5 md:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                                        <div key={idx} className="group flex items-center gap-2 p-1.5 md:p-2 rounded-lg hover:bg-brand-50/50 transition-colors border border-transparent hover:border-brand-100/50">
+                                            <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 shrink-0 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                                                <svg className="w-2.5 h-2.5 md:w-3 md:h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
                                             </div>
-                                            <span className="text-gray-600 font-medium text-xs md:text-base group-hover:text-brand-900 transition-colors">{spec}</span>
+                                            <span className="text-gray-700 font-medium text-xs md:text-sm group-hover:text-brand-900 transition-colors leading-tight">{spec}</span>
                                         </div>
                                     ))}
                                 </div>
 
-                                <div className="mt-6 md:mt-10 pt-4 md:pt-8 border-t border-gray-100 flex justify-end">
+                                <div className="mt-8 md:mt-12 pt-4 md:pt-6 border-t border-gray-200/60 flex justify-end">
                                     <button
                                         onClick={() => navigate('/repair-maintenance')}
                                         className="flex items-center gap-2 text-xs md:text-sm font-bold uppercase tracking-widest text-brand-600 hover:text-brand-800 transition-colors group"
