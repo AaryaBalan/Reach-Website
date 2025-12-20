@@ -34,7 +34,7 @@ const TrainingPage = () => {
             <Navbar />
 
             {/* Cinematic Hero Section */}
-            <section className="relative h-[40vh] min-h-75 md:h-[70vh] md:min-h-125 flex items-center justify-center overflow-hidden bg-brand-900">
+            <section className="relative min-h-[600px] md:h-[70vh] md:min-h-125 flex items-center justify-center overflow-hidden bg-brand-900">
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/60 to-neutral-50 z-10"></div>
                     <motion.img
@@ -47,7 +47,7 @@ const TrainingPage = () => {
                     />
                 </div>
 
-                <div className="relative z-20 text-center px-4 md:px-6 max-w-5xl mx-auto">
+                <div className="relative z-20 text-center px-4 md:px-6 max-w-5xl mx-auto pt-28 md:pt-0">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}

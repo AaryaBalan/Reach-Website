@@ -49,9 +49,10 @@ const Hero = () => {
                                 className="w-full h-full object-cover opacity-100"
                             />
                         </div>
-                        {/* Cinematic Gradient Overlay */}
-                        <div className="absolute inset-0 bg-linear-to-r from-brand-900/80 via-brand-900/40 to-transparent"></div>
-                        <div className="absolute inset-0 bg-linear-to-t from-brand-900/60 via-transparent to-transparent"></div>
+                        {/* Cinematic Gradient Overlay - Darkened for Readability */}
+                        <div className="absolute inset-0 bg-black/30"></div>
+                        <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/50 to-transparent"></div>
+                        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent"></div>
                     </div>
                 ))}
             </div>
@@ -60,25 +61,25 @@ const Hero = () => {
             <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-28 md:pt-32 pb-12">
                 <div className="max-w-4xl">
                     {/* Badge */}
-                    <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-8 animate-fade-in-up hover:bg-white/15 transition-colors cursor-default">
+                    <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-8 animate-fade-in-up hover:bg-white/15 transition-colors cursor-default shadow-lg shadow-black/20">
                         <span className="relative flex shrink-0 w-3 h-3">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-600 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-3 w-3 bg-brand-600"></span>
                         </span>
-                        <span className="text-white font-semibold tracking-wide text-xs uppercase">ISO Certified Facility Management</span>
+                        <span className="text-white font-semibold tracking-wide text-xs uppercase drop-shadow-md">ISO Certified Facility Management</span>
                     </div>
 
                     {/* Main heading - Apple Style Typography */}
-                    <h1 className="text-4xl sm:text-6xl lg:text-[5.5rem] font-extrabold text-white leading-[1.1] mb-6 md:mb-8 animate-fade-in-up delay-100 tracking-tight">
-                        Reach New Heights in <br />
-                        <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-600 via-brand-600 to-brand-900">
-                            Facility Excellence.
+                    <h1 className="text-4xl sm:text-6xl lg:text-[5.5rem] font-extrabold text-white leading-[1.1] mb-6 md:mb-8 animate-fade-in-up delay-100 tracking-tight drop-shadow-2xl">
+                        Elevating <br />
+                        <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-400 via-brand-500 to-brand-600 drop-shadow-none filter brightness-125">
+                            Facility Standards.
                         </span>
                     </h1>
 
                     {/* Subsubtitle */}
-                    <p className="text-lg sm:text-2xl text-gray-200 font-light leading-relaxed mb-8 md:mb-12 max-w-2xl animate-fade-in-up delay-200">
-                        We offer integrated management services, ensuring your infrastructure operates at its <strong className="text-white font-medium">highest potential</strong> through technical expertise and precise care.
+                    <p className="text-lg sm:text-2xl text-gray-100 font-light leading-relaxed mb-8 md:mb-12 max-w-2xl animate-fade-in-up delay-200 drop-shadow-lg">
+                        Integrated management services for <strong className="text-white font-medium">peak infrastructure performance</strong>.
                     </p>
 
                     {/* CTA Buttons */}

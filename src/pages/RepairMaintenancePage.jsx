@@ -117,7 +117,7 @@ const RepairMaintenancePage = () => {
             <Navbar />
 
             {/* Hero Section */}
-            <section className="relative h-[40vh] min-h-75 md:h-screen flex items-center overflow-hidden bg-brand-900">
+            <section className="relative min-h-[600px] md:h-screen flex items-center overflow-hidden bg-brand-900">
                 {/* Full Background Image with Parallax & Zoom */}
                 <div className="absolute inset-0 z-0">
                     <motion.div
@@ -134,18 +134,19 @@ const RepairMaintenancePage = () => {
                         />
                     </motion.div>
 
-                    {/* Cinematic Gradients Overlay */}
-                    <div className="absolute inset-0 bg-linear-to-r from-brand-900/80 via-brand-900/40 to-transparent"></div>
-                    <div className="absolute inset-0 bg-linear-to-t from-brand-900/60 via-transparent to-transparent"></div>
+                    {/* Cinematic Gradients Overlay - Darkened for Readability */}
+                    <div className="absolute inset-0 bg-black/40"></div>
+                    <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/50 to-transparent"></div>
+                    <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent"></div>
                 </div>
 
-                <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10 w-full mt-8 md:mt-16">
+                <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10 w-full pt-28 md:pt-0">
                     <div className="max-w-4xl">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
-                            className="inline-block px-3 py-1 md:px-4 md:py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-4 md:mb-8"
+                            className="inline-block px-3 py-1 md:px-4 md:py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-4 md:mb-8 shadow-lg shadow-black/20"
                         >
                             Technical Operations Domain
                         </motion.div>
@@ -158,14 +159,14 @@ const RepairMaintenancePage = () => {
                             </motion.span>
                             <motion.span
                                 initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.8 }}
-                                className="text-transparent bg-clip-text bg-linear-to-r from-brand-600 to-brand-400"
+                                className="text-transparent bg-clip-text bg-linear-to-r from-brand-400 to-brand-600 filter brightness-125"
                             >
                                 Precision.
                             </motion.span>
                         </h1>
                         <motion.p
                             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6, duration: 1 }}
-                            className="text-base md:text-2xl text-gray-200 max-w-2xl font-light leading-relaxed drop-shadow-lg"
+                            className="text-base md:text-2xl text-gray-100 max-w-2xl font-light leading-relaxed drop-shadow-lg"
                         >
                             Orchestrating industrial reliability through high-voltage engineering, structural integrity, and premium interior finishing.
                         </motion.p>
@@ -219,7 +220,7 @@ const RepairMaintenancePage = () => {
 
                                 {/* Roles Cards */}
                                 {service.roles.map((role, rIndex) => (
-                                    <TiltCard key={rIndex} className="bg-white p-5 md:p-8 rounded-3xl md:rounded-4xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] border border-gray-100 relative group overflow-hidden h-full">
+                                    <TiltCard key={rIndex} className="bg-white p-5 md:p-8 rounded-3xl md:rounded-4xl shadow-sm hover:shadow-xl border border-gray-100 relative group overflow-hidden h-full transition-all duration-300">
                                         <div className="relative z-10">
                                             <h3 className="text-lg md:text-xl font-bold text-brand-900 mb-3 md:mb-4 group-hover:text-brand-600 transition-colors">
                                                 {role.title}
@@ -237,7 +238,7 @@ const RepairMaintenancePage = () => {
                                 ))}
 
                                 {/* Featured Scope / Extra Work */}
-                                <TiltCard className={`p-5 md:p-8 rounded-3xl md:rounded-4xl relative overflow-hidden group h-full
+                                <TiltCard className={`p-5 md:p-8 rounded-3xl md:rounded-4xl relative overflow-hidden group h-full shadow-sm hover:shadow-xl transition-all duration-300
                                     ${service.roles.length === 0 ? 'lg:col-span-3 bg-brand-900' : 'lg:col-span-1 bg-linear-to-br from-neutral-50 to-white border border-gray-100'}
                                 `}>
                                     {service.roles.length === 0 && (
