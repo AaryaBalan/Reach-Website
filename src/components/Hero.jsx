@@ -32,7 +32,7 @@ const Hero = () => {
     };
 
     return (
-        <section id="home" className="relative h-screen flex items-center overflow-hidden font-['Poppins']">
+        <section id="home" className="relative min-h-[100dvh] flex items-center overflow-hidden font-['Poppins']">
             {/* Background Image Carousel with Ken Burns Effect */}
             <div className="absolute inset-0 bg-black">
                 {slides.map((slide, index) => (
@@ -49,43 +49,44 @@ const Hero = () => {
                                 className="w-full h-full object-cover opacity-100"
                             />
                         </div>
-                        {/* Cinematic Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#623004]/50 via-[#623004]/20 to-transparent"></div>
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#623004]/40 via-transparent to-transparent"></div>
+                        {/* Cinematic Gradient Overlay - Darkened for Readability */}
+                        <div className="absolute inset-0 bg-black/30"></div>
+                        <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/50 to-transparent"></div>
+                        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent"></div>
                     </div>
                 ))}
             </div>
 
             {/* Content */}
-            <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-16">
+            <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-28 md:pt-32 pb-12">
                 <div className="max-w-4xl">
                     {/* Badge */}
-                    <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-8 animate-fade-in-up hover:bg-white/15 transition-colors cursor-default">
+                    <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-8 animate-fade-in-up hover:bg-white/15 transition-colors cursor-default shadow-lg shadow-black/20">
                         <span className="relative flex shrink-0 w-3 h-3">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C1311C] opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-3 w-3 bg-[#C1311C]"></span>
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-600 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-3 w-3 bg-brand-600"></span>
                         </span>
-                        <span className="text-white font-semibold tracking-wide text-xs uppercase">ISO Certified Facility Management</span>
+                        <span className="text-white font-semibold tracking-wide text-xs uppercase drop-shadow-md">ISO Certified Facility Management</span>
                     </div>
 
                     {/* Main heading - Apple Style Typography */}
-                    <h1 className="text-5xl sm:text-7xl lg:text-[5.5rem] font-extrabold text-white leading-[1.1] mb-8 animate-fade-in-up delay-100 tracking-tight">
-                        Reach New Heights in <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C1311C] via-[#C1311C] to-[#623004]">
-                            Facility Excellence.
+                    <h1 className="text-4xl sm:text-6xl lg:text-[5.5rem] font-extrabold text-white leading-[1.1] mb-6 md:mb-8 animate-fade-in-up delay-100 tracking-tight drop-shadow-2xl">
+                        Elevating <br />
+                        <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-400 via-brand-500 to-brand-600 drop-shadow-none filter brightness-125">
+                            Facility Standards.
                         </span>
                     </h1>
 
                     {/* Subsubtitle */}
-                    <p className="text-lg sm:text-2xl text-gray-200 font-light leading-relaxed mb-12 max-w-2xl animate-fade-in-up delay-200">
-                        We offer integrated management services, ensuring your infrastructure operates at its <strong className="text-white font-medium">highest potential</strong> through technical expertise and precise care.
+                    <p className="text-lg sm:text-2xl text-gray-100 font-light leading-relaxed mb-8 md:mb-12 max-w-2xl animate-fade-in-up delay-200 drop-shadow-lg">
+                        Integrated management services for <strong className="text-white font-medium">peak infrastructure performance</strong>.
                     </p>
 
                     {/* CTA Buttons */}
                     <div className="flex flex-col sm:flex-row gap-5 animate-fade-in-up delay-300">
                         <button
                             onClick={scrollToContact}
-                            className="group relative px-8 py-4 bg-[#C1311C] text-white font-bold rounded-2xl shadow-[0_20px_40px_-15px_rgba(13,148,136,0.3)] hover:shadow-[0_25px_50px_-12px_rgba(13,148,136,0.5)] transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                            className="group relative px-8 py-4 bg-brand-600 text-white font-bold rounded-2xl shadow-[0_20px_40px_-15px_rgba(13,148,136,0.3)] hover:shadow-[0_25px_50px_-12px_rgba(13,148,136,0.5)] transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                         >
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700 ease-in-out"></div>
                             <span className="relative flex items-center gap-3 text-sm uppercase tracking-widest">
@@ -109,12 +110,12 @@ const Hero = () => {
                     </div>
 
                     {/* Carousel Indicators - Refined */}
-                    <div className="mt-20 flex items-center gap-3 animate-fade-in-up delay-500">
+                    <div className="mt-12 md:mt-20 flex items-center gap-3 animate-fade-in-up delay-500">
                         {slides.map((_, index) => (
                             <button
                                 key={index}
                                 onClick={() => goToSlide(index)}
-                                className={`transition-all duration-500 rounded-full h-1.5 ${currentSlide === index ? 'w-12 bg-[#C1311C]' : 'w-2 bg-white/20 hover:bg-white/40'
+                                className={`transition-all duration-500 rounded-full h-1.5 ${currentSlide === index ? 'w-12 bg-brand-600' : 'w-2 bg-white/20 hover:bg-white/40'
                                     }`}
                                 aria-label={`Go to slide ${index + 1}`}
                             />

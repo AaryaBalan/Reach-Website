@@ -1,8 +1,28 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-50: #fdf2f2;
+  --color-brand-100: #EBC3C1;
+  --color-brand-200: #DEA7A7;
+  --color-brand-300: #D08C8C;
+  --color-brand-400: #B67474;
+  --color-brand-500: #9D5C5C;
+  --color-brand-600: #844343;
+  --color-brand-700: #6B2B2B;
+  --color-brand-800: #541E1E;
+  --color-brand-900: #3E1212;
+  --color-brand-950: #2A0A0A;
+}
+
 :root {
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  @apply overflow-x-hidden;
 }
 
 body {
@@ -58,6 +78,20 @@ body {
   animation: marquee 30s linear infinite;
 }
 
+@keyframes marqueeVertical {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-marquee-vertical {
+  animation: marqueeVertical 20s linear infinite;
+}
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
@@ -69,4 +103,13 @@ body {
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: 20px;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

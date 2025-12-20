@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import bgImage from '../assets/carousel-2.png';
 
 const RepairMaintenance = () => {
     const [activeTab, setActiveTab] = useState('electrical');
+    const navigate = useNavigate();
 
     const services = [
         {
@@ -71,63 +74,95 @@ const RepairMaintenance = () => {
     const activeData = services.find(s => s.key === activeTab);
 
     return (
-        <section id="repair" className="py-24 bg-white font-['Poppins']">
-            <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <section id="repair" className="relative py-16 md:py-24 font-['Poppins'] overflow-hidden">
+            {/* Background Image with Overlay */}
+            <div className="absolute inset-0 z-0">
+                <img src={bgImage} alt="Background" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-brand-950/90 backdrop-blur-[2px]"></div>
+            </div>
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                 {/* Header */}
-                <div className="mb-16">
-                    <span className="text-[#C1311C] font-bold tracking-widest uppercase text-sm mb-2 block">Technical Support</span>
-                    <h2 className="text-4xl lg:text-5xl font-bold text-[#623004] mb-4">
-                        Maintenance <span className="text-[#C1311C]">Expertise</span>
+                <div className="max-w-4xl mx-auto text-center mb-10 md:mb-16">
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-4 md:mb-6 shadow-lg animate-fade-in-up">
+                        <span className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-brand-400 animate-pulse"></span>
+                        <span className="text-white text-[10px] md:text-sm font-bold uppercase tracking-widest drop-shadow-md">Technical Support</span>
+                    </div>
+
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight animate-fade-in-up delay-100 drop-shadow-2xl">
+                        Maintenance <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-300 to-white drop-shadow-lg">Expertise</span>
                     </h2>
-                    <p className="text-gray-500 text-lg max-w-2xl">
-                        Ensuring operational efficiency through precise engineering solutions.
+
+                    <p className="text-gray-100 text-sm md:text-xl leading-relaxed max-w-2xl mx-auto animate-fade-in-up delay-200 font-light drop-shadow-lg">
+                        Ensuring operational efficiency through precise engineering solutions and comprehensive maintenance services.
                     </p>
                 </div>
 
-                {/* Clean Tab Layout */}
-                <div className="flex flex-col lg:flex-row gap-12 bg-white rounded-2xl border border-gray-100 shadow-xl overflow-hidden">
+                {/* Modern Tab Layout */}
+                <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
 
-                    {/* Sidebar Nav */}
-                    <div className="lg:w-1/3 bg-gray-50 border-r border-gray-100 p-6 flex flex-col gap-2">
-                        {services.map((s) => (
-                            <button
-                                key={s.key}
-                                onClick={() => setActiveTab(s.key)}
-                                className={`flex items-center gap-4 p-4 rounded-xl text-left transition-all duration-300
-                                    ${activeTab === s.key
-                                        ? 'bg-white text-[#623004] shadow-md border border-gray-100'
-                                        : 'text-gray-500 hover:text-[#623004] hover:bg-white/50'
-                                    }
-                                `}
-                            >
-                                <div className={`${activeTab === s.key ? 'text-[#C1311C]' : 'text-gray-400'}`}>
-                                    {s.icon}
-                                </div>
-                                <span className={`font-bold ${activeTab === s.key ? 'font-bold' : 'font-medium'}`}>
-                                    {s.title}
-                                </span>
-                            </button>
-                        ))}
+                    {/* Navigation - Scrollable Pills on Mobile, Sidebar on Desktop */}
+                    <div className="lg:w-1/3">
+                        <div className="flex lg:flex-col gap-3 overflow-x-auto pb-2 lg:pb-0 scrollbar-hide snap-x">
+                            {services.map((s) => (
+                                <button
+                                    key={s.key}
+                                    onClick={() => setActiveTab(s.key)}
+                                    className={`flex items-center gap-3 md:gap-4 p-3 md:p-5 rounded-xl md:rounded-2xl text-left transition-all duration-300 whitespace-nowrap lg:whitespace-normal shrink-0 snap-start border backdrop-blur-md
+                                        ${activeTab === s.key
+                                            ? 'bg-white/90 text-brand-900 border-white shadow-xl scale-[1.02]'
+                                            : 'bg-white/10 text-white/70 border-white/10 hover:bg-white/20 hover:text-white hover:border-white/30'
+                                        }
+                                    `}
+                                >
+                                    <div className={`p-2 rounded-lg transition-colors ${activeTab === s.key ? 'bg-brand-100 text-brand-700' : 'bg-white/10 text-white'}`}>
+                                        {s.icon}
+                                    </div>
+                                    <span className="font-bold text-sm md:text-lg">
+                                        {s.title}
+                                    </span>
+                                </button>
+                            ))}
+                        </div>
                     </div>
 
-                    {/* Content Panel */}
-                    <div className="lg:w-2/3 p-8 lg:p-12">
-                        <div className="animate-fade-in-up">
-                            <div className="flex items-center gap-4 mb-8">
-                                <div className="p-3 bg-[#623004]/5 rounded-xl text-[#623004]">
-                                    {activeData.icon}
-                                </div>
-                                <h3 className="text-3xl font-bold text-[#623004]">{activeData.title}</h3>
-                            </div>
+                    {/* Content Panel - Glassmorphism */}
+                    <div className="lg:w-2/3">
+                        <div className="bg-white/90 backdrop-blur-xl rounded-2xl md:rounded-3xl p-6 md:p-10 shadow-2xl border border-white/50 relative overflow-hidden min-h-[400px]">
+                            {/* Decorative Blobs inside card */}
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 
-                            <div className="grid sm:grid-cols-2 gap-4">
-                                {activeData.specs.map((spec, idx) => (
-                                    <div key={idx} className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
-                                        <svg className="w-5 h-5 text-[#C1311C] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                                        <span className="text-gray-600 font-medium text-sm">{spec}</span>
+                            <div className="relative z-10 animate-fade-in-up key={activeTab}"> {/* Key forces re-render for animation */}
+                                <div className="flex items-center gap-4 mb-6 md:mb-10 border-b border-gray-200/60 pb-4 md:pb-8">
+                                    <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-50 rounded-2xl flex items-center justify-center text-brand-600 shadow-inner">
+                                        {activeData.icon}
                                     </div>
-                                ))}
+                                    <div>
+                                        <h3 className="text-xl md:text-3xl font-bold text-brand-900">{activeData.title}</h3>
+                                        <p className="text-brand-600 font-medium text-xs md:text-base mt-1">Professional Services</p>
+                                    </div>
+                                </div>
+
+                                <div className="grid sm:grid-cols-2 gap-2 md:gap-3">
+                                    {activeData.specs.map((spec, idx) => (
+                                        <div key={idx} className="group flex items-center gap-2 p-1.5 md:p-2 rounded-lg hover:bg-brand-50/50 transition-colors border border-transparent hover:border-brand-100/50">
+                                            <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 shrink-0 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                                                <svg className="w-2.5 h-2.5 md:w-3 md:h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                                            </div>
+                                            <span className="text-gray-700 font-medium text-xs md:text-sm group-hover:text-brand-900 transition-colors leading-tight">{spec}</span>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <div className="mt-8 md:mt-12 pt-4 md:pt-6 border-t border-gray-200/60 flex justify-end">
+                                    <button
+                                        onClick={() => navigate('/repair-maintenance')}
+                                        className="flex items-center gap-2 text-xs md:text-sm font-bold uppercase tracking-widest text-brand-600 hover:text-brand-800 transition-colors group"
+                                    >
+                                        View Details <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

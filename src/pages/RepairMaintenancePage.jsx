@@ -34,7 +34,7 @@ const TiltCard = ({ children, className }) => {
             <motion.div
                 style={{
                     opacity: useTransform(mouseX, [-300, 300], [0, 0.4]),
-                    background: useMotionTemplate`radial-gradient(600px circle at ${mouseX}px ${mouseY}px, rgba(193, 49, 28, 0.15), transparent 80%)`,
+                    background: useMotionTemplate`radial-gradient(600px circle at ${mouseX}px ${mouseY}px, rgba(132, 67, 67, 0.15), transparent 80%)`,
                 }}
                 className="absolute inset-0 z-0 transition-opacity duration-300 rounded-[inherit]"
             />
@@ -110,14 +110,14 @@ const RepairMaintenancePage = () => {
     ];
 
     return (
-        <div ref={containerRef} className="min-h-screen bg-[#FAFAFA] font-['Poppins'] selection:bg-[#C1311C] selection:text-white overflow-x-hidden">
+        <div ref={containerRef} className="min-h-screen bg-neutral-50 font-['Poppins'] selection:bg-brand-600 selection:text-white overflow-x-hidden">
 
             {/* Navigation / Back Button */}
             {/* Navigation */}
             <Navbar />
 
             {/* Hero Section */}
-            <section className="relative h-screen flex items-center overflow-hidden bg-[#623004]">
+            <section className="relative min-h-[600px] md:h-screen flex items-center overflow-hidden bg-brand-900">
                 {/* Full Background Image with Parallax & Zoom */}
                 <div className="absolute inset-0 z-0">
                     <motion.div
@@ -134,22 +134,23 @@ const RepairMaintenancePage = () => {
                         />
                     </motion.div>
 
-                    {/* Cinematic Gradients Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#623004]/70 via-[#623004]/20 to-transparent"></div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#623004]/60 via-transparent to-transparent"></div>
+                    {/* Cinematic Gradients Overlay - Darkened for Readability */}
+                    <div className="absolute inset-0 bg-black/40"></div>
+                    <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/50 to-transparent"></div>
+                    <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent"></div>
                 </div>
 
-                <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full mt-16">
+                <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative z-10 w-full pt-28 md:pt-0">
                     <div className="max-w-4xl">
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8 }}
-                            className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-xs font-bold tracking-[0.2em] uppercase mb-8"
+                            className="inline-block px-3 py-1 md:px-4 md:py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-4 md:mb-8 shadow-lg shadow-black/20"
                         >
                             Technical Operations Domain
                         </motion.div>
-                        <h1 className="text-5xl sm:text-7xl lg:text-[6rem] font-extrabold text-white leading-[0.9] mb-8 tracking-tight drop-shadow-2xl">
+                        <h1 className="text-3xl md:text-5xl lg:text-[6rem] font-extrabold text-white leading-[1.1] md:leading-[0.9] mb-4 md:mb-8 tracking-tight drop-shadow-2xl">
                             <motion.span
                                 initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }}
                                 className="block"
@@ -158,14 +159,14 @@ const RepairMaintenancePage = () => {
                             </motion.span>
                             <motion.span
                                 initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, duration: 0.8 }}
-                                className="text-transparent bg-clip-text bg-gradient-to-r from-[#C1311C] to-[#E85D45]"
+                                className="text-transparent bg-clip-text bg-linear-to-r from-brand-400 to-brand-600 filter brightness-125"
                             >
                                 Precision.
                             </motion.span>
                         </h1>
                         <motion.p
                             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6, duration: 1 }}
-                            className="text-xl md:text-2xl text-gray-200 max-w-2xl font-light leading-relaxed drop-shadow-lg"
+                            className="text-base md:text-2xl text-gray-100 max-w-2xl font-light leading-relaxed drop-shadow-lg"
                         >
                             Orchestrating industrial reliability through high-voltage engineering, structural integrity, and premium interior finishing.
                         </motion.p>
@@ -175,8 +176,8 @@ const RepairMaintenancePage = () => {
             </section>
 
             {/* Services List */}
-            <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-32 pt-16">
-                <div className="flex flex-col gap-32">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pb-10 pt-8 md:pb-32 md:pt-16">
+                <div className="flex flex-col gap-16 md:gap-32">
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
@@ -187,13 +188,13 @@ const RepairMaintenancePage = () => {
                             className="scroll-mt-32"
                         >
                             {/* Section Header */}
-                            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-l-4 border-[#C1311C] pl-6 md:pl-10 relative">
-                                <span className="absolute -left-[3px] top-0 h-full w-[2px] bg-gradient-to-b from-[#C1311C] to-transparent"></span>
-                                <div className="flex items-center gap-6">
-                                    <div className="relative w-20 h-20 shrink-0">
-                                        <div className="absolute inset-0 bg-[#C1311C]/10 rounded-2xl rotate-6 transform transition-transform group-hover:rotate-12"></div>
-                                        <div className="absolute inset-0 bg-white rounded-2xl shadow-xl flex items-center justify-center text-[#C1311C] z-10 border border-gray-50">
-                                            <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6 mb-8 md:mb-12 border-l-4 border-brand-600 pl-4 md:pl-10 relative">
+                                <span className="absolute -left-[3px] top-0 h-full w-[2px] bg-linear-to-b from-brand-600 to-transparent"></span>
+                                <div className="flex items-center gap-4 md:gap-6">
+                                    <div className="relative w-16 h-16 md:w-20 md:h-20 shrink-0">
+                                        <div className="absolute inset-0 bg-brand-600/10 rounded-2xl rotate-6 transform transition-transform group-hover:rotate-12"></div>
+                                        <div className="absolute inset-0 bg-white rounded-2xl shadow-xl flex items-center justify-center text-brand-600 z-10 border border-gray-50">
+                                            <svg className="w-8 h-8 md:w-10 md:h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                                                 <motion.path
                                                     d={service.iconPath}
                                                     strokeLinecap="round" strokeLinejoin="round"
@@ -205,8 +206,8 @@ const RepairMaintenancePage = () => {
                                         </div>
                                     </div>
                                     <div>
-                                        <h2 className="text-4xl md:text-5xl font-bold text-[#623004] tracking-tight">{service.category}</h2>
-                                        <p className="text-gray-500 mt-2 text-lg font-light tracking-wide">{service.description}</p>
+                                        <h2 className="text-2xl md:text-5xl font-bold text-brand-900 tracking-tight">{service.category}</h2>
+                                        <p className="text-gray-500 mt-1 md:mt-2 text-sm md:text-lg font-light tracking-wide">{service.description}</p>
                                     </div>
                                 </div>
                                 <div className="hidden lg:block text-[#f3f3f3] font-black text-9xl absolute -z-10 -top-10 right-0 select-none opacity-50">
@@ -215,19 +216,19 @@ const RepairMaintenancePage = () => {
                             </div>
 
                             {/* Interactive Cards Grid */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
 
                                 {/* Roles Cards */}
                                 {service.roles.map((role, rIndex) => (
-                                    <TiltCard key={rIndex} className="bg-white p-8 rounded-[2rem] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] border border-gray-100 relative group overflow-hidden h-full">
+                                    <TiltCard key={rIndex} className="bg-white p-5 md:p-8 rounded-3xl md:rounded-4xl shadow-sm hover:shadow-xl border border-gray-100 relative group overflow-hidden h-full transition-all duration-300">
                                         <div className="relative z-10">
-                                            <h3 className="text-xl font-bold text-[#623004] mb-4 group-hover:text-[#C1311C] transition-colors">
+                                            <h3 className="text-lg md:text-xl font-bold text-brand-900 mb-3 md:mb-4 group-hover:text-brand-600 transition-colors">
                                                 {role.title}
                                             </h3>
-                                            <div className="space-y-3">
+                                            <div className="space-y-2 md:space-y-3">
                                                 {role.tasks.map((task, tIndex) => (
-                                                    <div key={tIndex} className="flex items-start gap-3 text-gray-600 text-sm leading-relaxed">
-                                                        <span className="w-1.5 h-1.5 rounded-full bg-[#C1311C] mt-2 shrink-0 opacity-50"></span>
+                                                    <div key={tIndex} className="flex items-start gap-2 md:gap-3 text-gray-600 text-sm leading-relaxed">
+                                                        <span className="w-1.5 h-1.5 rounded-full bg-brand-600 mt-2 shrink-0 opacity-50"></span>
                                                         {task}
                                                     </div>
                                                 ))}
@@ -237,30 +238,30 @@ const RepairMaintenancePage = () => {
                                 ))}
 
                                 {/* Featured Scope / Extra Work */}
-                                <TiltCard className={`p-8 rounded-[2rem] relative overflow-hidden group h-full
-                                    ${service.roles.length === 0 ? 'lg:col-span-3 bg-[#623004]' : 'lg:col-span-1 bg-gradient-to-br from-[#FAFAFA] to-white border border-gray-100'}
+                                <TiltCard className={`p-5 md:p-8 rounded-3xl md:rounded-4xl relative overflow-hidden group h-full shadow-sm hover:shadow-xl transition-all duration-300
+                                    ${service.roles.length === 0 ? 'lg:col-span-3 bg-brand-900' : 'lg:col-span-1 bg-linear-to-br from-neutral-50 to-white border border-gray-100'}
                                 `}>
                                     {service.roles.length === 0 && (
                                         <>
-                                            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#C1311C]/20 rounded-full blur-[80px] group-hover:scale-110 transition-transform duration-700"></div>
-                                            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-black/20 rounded-full blur-[60px]"></div>
+                                            <div className="absolute top-0 right-0 w-64 h-64 md:w-100 md:h-100 bg-brand-600/20 rounded-full blur-[60px] md:blur-[80px] group-hover:scale-110 transition-transform duration-700"></div>
+                                            <div className="absolute bottom-0 left-0 w-48 h-48 md:w-75 md:h-75 bg-black/20 rounded-full blur-2xl md:blur-[60px]"></div>
                                         </>
                                     )}
 
                                     <div className="relative z-10 h-full flex flex-col">
-                                        <h3 className={`text-2xl font-bold mb-6 ${service.roles.length === 0 ? 'text-white' : 'text-[#623004]'}`}>
+                                        <h3 className={`text-xl md:text-2xl font-bold mb-4 md:mb-6 ${service.roles.length === 0 ? 'text-white' : 'text-brand-900'}`}>
                                             {service.roles.length === 0 ? 'Specialized Scope of Works' : 'Additional Capabilities'}
                                         </h3>
 
-                                        <div className={`grid gap-4 ${service.roles.length === 0 ? 'sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
+                                        <div className={`grid gap-3 md:gap-4 ${service.roles.length === 0 ? 'sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
                                             {service.extra.map((work, wIndex) => (
-                                                <div key={wIndex} className={`flex items-start gap-3 text-sm leading-relaxed p-3 rounded-xl transition-colors
+                                                <div key={wIndex} className={`flex items-start gap-2 md:gap-3 text-sm leading-relaxed p-2 md:p-3 rounded-xl transition-colors
                                                     ${service.roles.length === 0
                                                         ? 'bg-white/5 hover:bg-white/10 text-white/90 border border-white/5'
                                                         : 'hover:bg-gray-50 text-gray-600'
                                                     }
                                                 `}>
-                                                    <svg className={`w-5 h-5 shrink-0 ${service.roles.length === 0 ? 'text-[#C1311C]' : 'text-[#C1311C]'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                                                    <svg className={`w-4 h-4 md:w-5 md:h-5 shrink-0 ${service.roles.length === 0 ? 'text-brand-600' : 'text-brand-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                                                     <span>{work}</span>
                                                 </div>
                                             ))}
@@ -275,19 +276,19 @@ const RepairMaintenancePage = () => {
             </div>
 
             {/* Footer CTA */}
-            <div className="py-32 relative overflow-hidden bg-black">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#623004] to-black opacity-80"></div>
-                <div className="absolute -top-[20%] left-[20%] w-[600px] h-[600px] bg-[#C1311C] rounded-full blur-[150px] opacity-20 animate-pulse"></div>
+            <div className="py-16 md:py-32 relative overflow-hidden bg-black">
+                <div className="absolute inset-0 bg-linear-to-br from-brand-900 to-black opacity-80"></div>
+                <div className="absolute -top-[20%] left-[20%] w-72 h-72 md:w-150 md:h-150 bg-brand-600 rounded-full blur-[80px] md:blur-[150px] opacity-20 animate-pulse"></div>
 
                 <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
                     <motion.h2
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tight"
+                        className="text-3xl md:text-6xl font-black text-white mb-6 md:mb-8 tracking-tight"
                     >
                         Ready to Upgrade Your <br />
-                        <span className="text-[#C1311C]">Facility Standard?</span>
+                        <span className="text-brand-600">Facility Standard?</span>
                     </motion.h2>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -296,7 +297,7 @@ const RepairMaintenancePage = () => {
                         transition={{ delay: 0.2 }}
                         className="flex flex-col sm:flex-row gap-4 justify-center"
                     >
-                        <Link to="/#contact" className="px-10 py-5 bg-[#C1311C] text-white text-lg font-bold rounded-2xl hover:bg-[#a02817] hover:scale-105 transition-all shadow-xl shadow-[#C1311C]/30">
+                        <Link to="/#contact" className="px-8 py-4 md:px-10 md:py-5 bg-brand-600 text-white text-base md:text-lg font-bold rounded-2xl hover:bg-brand-700 hover:scale-105 transition-all shadow-xl shadow-brand-600/30">
                             Book a Technician
                         </Link>
                     </motion.div>
