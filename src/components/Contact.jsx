@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import bgImage from '../assets/carousel-2.png';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -22,39 +21,6 @@ const Contact = () => {
         setFormData({ name: '', email: '', phone: '', message: '' });
     };
 
-    const mainContacts = [
-        {
-            icon: (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-            ),
-            title: 'Head Office',
-            content: 'No.410, Alpha Flat, Temple Green Apartment, Arun Excello, Mathur, Sriperumpudhur Taluk, Kancheepuram - 602105'
-        },
-        {
-            icon: (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-            ),
-            title: 'Phone',
-            content: '+91 9176602204',
-            link: 'tel:+919176602204'
-        },
-        {
-            icon: (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-            ),
-            title: 'Email',
-            content: 'operations@reachfacility.com',
-            link: 'mailto:operations@reachfacility.com'
-        }
-    ];
-
     const personnel = [
         { role: 'Founder & Proprietor', name: 'Vijayanand Sivakumar', phone: '+91 9176602203', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=500', category: 'Leadership' },
         { role: 'Operations - Head', name: 'Rajalakshmi Sivakumar', phone: '+91 7373212269', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=500', category: 'Leadership' },
@@ -74,112 +40,130 @@ const Contact = () => {
 
     return (
         <div className="font-['Poppins']">
-            <section id="contact" className="py-20 md:py-32 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section id="contact" className="py-20 md:py-32 bg-brand-950 relative overflow-hidden">
+                {/* Background Elements */}
+                <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+                    <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-brand-900/20 rounded-full blur-[100px]"></div>
+                    <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-brand-900/20 rounded-full blur-[100px]"></div>
+                </div>
 
-                    {/* Main Contact Card */}
-                    <div className="bg-white rounded-[2.5rem] shadow-2xl shadow-gray-200/50 overflow-hidden flex flex-col lg:flex-row mb-0">
-
-                        {/* Left Side - Visual & Info */}
-                        <div className="lg:w-5/12 relative bg-brand-900 text-white p-10 md:p-14 flex flex-col justify-between overflow-hidden">
-                            {/* Background Image & Overlay */}
-                            <div className="absolute inset-0 z-0">
-                                <img src={bgImage} alt="Office" className="w-full h-full object-cover opacity-40 mix-blend-overlay" />
-                                <div className="absolute inset-0 bg-gradient-to-b from-brand-900/90 to-brand-950/95"></div>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
+                        {/* Left Side - Info */}
+                        <div className="lg:w-5/12 flex flex-col justify-center">
+                            <div className="mb-12">
+                                <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+                                    Contact <span className="text-brand-500">Us.</span>
+                                </h2>
+                                <div className="w-20 h-1.5 bg-brand-500 rounded-full mb-8"></div>
                             </div>
 
-                            {/* Content */}
-                            <div className="relative z-10">
-                                <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
-                                    Let's build something <br /> <span className="text-brand-300">great together.</span>
-                                </h2>
-                                <p className="text-brand-100/80 text-lg mb-12 max-w-sm">
-                                    Reach out to us for a personalized quote or any facility management inquiries.
-                                </p>
+                            <div className="space-y-6">
+                                {/* Address */}
+                                <div>
+                                    <h3 className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-2">
+                                        <svg className="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                                        Head Office
+                                    </h3>
+                                    <p className="text-gray-300 text-base leading-snug pl-6 border-l border-brand-500/30">
+                                        No.410, Alpha Flat, Temple Green Apartment,<br />
+                                        Arun Excello, Mathur, Sriperumpudhur Taluk,<br />
+                                        Kancheepuram - 602105
+                                    </p>
+                                </div>
 
-                                <div className="space-y-8">
-                                    {mainContacts.map((info, index) => (
-                                        <div key={index} className="flex gap-5 items-start">
-                                            <div className="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center shrink-0 border border-white/10">
-                                                {info.icon}
-                                            </div>
-                                            <div>
-                                                <p className="text-xs font-bold uppercase tracking-widest text-brand-300 mb-1">{info.title}</p>
-                                                {info.link ? (
-                                                    <a href={info.link} className="text-lg font-medium hover:text-white transition-colors">
-                                                        {info.content}
-                                                    </a>
-                                                ) : (
-                                                    <p className="text-base font-medium text-brand-50 leading-relaxed">{info.content}</p>
-                                                )}
-                                            </div>
-                                        </div>
-                                    ))}
+                                {/* Contacts */}
+                                <div>
+                                    <h3 className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-2">
+                                        <svg className="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                                        Contact Details
+                                    </h3>
+                                    <div className="space-y-2 pl-6 border-l border-brand-500/30">
+                                        <a href="mailto:operations@reachfacility.com" className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+                                            <span className="text-base">operations@reachfacility.com</span>
+                                        </a>
+                                        <a href="tel:+919176602204" className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group">
+                                            <span className="text-base">+91 9176602204</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                {/* Socials Placeholder - Optional based on design */}
+                                <div className="flex gap-4 pt-4">
+                                    {/* Add social icons here if needed */}
                                 </div>
                             </div>
-
-                            {/* Decorative Circles */}
-                            <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-brand-500/20 rounded-full blur-3xl pointer-events-none"></div>
-                            <div className="absolute top-1/2 -left-24 w-48 h-48 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
                         </div>
 
                         {/* Right Side - Form */}
-                        <div className="lg:w-7/12 p-10 md:p-14 lg:p-20 bg-white">
-                            <h3 className="text-2xl font-bold text-brand-900 mb-8">Send us a Message</h3>
-                            <form onSubmit={handleSubmit} className="space-y-6">
-                                <div className="grid md:grid-cols-2 gap-6">
+                        <div className="lg:w-7/12 relative">
+                            {/* Bracket Accents */}
+                            <div className="absolute -top-6 -left-6 w-16 h-16 border-t-4 border-l-4 border-brand-500 rounded-tl-xl hidden md:block"></div>
+                            <div className="absolute -bottom-6 -right-6 w-16 h-16 border-b-4 border-r-4 border-brand-500 rounded-br-xl hidden md:block"></div>
+
+                            {/* Form Card */}
+                            <div className="bg-gray-900 p-8 md:p-12 rounded-2xl border border-gray-800 shadow-2xl relative z-10">
+                                <h3 className="text-3xl font-bold text-white mb-8">Get in Touch</h3>
+
+                                <form onSubmit={handleSubmit} className="space-y-6">
                                     <div className="space-y-2">
-                                        <label className="text-sm font-semibold text-gray-700 ml-1">Your Name</label>
+                                        <label className="text-sm font-semibold text-gray-300 ml-1">Name</label>
                                         <input
                                             name="name"
                                             value={formData.name}
                                             onChange={handleChange}
                                             placeholder="John Doe"
-                                            className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-xl text-brand-900 placeholder-gray-400 focus:bg-white focus:ring-4 focus:ring-brand-600/10 focus:border-brand-600 transition-all duration-300 outline-none"
+                                            className="w-full bg-white/5 border border-gray-700 rounded-lg text-white px-4 py-3 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none transition-all placeholder-gray-500"
                                             required
                                         />
                                     </div>
+
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-semibold text-gray-300 ml-1">Email</label>
+                                            <input
+                                                name="email"
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                placeholder="john@example.com"
+                                                type="email"
+                                                className="w-full bg-white/5 border border-gray-700 rounded-lg text-white px-4 py-3 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none transition-all placeholder-gray-500"
+                                                required
+                                            />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-semibold text-gray-300 ml-1">Phone</label>
+                                            <input
+                                                name="phone"
+                                                value={formData.phone}
+                                                onChange={handleChange}
+                                                placeholder="+91 98765 43210"
+                                                className="w-full bg-white/5 border border-gray-700 rounded-lg text-white px-4 py-3 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none transition-all placeholder-gray-500"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+
                                     <div className="space-y-2">
-                                        <label className="text-sm font-semibold text-gray-700 ml-1">Phone Number</label>
-                                        <input
-                                            name="phone"
-                                            value={formData.phone}
+                                        <label className="text-sm font-semibold text-gray-300 ml-1">Message</label>
+                                        <textarea
+                                            name="message"
+                                            value={formData.message}
                                             onChange={handleChange}
-                                            placeholder="+91 98765 43210"
-                                            className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-xl text-brand-900 placeholder-gray-400 focus:bg-white focus:ring-4 focus:ring-brand-600/10 focus:border-brand-600 transition-all duration-300 outline-none"
+                                            placeholder="Tell us about your requirements..."
+                                            rows={4}
+                                            className="w-full bg-white/5 border border-gray-700 rounded-lg text-white px-4 py-3 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 focus:outline-none transition-all placeholder-gray-500 resize-none"
                                             required
                                         />
                                     </div>
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-sm font-semibold text-gray-700 ml-1">Email Address</label>
-                                    <input
-                                        name="email"
-                                        value={formData.email}
-                                        onChange={handleChange}
-                                        placeholder="john@example.com"
-                                        type="email"
-                                        className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-xl text-brand-900 placeholder-gray-400 focus:bg-white focus:ring-4 focus:ring-brand-600/10 focus:border-brand-600 transition-all duration-300 outline-none"
-                                        required
-                                    />
-                                </div>
-                                <div className="space-y-2">
-                                    <label className="text-sm font-semibold text-gray-700 ml-1">Message</label>
-                                    <textarea
-                                        name="message"
-                                        value={formData.message}
-                                        onChange={handleChange}
-                                        placeholder="Tell us about your requirements..."
-                                        rows={4}
-                                        className="w-full px-6 py-4 bg-gray-50 border border-gray-100 rounded-xl text-brand-900 placeholder-gray-400 focus:bg-white focus:ring-4 focus:ring-brand-600/10 focus:border-brand-600 transition-all duration-300 outline-none resize-none"
-                                        required
-                                    />
-                                </div>
-                                <button type="submit" className="w-full py-5 bg-brand-900 text-white font-bold rounded-xl shadow-xl shadow-brand-900/20 hover:shadow-2xl hover:shadow-brand-900/30 hover:-translate-y-1 hover:bg-brand-800 transition-all duration-300 text-base tracking-wide flex items-center justify-center gap-2">
-                                    Send Message
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                                </button>
-                            </form>
+
+                                    <div className="pt-4">
+                                        <button type="submit" className="w-full py-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-lg shadow-lg shadow-brand-900/20 transition-all duration-300 uppercase tracking-wider text-sm transform hover:-translate-y-0.5">
+                                            Send Message
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -210,8 +194,8 @@ const Contact = () => {
                                     key={tab}
                                     onClick={() => setActiveTab(tab)}
                                     className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${activeTab === tab
-                                            ? 'bg-white text-black shadow-lg'
-                                            : 'text-gray-400 hover:text-white'
+                                        ? 'bg-white text-black shadow-lg'
+                                        : 'text-gray-400 hover:text-white'
                                         }`}
                                 >
                                     {tab}
