@@ -78,6 +78,20 @@ body {
   animation: marquee 30s linear infinite;
 }
 
+@keyframes marqueeVertical {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-marquee-vertical {
+  animation: marqueeVertical 20s linear infinite;
+}
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 4px;
 }
