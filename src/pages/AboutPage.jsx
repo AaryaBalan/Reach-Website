@@ -197,7 +197,7 @@ const AboutPage = () => {
                 <div className="absolute top-10 md:top-20 right-10 md:right-20 w-48 md:w-96 h-48 md:h-96 bg-brand-500 rounded-full blur-[100px] md:blur-[200px] opacity-20"></div>
                 <div className="absolute bottom-10 md:bottom-20 left-10 md:left-20 w-36 md:w-72 h-36 md:h-72 bg-brand-100 rounded-full blur-[80px] md:blur-[150px] opacity-10"></div>
 
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="max-w-7xl mx-auto px-1 sm:px-1 lg:px-1 relative z-10">
                     {/* Header */}
                     <motion.div {...fadeInUp} className="text-center mb-12 md:mb-16 lg:mb-20">
                         <span className="text-brand-300 font-bold uppercase tracking-widest text-xs md:text-sm">Our Foundation</span>
