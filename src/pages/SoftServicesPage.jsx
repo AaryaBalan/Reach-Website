@@ -275,41 +275,46 @@ const SoftServicesPage = () => {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 0.4 }}
-                            className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start"
+                            className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-stretch overflow-visible"
                         >
-                            {/* Image Card */}
-                            <div className="relative group order-1">
-                                <div className="absolute -inset-0.5 sm:-inset-1 bg-gradient-to-r from-brand-500 to-brand-700 rounded-2xl sm:rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-500" />
-                                <div className="relative bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
-                                    <div className="relative h-56 sm:h-72 md:h-80 lg:h-96 overflow-hidden">
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10" />
-                                        <motion.img
-                                            initial={{ scale: 1.05 }}
-                                            animate={{ scale: 1 }}
-                                            transition={{ duration: 0.5 }}
-                                            src={servicesMap[activeService].image}
-                                            alt={servicesMap[activeService].title}
-                                            className="w-full h-full object-cover"
-                                        />
+                            {/* Image Card Column - stretches to match content height */}
+                            <div className="relative order-1">
+                                {/* Sticky wrapper inside the stretched column */}
+                                <div className="lg:sticky lg:top-28 h-fit">
+                                    <div className="relative group">
+                                        <div className="absolute -inset-0.5 sm:-inset-1 bg-gradient-to-r from-brand-500 to-brand-700 rounded-2xl sm:rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-500" />
+                                        <div className="relative bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
+                                            <div className="relative h-56 sm:h-72 md:h-80 lg:h-96 overflow-hidden">
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10" />
+                                                <motion.img
+                                                    initial={{ scale: 1.05 }}
+                                                    animate={{ scale: 1 }}
+                                                    transition={{ duration: 0.5 }}
+                                                    src={servicesMap[activeService].image}
+                                                    alt={servicesMap[activeService].title}
+                                                    className="w-full h-full object-cover"
+                                                />
 
-                                        {/* Badge */}
-                                        <div className="absolute top-3 sm:top-4 left-3 sm:left-4 z-20">
-                                            <div className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
-                                                <span className="w-4 h-4 sm:w-5 sm:h-5 text-white">
-                                                    {Icons[activeService]}
-                                                </span>
-                                                <span className="text-white font-semibold text-xs sm:text-sm">
-                                                    {servicesMap[activeService].title}
-                                                </span>
+                                                {/* Badge */}
+                                                <div className="absolute top-3 sm:top-4 left-3 sm:left-4 z-20">
+                                                    <div className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+                                                        <span className="w-4 h-4 sm:w-5 sm:h-5 text-white">
+                                                            {Icons[activeService]}
+                                                        </span>
+                                                        <span className="text-white font-semibold text-xs sm:text-sm">
+                                                            {servicesMap[activeService].title}
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                {/* Title Overlay */}
+                                                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 z-20">
+                                                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">
+                                                        {servicesMap[activeService].title}
+                                                    </h3>
+                                                    <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-brand-400 to-brand-600 rounded-full" />
+                                                </div>
                                             </div>
-                                        </div>
-
-                                        {/* Title Overlay */}
-                                        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 z-20">
-                                            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">
-                                                {servicesMap[activeService].title}
-                                            </h3>
-                                            <div className="w-12 sm:w-16 h-1 bg-gradient-to-r from-brand-400 to-brand-600 rounded-full" />
                                         </div>
                                     </div>
                                 </div>
